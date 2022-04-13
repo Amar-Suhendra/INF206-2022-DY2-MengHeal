@@ -13,6 +13,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// go to landing page
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
+});
+
+//go to landing page
+Route::get('/home', function () {
+    return view('landing');
+});
+
+// go to login page
+Route::get('/login', function () {
+    return view('login');
+});
+
+// go to register page
+Route::get('/register', function () {
+    return view('register');
+});
+
+// go to antrian page
+Route::get('/antrian', function () {
+    return view('antrian');
+});
+
+// go to konsul page
+Route::get('/konsul', function () {
+    return view('konsul');
+});
+
+// go to detail pasien page
+Route::get('/detailpasien', function () {
+    return view('detailpasien');
 });
