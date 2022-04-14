@@ -10,7 +10,7 @@
 <body>
     <div class="header">
         <div class="header-logo">
-            <img src="Logo.png" class="gambar">
+            <img src="assets/icon/Logo.png" class="gambar">
             <h2>Mengheal</h2>
         </div>
         <div class="header-list">
