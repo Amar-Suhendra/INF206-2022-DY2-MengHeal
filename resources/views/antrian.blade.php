@@ -8,6 +8,28 @@
     <title>antrian online</title>
 </head>
 <body>
-    <h1>antrian online Page</h1>
+    <div class="header">
+        <div class="header-logo">
+            <img src="Logo.png" class="gambar">
+            <h2>Mengheal</h2>
+        </div>
+        <div class="header-list">
+            <div class="aboutus">About us</div>
+            <div class="menu">
+                <ul>
+                    <li>Healing</li>
+                    <li>Konsultasi Online</li>
+                    <li>Konsultasi Langsung</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="border">
+            <h2>NO Antrian</h2>
+            <h1><b>10</b></h1>
+            <div class="btn">Konfirmasi</div>
+        </div>
+    </div>
 </body>
 </html>
