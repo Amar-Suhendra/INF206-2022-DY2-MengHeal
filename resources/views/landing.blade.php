@@ -36,12 +36,12 @@
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Quotes</a></li>
+                            <li><a class="dropdown-item" href="#">Video Booster</a></li>
                         </ul>
                     </div>
                 </div>
+                <img class="img-thumbnail" src="img/user.png" alt="">
             </div>
         </div>
     </nav>
