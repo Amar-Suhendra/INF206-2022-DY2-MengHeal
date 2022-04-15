@@ -8,6 +8,16 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Login page</h1>
+    <div class="login-box">
+        <img src="assets/icon/BBIJ.jpg" class="avatar">
+        <h1>Login</h1>
+        <form>
+            <input type="text" name="Username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="Password" name="Password" placeholder="Enter Password">
+            <input type="submit" name="submit" value="Login">
+            <a href="a">Forget Password</a>
+        </form>
+    </div>
 </body>
 </html>
