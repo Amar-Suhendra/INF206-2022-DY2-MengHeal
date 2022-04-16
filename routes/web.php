@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,9 +38,8 @@ Route::get('/register', function () {
 
 // go to antrian page
 Route::GET('/konsultasilangsung', [UserController::class, 'index']);
-Route::get('/antrian', function () {
-    return view('antrian');
-});
+Route::GET('/getantrian', [UserController::class, 'getAntrian']);
+
 
 // go to konsul page
 Route::get('/konsul', function () {
