@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // go to landing page
-Route::get('/', function () {
+Route::get('', function () {
     return view('landing');
 });
 
@@ -36,6 +36,7 @@ Route::get('/register', function () {
 });
 
 // go to antrian page
+Route::GET('/konsultasilangsung', [UserController::class, 'index']);
 Route::get('/antrian', function () {
     return view('antrian');
 });

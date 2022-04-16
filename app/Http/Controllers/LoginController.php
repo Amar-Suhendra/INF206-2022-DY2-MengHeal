@@ -26,10 +26,10 @@ class LoginController extends Controller
      */
     public function validation(Request $request)
     {
-        if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
-
+        if (Auth::attempt(['Username' => $request->Username, 'password' => $request->Password])) {
+            // return view('landing');
             $request->session()->regenerate();
-            return redirect()->intended('');
+            return redirect()->intended('/');
         }
 
         return back()->with(
