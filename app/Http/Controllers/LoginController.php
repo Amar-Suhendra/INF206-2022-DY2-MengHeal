@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+
 
 class LoginController extends Controller
 {
@@ -23,14 +26,10 @@ class LoginController extends Controller
      */
     public function validation(Request $request)
     {
-        if (Auth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
-            if ((User::where('npm', $request->npm)->first()->is_admin) === 1) {
-                $request->session()->regenerate();
-                return redirect()->intended('admin/dashboard');
-            } else if (User::where('npm', $request->npm)->first()->is_admin !== 1) {
-                $request->session()->regenerate();
-                return redirect()->intended('');
-            }
+        if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
+
+            $request->session()->regenerate();
+            return redirect()->intended('');
         }
 
         return back()->with(
