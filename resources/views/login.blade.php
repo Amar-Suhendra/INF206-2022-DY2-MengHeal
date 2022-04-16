@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <title>Login</title>
-</head>
-<body>
+@extends('layout/main')
+
+@section('container')
     <div class="login-box">
-        <img src="assets/icon/Logo.png" class="avatar">
         <h1>Login</h1>
         <form>
             <input type="text" name="Username" placeholder="Enter Username">
@@ -19,5 +11,4 @@
             <a href="a">Forget Password</a>
         </form>
     </div>
-</body>
-</html>
+@endsection
