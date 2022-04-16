@@ -1,15 +1,6 @@
 .company-name{
     color: #2B88D9;
 }
-body{
-    margin-bottom: 0px;
-    padding: 0px;
-    background-image: url("/assets/image/belakang.jpg");
-    background-size: cover;
-    background-position: center;
-    font-family: sans-serif;
-    height: 100vh;
-}
 
 .login-box{
     width: 320px;
@@ -22,13 +13,4 @@ body{
     box-sizing: border-box;
     padding: 70px;
     transform: translate(-50%, -50%);
-}
-
-.avatar{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: calc(67% - 33%);
 }

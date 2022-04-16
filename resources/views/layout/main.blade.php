@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand ms-5 me-1" href="/">
-                <img src="img/Icon.png" alt="Mengheal">
+                <img src="assets/img/Icon.png" alt="Mengheal">
             </a>
             <h3 class="company-name">Mengheal</h3>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -49,7 +49,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login |</a>
+                        <a class="nav-link" href="/login">Login |</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Daftar</a>
@@ -58,7 +58,7 @@
             </div>
         </div>
     </nav>
-    
+
     <div class="container mt-5 me-auto ms-5">
         @yield('container')
     </div>
