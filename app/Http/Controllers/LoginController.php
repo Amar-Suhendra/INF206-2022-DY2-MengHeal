@@ -13,17 +13,30 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+        return view('login');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * validate username & password
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function validation(Request $request)
     {
-        //
+        if (Auth::attempt(['npm' => $request->npm, 'password' => $request->password])) {
+            if ((User::where('npm', $request->npm)->first()->is_admin) === 1) {
+                $request->session()->regenerate();
+                return redirect()->intended('admin/dashboard');
+            } else if (User::where('npm', $request->npm)->first()->is_admin !== 1) {
+                $request->session()->regenerate();
+                return redirect()->intended('');
+            }
+        }
+
+        return back()->with(
+            'error',
+            'Login gagal'
+        );
     }
 
     /**

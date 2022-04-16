@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,11 +24,12 @@ Route::get('/home', function () {
     return view('landing');
 });
 
-// go to login page
-Route::get('/login', function () {
-    return view('login');
-});
 
+
+// go to login page
+Route::GET('login', [LoginController::class, 'index']);
+// validation login
+Route::POST('login', [LoginController::class, 'validation']);
 // go to register page
 Route::get('/register', function () {
     return view('register');
