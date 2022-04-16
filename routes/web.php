@@ -37,14 +37,12 @@ Route::get('/register', function () {
 });
 
 // go to antrian page
-Route::GET('/konsultasilangsung', [UserController::class, 'index']);
+Route::GET('/konsultasilangsung', [UserController::class, 'konsulLangsung']);
 Route::GET('/getantrian', [UserController::class, 'getAntrian']);
 
 
 // go to konsul page
-Route::get('/konsul', function () {
-    return view('konsul');
-});
+Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
 
 // go to detail pasien page
 Route::get('/detailpasien', function () {
