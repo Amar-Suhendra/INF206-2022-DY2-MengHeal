@@ -1,9 +1,18 @@
-@extends('layout/main')
-
-@section('container')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Login</title>
+</head>
+<body class="login-body">
     <div class="login-box">
-        <h1>Login</h1>
+        <img src="assets/img/logo.png" class="login-avatar">
+        <h1 class="login-h1">Login Here</h1>
         <form>
+            <p>Username</p>
             <input type="text" name="Username" placeholder="Enter Username">
             <p>Password</p>
             <input type="Password" name="Password" placeholder="Enter Password">
@@ -11,4 +20,5 @@
             <a href="a">Forget Password</a>
         </form>
     </div>
-@endsection
+</body>
+</html>
