@@ -24,15 +24,6 @@
                         <img src="../assets/img/training.jpg" class="img-1">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="img-section-2">
-                        <img src="../assets/img/logo.png" class="img-2">
-                    </div>
-                    <div class="deskripsi-2">
-                        <h2>Bingung mau cari tau info tentang kursus, workshop, atau seminar tentang programming dimana ? Kuy cek website kita.</h2>
-                        <p>Disini kita bakal share nih, semua tentang kursus, workshop, atau seminar programming secara gratis.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
