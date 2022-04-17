@@ -17,7 +17,8 @@
             <p>Password</p>
             <input type="Password" name="Password" placeholder="Enter Password">
             <input type="submit" name="submit" value="Login">
-            <a href="a">Forget Password</a>
+            <a href="a">Forget Password?</a>
+            <a href="a">Register</a>
         </form>
     </div>
 </body>
