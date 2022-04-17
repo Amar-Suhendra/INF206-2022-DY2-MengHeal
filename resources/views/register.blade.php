@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Register</title>
 </head>
-<body class="regiser-body">
-    <div class="register-box">
-        <img src="assets/img/logo.png" class="register-avatar">
-        <h1 class="register-h1">Register Here</h1>
+<body class="login-body">
+    <div class="login-box">
+        <img src="assets/img/logo.png" class="login-avatar">
+        <h1 class="login-h1">Register Here</h1>
         <form>
             <p>Username</p>
             <input type="text" name="Username" placeholder="Enter Username">
