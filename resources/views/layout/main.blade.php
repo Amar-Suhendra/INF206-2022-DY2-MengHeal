@@ -32,10 +32,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Konsultasi Langsung</a>
+                        <a class="nav-link" href="{{ url('/konsultasilangsung') }}">Konsultasi Langsung</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Konsultasi Online</a>
+                        <a class="nav-link" href="{{ url('/konsultasionline') }}">Konsultasi Online</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
