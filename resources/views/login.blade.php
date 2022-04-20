@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,22 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Login</title>
 </head>
-<body>
-    <h1>Login page</h1>
+
+<body class="login-body">
+    <div class="login-box">
+        <img src="assets/img/logo.png" class="login-avatar">
+        <h1 class="login-h1">Login Here</h1>
+        <form action="{{ url('login') }}" method="post">
+            @csrf
+            <p>Username</p>
+            <input type="text" name="Username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="Password" name="Password" placeholder="Enter Password">
+            <input type="submit" name="submit" value="Login">
+            <a href="a">Forget Password</a>
+
+        </form>
+    </div>
 </body>
+
 </html>

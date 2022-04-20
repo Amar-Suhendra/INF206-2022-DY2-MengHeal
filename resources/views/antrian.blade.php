@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <title>antrian online</title>
-</head>
-<body>
-    <div class="header">
-        <div class="header-logo">
-            <img src="assets/icon/Logo.png" class="gambar">
-            <h2>Mengheal</h2>
-        </div>
-        <div class="header-list">
-            <div class="aboutus">About us</div>
-            <div class="menu">
-                <ul>
-                    <li>Healing</li>
-                    <li>Konsultasi Online</li>
-                    <li>Konsultasi Langsung</li>
-                </ul>
+@extends('layout.main')
+@section('container')
+    <div class="d-flex justify-content-center p-5">
+        <div class="card text-center " style="width: 18rem; height:16rem; border-radius: 10%">
+            <div class="card-header bg-transparent">
+                <div class="card-title">
+                    <h3>No Antrian</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-text">
+                    <br>
+                    <h1><b>10</b></h1>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent">
+                <a href="#" class="btn btn-primary" style="width:14rem;">
+                    Konfirmasi
+                </a>
             </div>
         </div>
     </div>
-    <div class="main">
-        <div class="border">
-            <h2>NO Antrian</h2>
-            <h1><b>10</b></h1>
-            <div class="btn">Konfirmasi</div>
-        </div>
-    </div>
-</body>
-</html>
+@endsection
