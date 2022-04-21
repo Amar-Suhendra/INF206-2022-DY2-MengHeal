@@ -60,7 +60,7 @@
         </div>
     </nav>
 
-    <div class="container mt-5 me-auto ms-5">
+    <div class="container mt-5">
         @yield('container')
     </div>
 

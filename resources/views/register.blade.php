@@ -7,7 +7,20 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Register</title>
 </head>
-<body>
-    <h1>Register page</h1>
+<body class="register-body">
+    <div class="register-box">
+        <img src="assets/img/logo.png" class="register-avatar">
+        <h1 class="register-h1">Register Here</h1>
+        <form>
+            <p>Username</p>
+            <input type="text" name="Username" placeholder="Enter Username">
+            <p>Email</p>
+            <input type="email" name="Email" placeholder="Enter Email">
+            <p>Password</p>
+            <input type="Password" name="Password" placeholder="Enter Password">
+            <input type="submit" name="submit" value="Register">
+            <a href="a">Have an account? Login</a>
+        </form>
+    </div>
 </body>
 </html>
