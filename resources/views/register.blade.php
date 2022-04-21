@@ -22,7 +22,7 @@
             <p>Password</p>
             <input type="Password" name="Password" placeholder="Enter Password">
             <input type="submit" name="submit" value="Register">
-            <a href="a">Have an account? Login</a>
+            <a href="{{ url('login') }}">Have an account? Login</a>
         </form>
     </div>
 </body>
