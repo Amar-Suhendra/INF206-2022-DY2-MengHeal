@@ -53,7 +53,7 @@
                         <a class="nav-link" href="/login">Login |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Daftar</a>
+                        <a class="nav-link" href="/register">Daftar</a>
                     </li>
                 </ul>
             </div>

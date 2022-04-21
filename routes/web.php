@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,9 +33,7 @@ Route::GET('login', [LoginController::class, 'index']);
 // validation login
 Route::POST('login', [LoginController::class, 'validation']);
 // go to register page
-Route::get('/register', function () {
-    return view('register');
-});
+Route::GET('register', [RegisterController::class, 'index']);
 
 // go to antrian page
 Route::GET('/konsultasilangsung', [UserController::class, 'konsulLangsung']);
