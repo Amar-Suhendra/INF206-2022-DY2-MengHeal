@@ -13,7 +13,7 @@
     <div class="register-box">
         <img src="assets/img/logo.png" class="register-avatar">
         <h1 class="register-h1">Register Here</h1>
-        <form method="POST" action="/register">
+        <form method="POST" action="{{ url('register') }}">
             @csrf
             <p>Username</p>
             <input type="text" name="Username" placeholder="Enter Username">
