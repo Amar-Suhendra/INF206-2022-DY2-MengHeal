@@ -40,6 +40,12 @@ Route::get('/register', function () {
 Route::GET('/konsultasilangsung', [UserController::class, 'konsulLangsung']);
 Route::GET('/getantrian', [UserController::class, 'getAntrian']);
 
+// go to konfirmasi page
+Route::GET('/konfirmasi', [UserController::class, 'konfirmasi']);
+Route::GET('/konfirmasi', function () {
+    return view('konfirmasi');
+});
+
 
 // go to konsul page
 Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);

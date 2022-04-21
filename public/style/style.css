@@ -88,3 +88,7 @@ input[type='password'] {
 .login-box a:hover {
   color: #293cec;
 }
+
+.ceklist {
+  height: 90px;
+}
