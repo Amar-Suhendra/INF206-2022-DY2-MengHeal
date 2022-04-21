@@ -34,6 +34,7 @@ Route::GET('login', [LoginController::class, 'index']);
 Route::POST('login', [LoginController::class, 'validation']);
 // go to register page
 Route::GET('register', [RegisterController::class, 'index']);
+Route::POST('register', [RegisterController::class, 'store']);
 
 // go to antrian page
 Route::GET('/konsultasilangsung', [UserController::class, 'konsulLangsung']);
