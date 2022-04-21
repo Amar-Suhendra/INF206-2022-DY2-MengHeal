@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Register;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -34,7 +35,16 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validasi data
+        $credentials = $request->validate([
+            'nama' => 'required|max:255',
+            'username' => 'required|unique:registers',
+            'email' => 'required|unique:registers,email',
+            'password' => 'required',
+        ]);
+
+        // simpan data ke dalam database register
+        Register::create($credentials);
     }
 
     /**
