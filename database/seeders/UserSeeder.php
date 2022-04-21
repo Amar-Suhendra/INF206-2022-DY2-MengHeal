@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -21,7 +20,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'ikhsan',
                 'username' => 'ikhsan',
-                'password' => Crypt::encryptString('123'),
+                'password' => bcrypt('123'),
             ]
 
         );
