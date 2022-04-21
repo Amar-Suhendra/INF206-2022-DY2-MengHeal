@@ -37,10 +37,10 @@ class RegisterController extends Controller
     {
         // validasi data
         $credentials = $request->validate([
-            'nama' => 'required|max:255',
-            'username' => 'required|unique:registers',
-            'email' => 'required|unique:registers,email',
-            'password' => 'required',
+            // 'nama' => 'required',
+            'Username' => 'required|unique:registers',
+            'Email' => 'required|unique:registers,email',
+            'Password' => 'required',
         ]);
 
         // simpan data ke dalam database register
