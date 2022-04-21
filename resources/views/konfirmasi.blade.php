@@ -11,7 +11,7 @@
             <div class="card-body">
                 <div class="card-text">
                     <br>
-                    <h1><b></b></h1>
+                    <img src="assets/icon/ceklist.png">
                 </div>
             </div>
             <div class="card-footer bg-transparent">
