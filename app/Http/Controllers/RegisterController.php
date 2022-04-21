@@ -45,7 +45,7 @@ class RegisterController extends Controller
 
         // simpan data ke dalam database register
         Register::create($credentials);
-        redirect('login');
+        redirect('login')->with('status', 'success');
     }
 
     /**
