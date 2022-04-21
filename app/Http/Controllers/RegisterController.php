@@ -50,7 +50,7 @@ class RegisterController extends Controller
             'Email' => $request->Email,
             'Password' => Crypt::encryptString($request->Password),
         ]);
-        redirect('login')->with('status', 'success');
+        return redirect('/login');
     }
 
     /**
