@@ -53,14 +53,14 @@
                         <a class="nav-link" href="/login">Login |</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Daftar</a>
+                        <a class="nav-link" href="/register">Daftar</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5 me-auto ms-5">
+    <div class="container mt-5">
         @yield('container')
     </div>
 
