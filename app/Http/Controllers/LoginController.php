@@ -27,7 +27,6 @@ class LoginController extends Controller
     public function validation(Request $request)
     {
         if (Auth::attempt(['Username' => $request->Username, 'password' => $request->Password])) {
-            // return view('landing');
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
