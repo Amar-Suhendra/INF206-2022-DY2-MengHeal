@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,13 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Register</title>
 </head>
+
 <body class="register-body">
     <div class="register-box">
         <img src="assets/img/logo.png" class="register-avatar">
         <h1 class="register-h1">Register Here</h1>
-        <form>
+        <form method="POST" action="{{ url('register') }}">
+            @csrf
             <p>Username</p>
             <input type="text" name="Username" placeholder="Enter Username">
             <p>Email</p>
@@ -19,8 +22,9 @@
             <p>Password</p>
             <input type="Password" name="Password" placeholder="Enter Password">
             <input type="submit" name="submit" value="Register">
-            <a href="a">Have an account? Login</a>
+            <a href="{{ url('login') }}">Have an account? Login</a>
         </form>
     </div>
 </body>
+
 </html>
