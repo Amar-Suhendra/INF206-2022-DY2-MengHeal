@@ -45,6 +45,7 @@ Route::POST('logout', [LoginController::class, 'logout']);
 // Admin Route
 Route::GET('admin', [AdminController::class, 'index']);
 Route::GET('users', [AdminController::class, 'user']);
+Route::GET('users-registration', [AdminController::class, 'userRegistration']);
 
 
 
