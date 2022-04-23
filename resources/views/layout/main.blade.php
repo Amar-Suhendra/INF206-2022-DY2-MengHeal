@@ -49,22 +49,21 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    @if (session('status'))
-                        <li class="nav-item">
-                            <p>{{ auth()->user()->name }} |</p>
-
-                        </li>
-                        <li><a href="">
-                                <ion-icon name="log-out-outline"></ion-icon>
-                            </a></li>
-                        {{-- @else
+                    {{-- @if (session('status')) --}}
+                    <li class="nav-item">
+                        <p>{{ auth()->user()->name }} |</p>
+                    </li>
+                    <li><a href="#">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </a></li>
+                    {{-- @else
                         <li class="nav-item">
                             <a class="nav-link" href="/login">Login |</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/register">Daftar</a>
                         </li> --}}
-                    @endif
+                    {{-- @endif --}}
                 </ul>
             </div>
         </div>
