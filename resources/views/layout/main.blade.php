@@ -59,9 +59,6 @@
                                 {{ auth()->user()->name }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
                                 <li><a class="dropdown-item" href="#">
                                         <ion-icon name="log-out-outline"></ion-icon>Logout
                                     </a></li>
