@@ -18,15 +18,17 @@ use Illuminate\Support\Facades\Route;
 
 // go to landing page
 Route::get('', function () {
-    return view('landing');
+    return view('landing', [
+        'title' => 'Home',
+    ]);
 });
 
 //go to landing page
 Route::get('/index', function () {
-    return view('landing');
+    return view('landing', [
+        'title' => 'Home',
+    ]);
 });
-
-
 
 // go to login page
 Route::GET('login', [LoginController::class, 'index']);
@@ -39,7 +41,6 @@ Route::POST('register', [RegisterController::class, 'store']);
 // go to antrian page
 Route::GET('/konsultasilangsung', [UserController::class, 'konsulLangsung']);
 Route::GET('/getantrian', [UserController::class, 'getAntrian']);
-
 
 // go to konsul page
 Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
