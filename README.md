@@ -4,21 +4,21 @@ MengHeal menyediakan sarana untuk konsultasi mengenai permasalahan kesehatan men
 Repositori ini berisi mengenai project matakuliah Rekayasa Perangkat Lunak, dengan nama project MengHeal. Project ini mengambil tema mengenai Mental Health dikalangan remaja.
 ## How to run
 1. Clone repositori ini terlebih dahulu di dalam folder htdocs
-    https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal.git
+   https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal.git
 2. Masuk ke dalam folder
-    cd INF206-2022-DY2-MengHeal
+   cd INF206-2022-DY2-MengHeal
 3. Jalankan Composer Install
-    composer install
+   composer install
 4. Hidupkan key generate
-    php artisan key:generate
+   php artisan key:generate
 5. Copy file .env.example menjadi .env
 6. Di dalam file .env ubahlah nama database menjadi MengHeal
 7. Sebelum Melakukan migrasi, Buatlah terlebih dahulu database MengHeal dengan menggunakan aplikasi RDBMS yang anda punya
-    create database MengHeal;
+   create database MengHeal;
 8. Untuk Mengisi tabel beserta data-datanya (Migrasi database) jalankan perintah berikut:
-    php artisan migrate --seed 
+   php artisan migrate --seed 
 9. Lalu hidupkan server aplikasinya dengan cara sebagai berikut:
-    php artisan serve
+   php artisan serve
 
 ## Team Member
 ### Author
