@@ -24,7 +24,7 @@ Route::get('', function () {
 });
 
 //go to landing page
-Route::get('/home', function () {
+Route::get('/index', function () {
     return view('landing', [
         'title' => 'Home',
     ]);
