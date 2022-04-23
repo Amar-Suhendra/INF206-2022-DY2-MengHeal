@@ -83,6 +83,14 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/users') }}" class="nav-link">
+                                <i class="nav-icon fas fa-user-check"></i>
+                                <p>
+                                    Users Registration
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/users') }}" class="nav-link">
                                 <i class="nav-icon fas fa-hospital-user"></i>
                                 <p>
                                     Users
