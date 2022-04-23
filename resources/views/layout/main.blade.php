@@ -20,7 +20,7 @@
             <a class="navbar-brand ms-5 me-1">
                 <img src="assets/img/Icon.png" alt="Mengheal">
             </a>
-            <h3> <a href="{{ url('/home') }}"  class="company-name"> Mengheal</a> </h3>
+            <h3> <a href="{{ url('/home') }}" class="company-name"> Mengheal</a> </h3>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -29,13 +29,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {{ ($title == "Home")? 'active fw-bold text-primary' : '' }} " aria-current="page" href="{{ url('/home') }}">Home</a>
+                        <a class="nav-link {{ $title == 'Home' ? 'active fw-bold text-primary' : '' }} "
+                            aria-current="page" href="{{ url('/home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($title == "Antrian")? 'active fw-bold text-primary' : '' }} " href="{{ url('/konsultasilangsung') }}" >Konsultasi Langsung</a>
+                        <a class="nav-link {{ $title == 'Antrian' ? 'active fw-bold text-primary' : '' }} "
+                            href="{{ url('/konsultasilangsung') }}">Konsultasi Langsung</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($title == "Konsultasi Online")? 'active fw-bold text-primary' : '' }} " href="{{ url('/konsultasionline') }}">Konsultasi Online</a>
+                        <a class="nav-link {{ $title == 'Konsultasi Online' ? 'active fw-bold text-primary' : '' }} "
+                            href="{{ url('/konsultasionline') }}">Konsultasi Online</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -49,21 +52,25 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    {{-- @if (session('status')) --}}
-                    <li class="nav-item">
-                        <p>{{ auth()->user()->name }} |</p>
-                    </li>
-                    <li><a href="#">
-                            <ion-icon name="log-out-outline"></ion-icon>
-                        </a></li>
-                    {{-- @else
+                    @auth
+
+                        <li class="nav-item">
+                            <p>{{ auth()->user()->name }} |</p>
+                        </li>
+                        <li><a href="#">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </a></li>
+                    @endauth
+                    @guest
                         <li class="nav-item">
                             <a class="nav-link" href="/login">Login |</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/register">Daftar</a>
-                        </li> --}}
-                    {{-- @endif --}}
+                        </li>
+                    @endguest
+
+
                 </ul>
             </div>
         </div>
