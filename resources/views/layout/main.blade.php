@@ -49,12 +49,22 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login |</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register">Daftar</a>
-                    </li>
+                    @if (session('status'))
+                        <li class="nav-item">
+                            <p>{{ auth()->user()->name }} |</p>
+
+                        </li>
+                        <li><a href="">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </a></li>
+                        {{-- @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Daftar</a>
+                        </li> --}}
+                    @endif
                 </ul>
             </div>
         </div>
@@ -70,7 +80,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-
+    <!-- ionicon -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
