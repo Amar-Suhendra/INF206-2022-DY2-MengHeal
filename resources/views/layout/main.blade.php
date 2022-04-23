@@ -51,26 +51,22 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ms-auto">
                     @auth
-
-                        <li class="nav-item">
-                            <p>{{ auth()->user()->name }} |</p>
-                        </li>
-                        <li><a href="#">
-                                <ion-icon name="log-out-outline"></ion-icon>
-                            </a></li>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <li><button class="dropdown-item" type="button">Action</button></li>
-                                <li><button class="dropdown-item" type="button">Another action</button></li>
-                                <li><button class="dropdown-item" type="button">Something else here</button></li>
+                                {{ auth()->user()->name }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">
+                                        <ion-icon name="log-out-outline"></ion-icon>Logout
+                                    </a></li>
                             </ul>
-                        </div>
+                        </li>
                     @else
                         <li class="nav-item">
                             <a class="nav-link" href="/login">Login |</a>
@@ -79,9 +75,6 @@
                             <a class="nav-link" href="/register">Daftar</a>
                         </li>
                     @endauth
-
-
-
                 </ul>
             </div>
         </div>
