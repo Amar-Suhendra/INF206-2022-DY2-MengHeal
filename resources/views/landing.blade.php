@@ -2,22 +2,33 @@
 
 @section('container')
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="deskripsi-1">
-                <h2>Selamat Datang!</h2>
-                <p>Halo, web ini dibuat untuk memenuhi tugas projek tim Rekayasa Perangkat Lunak.</p>
-                <p>Web ini ditujukan untuk memberikan informasi mengenai kesehatan mental seseorang, terkhusus
-                    pada remaja. Dewasa ini banyak kita temukan, remaja yang bunuh diri.
-                </p>
-            </div>
+<div class="wrapper">
+    <section id="home">
+        <img src="../assets/img/landing2.jpg" width="600px" height="300px">
+        <div class="kolom">
+            <p class="deskripsi-1">Kami menyediakan</p>
+            <h2>Curhat Online</h2>
+            <p>Halo, web ini dibuat untuk memenuhi tugas projek tim program Digital Talent Scholarship Progate.
+                Web ini ditujukan untuk memberikan informasi mengenai kursus, seminar dan workshop yang diselenggarakan 
+                oleh beberapa universitas.
+            </p>
         </div>
-        <div class="col">
-            <img src="../assets/img/training.jpg">
+    </section>
+    <section id="courses">
+        <div class="kolom">
+            <p class="deskripsi">Kami menyediakan</p>
+            <h2>Curhat Online</h2>
+            <p>Halo, web ini dibuat untuk memenuhi tugas projek tim program Digital Talent Scholarship Progate.
+                Web ini ditujukan untuk memberikan informasi mengenai kursus, seminar dan workshop yang diselenggarakan 
+                oleh beberapa universitas.
+            </p>
         </div>
-    </div>
+        <img src="../assets/img/landing3.jpg" width="600px" height="300px">
+    </section>
+
 </div>
+
+
 
 
 @endsection
