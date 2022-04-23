@@ -13,10 +13,12 @@
                     <h1><b>10</b></h1>
                 </div>
             </div>
-            <div class="card-footer bg-transparent">
-                <a href="#" class="btn btn-primary" style="width:14rem;">
-                    Konfirmasi
-                </a>
+            <div class="mb-2 d-grid gap-2 col-8 mx-auto bg-transparent">
+                <button type="button" class="btn btn-primary">
+                    <a href="#" class="text-white text-decoration-none fw-bold">
+                        Konfirmasi
+                    </a>
+                </button>
             </div>
         </div>
     </div>

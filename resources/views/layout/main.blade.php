@@ -11,16 +11,16 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Menheal | home</title>
+    <title>Menheal | {{ $title }}</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand ms-5 me-1" href="/">
+            <a class="navbar-brand ms-5 me-1">
                 <img src="assets/img/Icon.png" alt="Mengheal">
             </a>
-            <h3 class="company-name">Mengheal</h3>
+            <h3> <a href="{{ url('/home') }}"  class="company-name"> Mengheal</a> </h3>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -29,13 +29,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link {{ ($title == "Home")? 'active fw-bold text-primary' : '' }} " aria-current="page" href="{{ url('/home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/konsultasilangsung') }}">Konsultasi Langsung</a>
+                        <a class="nav-link {{ ($title == "Antrian")? 'active fw-bold text-primary' : '' }} " href="{{ url('/konsultasilangsung') }}" >Konsultasi Langsung</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/konsultasionline') }}">Konsultasi Online</a>
+                        <a class="nav-link {{ ($title == "Konsultasi Online")? 'active fw-bold text-primary' : '' }} " href="{{ url('/konsultasionline') }}">Konsultasi Online</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -49,18 +49,28 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login |</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Daftar</a>
-                    </li>
+                    @if (session('status'))
+                        <li class="nav-item">
+                            <p>{{ auth()->user()->name }} |</p>
+
+                        </li>
+                        <li><a href="">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </a></li>
+                        {{-- @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Daftar</a>
+                        </li> --}}
+                    @endif
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5 me-auto ms-5">
+    <div class="container mt-5">
         @yield('container')
     </div>
 
@@ -70,7 +80,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-
+    <!-- ionicon -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"

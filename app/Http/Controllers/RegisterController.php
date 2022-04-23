@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Register;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+use Illuminate\Support\Facades\Crypt;
 
-
-class LoginController extends Controller
+class RegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,25 +15,17 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('login');
+        return view('register');
     }
 
     /**
-     * validate username & password
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function validation(Request $request)
+    public function create()
     {
-        if (Auth::attempt(['Username' => $request->Username, 'password' => $request->Password])) {
-            $request->session()->regenerate();
-            return redirect()->intended('/index')->with('status', 'sukses');
-        }
-
-        return back()->with(
-            'error',
-            'Login gagal'
-        );
+        //
     }
 
     /**
@@ -45,7 +36,21 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validasi data
+        $request->validate([
+            // 'nama' => 'required',
+            'Username' => 'required|unique:registers',
+            'Email' => 'required|unique:registers,email',
+            'Password' => 'required',
+        ]);
+
+        // simpan data ke dalam database register
+        Register::create([
+            'Username' => $request->Username,
+            'Email' => $request->Email,
+            'Password' => Crypt::encryptString($request->Password),
+        ]);
+        return redirect('/login');
     }
 
     /**

@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'ikhsan',
                 'username' => 'ikhsan',
-                'password' => Hash::make('123')
+                'password' => bcrypt('123'),
             ]
 
         );
