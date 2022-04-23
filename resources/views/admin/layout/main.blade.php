@@ -82,7 +82,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/users') }}" class="nav-link">
+                            <a href="{{ url('/users-registration') }}" class="nav-link">
                                 <i class="nav-icon fas fa-user-check"></i>
                                 <p>
                                     Users Registration
