@@ -30,6 +30,8 @@ Route::get('/index', function () {
         'title' => 'Home',
     ]);
 });
+
+
 // Login & Logout route
 // go to login page
 Route::GET('login', [LoginController::class, 'index']);
@@ -38,8 +40,11 @@ Route::POST('login', [LoginController::class, 'validation']);
 // logout account
 Route::POST('logout', [LoginController::class, 'logout']);
 
+
+
 // Admin Route
 Route::GET('admin', [AdminController::class, 'index']);
+Route::GET('users', [AdminController::class, 'user']);
 
 
 
