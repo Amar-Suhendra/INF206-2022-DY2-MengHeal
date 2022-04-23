@@ -34,6 +34,8 @@ Route::get('/home', function () {
 Route::GET('login', [LoginController::class, 'index']);
 // validation login
 Route::POST('login', [LoginController::class, 'validation']);
+// logout account
+Route::GET('logout', [LoginController::class, 'logout']);
 // go to register page
 Route::GET('register', [RegisterController::class, 'index']);
 Route::POST('register', [RegisterController::class, 'store']);
