@@ -43,10 +43,11 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="" class="nav-link">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Logout
-                    </a>
+
+                    <form action="{{ url('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="nav-link btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </form>
                 </li>
 
 
