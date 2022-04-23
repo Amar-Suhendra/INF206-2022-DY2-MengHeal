@@ -74,6 +74,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/admin') }}" class="nav-link">
+                                <i class="fas fa-home"></i>
+                                <p>
+                                    Home
+                                </p>
+                            </a>
+                        </li>
 
                         <!-- user login -->
                         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
