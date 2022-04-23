@@ -8,13 +8,17 @@ class UserController extends Controller
 {
     public function konsulLangsung()
     {
-        return view('antrian');
+        return view('antrian',[
+            'title' => 'Antrian',
+        ]);
     }
     public function getAntrian()
     {
     }
     public function konsulOnline()
     {
-        return view('konsul');
+        return view('konsul',[
+            'title' => 'Konsultasi Online',
+        ]);
     }
 }
