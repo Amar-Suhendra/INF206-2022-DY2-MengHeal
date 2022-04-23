@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
@@ -30,6 +31,13 @@ Route::get('/index', function () {
     ]);
 });
 
+// Admin Route
+Route::GET('admin', [AdminController::class, 'index']);
+
+
+
+
+// User Controller
 // go to login page
 Route::GET('login', [LoginController::class, 'index']);
 // validation login
