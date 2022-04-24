@@ -44,7 +44,7 @@ class AdminController extends Controller
     {
         $temp = Register::find($id);
         $temp->update(['status' => False]);
-        return view('admin.layout.user')->with(['registers' => Register::all()]);
+        return view('admin.layout.userRegistration')->with(['registers' => Register::all()]);
     }
 
     /**
