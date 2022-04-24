@@ -18,8 +18,8 @@ class registerSeeder extends Seeder
         DB::table('registers')->insert(
             [
                 'name' => 'amar',
-                'username' => 'amar',
-                'password' => bcrypt('123'),
+                'Username' => 'amar',
+                'Password' => bcrypt('123'),
             ]
 
         );
