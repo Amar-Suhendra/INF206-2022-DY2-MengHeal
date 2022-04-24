@@ -44,7 +44,8 @@ class AdminController extends Controller
     {
         $temp = Register::find($id);
         // return dd($temp['status']);
-        $temp->update(['status' => True]);
+        $temp->status = True;
+        $temp->save();
         return redirect('admin/users-registration');
     }
 

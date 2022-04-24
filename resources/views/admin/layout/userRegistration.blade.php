@@ -37,7 +37,7 @@
                                 @method('PUT')
                                 <button type="submit" class="btn btn-sm btn-block bg-gradient-primary ">Terima</button>
                             </form>
-                        @elseif ($register['status'] == 1)
+                        @elseif ($register['status'] === 1)
                             <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
                         @else
                             <p class="btn btn-sm btn-block bg-gradient-danger">Ditolak</p>

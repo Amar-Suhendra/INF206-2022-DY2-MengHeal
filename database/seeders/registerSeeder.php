@@ -19,6 +19,7 @@ class registerSeeder extends Seeder
             [
                 'name' => 'amar',
                 'Username' => 'amar',
+                'Email' => 'amar@gmai.com',
                 'Password' => bcrypt('123'),
             ]
 
