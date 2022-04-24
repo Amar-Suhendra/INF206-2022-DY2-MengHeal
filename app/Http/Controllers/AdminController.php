@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Register;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -25,6 +26,15 @@ class AdminController extends Controller
     {
         $dataUser = Register::all();
         return view('admin.layout.userRegistration')->with(['registers' => $dataUser]);
+    }
+    /**
+     * Display a listing of the user in the web
+     *
+     */
+    public function user()
+    {
+        $dataUser = User::all();
+        return view('admin.layout.user')->with(['registers' => $dataUser]);
     }
 
     /**
