@@ -26,14 +26,12 @@
                                 style="margin-right: 1rem;">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-sm btn-block bg-gradient-danger"
-                                    onclick="return confirm('Anda yakin?')">Tolak</button>
-                            </form>
-                            <form action="{{ url('/admin/user-registration/' . $register['id']) }}" method="POST">
-                                @csrf
-                                @method('PUT')
-                                <button type="submit" class="btn btn-sm btn-block bg-gradient-primary "
-                                    onclick="confirm()">Terima</button>
+                                <button type="submit" class="btn btn-sm btn-block bg-gradient-danger" ">Tolak</button>
+                                </form>
+                                <form action=" {{ url('/admin/user-registration/' . $register['id']) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-primary ">Terima</button>
                             </form>
                         @elseif ($register['status'] == 1)
                             <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
@@ -82,23 +80,5 @@
                 "responsive": true,
             });
         });
-    </script>
-
-    <script>
-        function confirm() {
-            Swal.fire({
-                title: 'Do you want to save the changes?',
-                showDenyButton: true,
-                showCancelButton: true,
-                confirmButtonText: 'Save',
-            }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                    Swal.fire('Saved!', '', 'success')
-                } else if (result.isDenied) {
-                    Swal.fire('Changes are not saved', '', 'info')
-                }
-            })
-        }
     </script>
 @endsection
