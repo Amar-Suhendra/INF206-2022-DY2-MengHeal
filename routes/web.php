@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
@@ -30,10 +31,27 @@ Route::get('/index', function () {
     ]);
 });
 
+
+// Login & Logout route
 // go to login page
 Route::GET('login', [LoginController::class, 'index']);
 // validation login
 Route::POST('login', [LoginController::class, 'validation']);
+// logout account
+Route::POST('logout', [LoginController::class, 'logout']);
+
+
+
+// Admin Route
+Route::GET('admin', [AdminController::class, 'index']);
+Route::GET('users', [AdminController::class, 'user']);
+Route::GET('users-registration', [AdminController::class, 'userRegistration']);
+
+
+
+
+// User Controller
+
 // go to register page
 Route::GET('register', [RegisterController::class, 'index']);
 Route::POST('register', [RegisterController::class, 'store']);
