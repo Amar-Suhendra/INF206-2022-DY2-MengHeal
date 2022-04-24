@@ -46,6 +46,7 @@ Route::POST('logout', [LoginController::class, 'logout']);
 Route::GET('admin', [AdminController::class, 'index']);
 Route::GET('users', [AdminController::class, 'user']);
 Route::GET('users-registration', [AdminController::class, 'userRegistration']);
+Route::GET('users-registration/{id}', [AdminController::class, 'accept']);
 
 
 
