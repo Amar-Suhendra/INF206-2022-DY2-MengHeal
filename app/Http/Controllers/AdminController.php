@@ -36,6 +36,16 @@ class AdminController extends Controller
         $dataUser = User::all();
         return view('admin.layout.user')->with(['registers' => $dataUser]);
     }
+    /**
+     * accept user registration
+     *
+     */
+    public function accept($id)
+    {
+        $temp = Register::find($);
+        $temp->update(['status' => False]);
+        return view('admin.layout.user')->with(['registers' => Register::all()]);
+    }
 
     /**
      * Show the form for creating a new resource.
