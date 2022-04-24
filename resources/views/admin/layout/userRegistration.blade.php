@@ -55,6 +55,8 @@
 
     <!-- /.tabel -->
 @endsection
+
+<!-- script table -->
 @section('script')
     <!-- DataTables  & Plugins -->
     <script src="{{ url('plugins/datatables/jquery.dataTables.min.js') }}"></script>
