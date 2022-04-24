@@ -22,8 +22,8 @@
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
                     <td>{{ $register['name'] }}</td>
-                    <td>{{ $register['Username'] }}</td>
-                    <td>{{ $register['Email'] }}</td>
+                    <td>{{ $register['username'] }}</td>
+                    <td>{{ $register['email'] }}</td>
                     <td>
                         @if ($register['status'] === 1)
                             Dokter
