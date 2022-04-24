@@ -178,6 +178,7 @@
     <script src="{{ url('plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
     <!-- ChartJS -->
     <script src="{{ url('plugins/chart.js/Chart.min.js') }}"></script>
+    @yield('script')
 </body>
 
 </html>
