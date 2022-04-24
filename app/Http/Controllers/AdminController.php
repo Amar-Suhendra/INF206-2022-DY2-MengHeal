@@ -22,6 +22,7 @@ class AdminController extends Controller
      */
     public function userRegistration()
     {
+        return view('admin.layout.userRegistration');
     }
 
     /**
