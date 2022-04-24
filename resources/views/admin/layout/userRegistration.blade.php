@@ -1,5 +1,8 @@
 @extends('admin.layout.main')
 
+@section('title-page', 'List User Registration')
+@section('title-tab', 'User Registration')
+
 @section('mainContent')
     {{-- <section class="content" style="background-color: #272A37;"> --}}
     <!-- tabel -->
@@ -8,6 +11,7 @@
             <tr>
                 <th>No.</th>
                 <th>Name</th>
+                <th>Username</th>
                 <th>Email</th>
                 <th></th>
             </tr>
@@ -27,8 +31,9 @@
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-sm btn-block bg-gradient-danger" ">Tolak</button>
-                                    </form>
-                                    <form action=" {{ url('/admin/user-registration/') }}" method="POST">
+                                                                        </form>
+                                                                        <form action="
+                                    {{ url('/admin/user-registration/') }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <button type="submit" class="btn btn-sm btn-block bg-gradient-primary ">Terima</button>
@@ -76,7 +81,7 @@
                 "searching": true,
                 "ordering": true,
                 "info": true,
-                "autoWidth": true,
+                "autoWidth": false,
                 "responsive": true,
             });
         });
