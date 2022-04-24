@@ -13,6 +13,7 @@
                 <th>Name</th>
                 <th>Username</th>
                 <th>Email</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,13 @@
                     <td>{{ $register['name'] }}</td>
                     <td>{{ $register['Username'] }}</td>
                     <td>{{ $register['Email'] }}</td>
+                    <td>
+                        @if ($register['status'] === 1)
+                            Dokter
+                        @else
+                            Pasien
+                        @endif
+                    </td>
                 </tr>
             @endforeach
 
