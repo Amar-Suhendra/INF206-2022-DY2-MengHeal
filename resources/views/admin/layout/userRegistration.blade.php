@@ -7,11 +7,8 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Nama</th>
-                <th>NPM</th>
+                <th>Name</th>
                 <th>Email</th>
-                <th>Jurusan</th>
-                <th>Mata Kuliah</th>
                 <th></th>
             </tr>
         </thead>
@@ -20,21 +17,19 @@
             @foreach ($registers as $register)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $register['nama'] }}</td>
-                    <td>{{ $register['npm'] }}</td>
-                    <td>{{ $register['email'] }}</td>
-                    <td>{{ $register['jurusan'] }}</td>
-                    <td>{{ $register['mataKuliah'] }}</td>
+                    <td>{{ $register['name'] }}</td>
+                    <td>{{ $register['Username'] }}</td>
+                    <td>{{ $register['Email'] }}</td>
                     <td class="row justify-content-center">
                         @if ($register['status'] === null)
-                            <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST"
+                            <form action="{{ url('/admin/user-registration/' . $register['id']) }}" method="POST"
                                 style="margin-right: 1rem;">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-sm btn-block bg-gradient-danger"
                                     onclick="return confirm('Anda yakin?')">Tolak</button>
                             </form>
-                            <form action="{{ url('/admin/pendaftar/' . $register['id']) }}" method="POST">
+                            <form action="{{ url('/admin/user-registration/' . $register['id']) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <button type="submit" class="btn btn-sm btn-block bg-gradient-primary "
