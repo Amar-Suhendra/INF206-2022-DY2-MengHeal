@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Register;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -22,7 +23,8 @@ class AdminController extends Controller
      */
     public function userRegistration()
     {
-        return view('admin.layout.userRegistration');
+        $dataUser = Register::all();
+        return view('admin.layout.userRegistration')->with(['registers' => $dataUser]);
     }
 
     /**
