@@ -30,13 +30,12 @@
                                 style="margin-right: 1rem;">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-sm btn-block bg-gradient-danger" ">Tolak</button>
-                                                                        </form>
-                                                                        <form action="
-                                    {{ url('/admin/user-registration/') }}" method="POST">
-                                    @csrf
-                                    @method('PUT')
-                                    <button type="submit" class="btn btn-sm btn-block bg-gradient-primary ">Terima</button>
+                                <button type="submit" class="btn btn-sm btn-block bg-gradient-danger">Tolak</button>
+                            </form>
+                            <form action="{{ url('/admin/user-registration/' . $register['id']) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="btn btn-sm btn-block bg-gradient-primary ">Terima</button>
                             </form>
                         @elseif ($register['status'] == 1)
                             <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
