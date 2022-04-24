@@ -22,13 +22,13 @@
                     <td>{{ $register['Email'] }}</td>
                     <td class="row justify-content-center">
                         @if ($register['status'] === null)
-                            <form action="{{ url('/admin/user-registration/' . $register['id']) }}" method="POST"
+                            <form action="{{ url('/admin/user-registration/') }}" method="POST"
                                 style="margin-right: 1rem;">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-sm btn-block bg-gradient-danger" ">Tolak</button>
-                                </form>
-                                <form action=" {{ url('/admin/user-registration/' . $register['id']) }}" method="POST">
+                                    </form>
+                                    <form action=" {{ url('/admin/user-registration/') }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <button type="submit" class="btn btn-sm btn-block bg-gradient-primary ">Terima</button>
