@@ -174,14 +174,37 @@
     color: #293cec;
 }
 
-.deskripsi-1 {
-    text-align: justify;
+section{
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
 }
 
-.img-1{
-    top: 10%;
-    left: 70%;
-    transform: translate(-50%, -50%);
+.kolom{
+    margin-top: 50px;
+    margin-bottom: 50px;
+
 }
 
+.kolom .deskripsi-1{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #364f6b;
+}
 
+h2{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #364f6b;
+    margin-left: 20px;
+}
+
+p{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #364f6b;
+    margin-left: 20px;
+}
