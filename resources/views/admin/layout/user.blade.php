@@ -13,7 +13,6 @@
                 <th>Name</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -24,26 +23,6 @@
                     <td>{{ $register['name'] }}</td>
                     <td>{{ $register['Username'] }}</td>
                     <td>{{ $register['Email'] }}</td>
-                    <td class="row justify-content-center">
-                        @if ($register['status'] === null)
-                            <form action="{{ url('/admin/user-registration/') }}" method="POST"
-                                style="margin-right: 1rem;">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-sm btn-block bg-gradient-danger">Tolak</button>
-                            </form>
-                            <form action="
-                                        {{ url('/admin/user-registration/') }}" method="POST">
-                                @csrf
-                                @method('PUT')
-                                <button type="submit" class="btn btn-sm btn-block bg-gradient-primary ">Terima</button>
-                            </form>
-                        @elseif ($register['status'] == 1)
-                            <p class="btn btn-sm btn-block bg-gradient-success">Diterima</p>
-                        @else
-                            <p class="btn btn-sm btn-block bg-gradient-danger">Ditolak</p>
-                        @endif
-                    </td>
                 </tr>
             @endforeach
 
