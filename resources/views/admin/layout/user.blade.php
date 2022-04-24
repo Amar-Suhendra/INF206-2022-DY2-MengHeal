@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
 
-@section('title-page', 'List User')
+@section('title-page', 'List Users')
 @section('title-tab', 'User')
 
 @section('mainContent')
@@ -31,8 +31,8 @@
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-sm btn-block bg-gradient-danger" ">Tolak</button>
-                                                                                        </form>
-                                                                                        <form action="
+                                                                                            </form>
+                                                                                            <form action="
                                     {{ url('/admin/user-registration/') }}" method="POST">
                                     @csrf
                                     @method('PUT')
