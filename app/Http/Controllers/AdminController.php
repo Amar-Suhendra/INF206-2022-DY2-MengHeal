@@ -46,6 +46,12 @@ class AdminController extends Controller
         // return dd($temp['status']);
         $temp->status = True;
         $temp->save();
+        User::create([
+            'name' => $temp['name'],
+            'username' => $temp['Username'],
+            'email' => $temp['Email'],
+            'password' => $temp['Password'],
+        ]);
         return redirect('admin/users-registration');
     }
 
