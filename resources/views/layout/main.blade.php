@@ -64,6 +64,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li class="nav-item d-none d-sm-inline-block">
                                     <form action="{{ url('logout') }}" method="post">
+                                        @csrf
                                         <button type="submit" class="nav-link btn">
                                             <i class="fas fa-sign-out-alt"></i>Logout
                                         </button>
