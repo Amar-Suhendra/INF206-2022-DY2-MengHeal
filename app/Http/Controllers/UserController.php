@@ -10,6 +10,7 @@ class UserController extends Controller
 {
     public function konsulLangsung()
     {
+        return 'hai';
         if (Antrian::where('username', auth()->user()->username)->first()) {
             $data = Antrian::where('username', auth()->user()->username)->first();
             $antrian = $data['no_antrian'];

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('antrians', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
+            $table->string('username')->unique();
             $table->string('no_antrian');
             $table->timestamps();
         });
