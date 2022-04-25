@@ -2,22 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function konsulLangsung()
     {
-        return view('antrian',[
-            'title' => 'Antrian',
+        $antrian = User::all()->last();
+        return view('antrian', [
+            'antrian' => $antrian, 'title' => 'antrian',
         ]);
     }
-    public function getAntrian()
+    public function getAntrian($id)
     {
+        return redirect('konsultasi-langsung');
     }
     public function konsulOnline()
     {
-        return view('konsul',[
+        return view('konsul', [
             'title' => 'Konsultasi Online',
         ]);
     }
