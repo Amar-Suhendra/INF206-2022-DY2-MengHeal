@@ -31,6 +31,13 @@ Route::get('/index', function () {
     ]);
 });
 
+// go to konfirmasi page
+Route::get('/konfirmasi', function () {
+    return view('konfirmasi', [
+        'title' => 'Konfirmasi',
+    ]);
+});
+
 
 // Login & Logout route
 // go to login page
