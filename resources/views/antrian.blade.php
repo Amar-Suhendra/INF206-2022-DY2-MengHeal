@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="mb-2 d-grid gap-2 col-8 mx-auto bg-transparent">
-                @if (!$status)
+                @if (!isset($status))
                     <a href="{{ url('get-antrian/') }}" type="button"
                         class="btn btn-primary text-white text-decoration-none fw-bold">
                         Ambil Antrian
