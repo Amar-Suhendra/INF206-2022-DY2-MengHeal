@@ -14,8 +14,9 @@ class UserController extends Controller
             'antrian' => $antrian, 'title' => 'antrian',
         ]);
     }
-    public function getAntrian()
+    public function getAntrian($id)
     {
+        return redirect('konsultasi-langsung');
     }
     public function konsulOnline()
     {
