@@ -1,5 +1,8 @@
 @extends('admin.layout.main')
 
+@section('title-tab', 'Dashboard')
+@section('title-page', 'Dashboard')
+
 @section('mainContent')
     <!-- Info boxes -->
     <div class="row">
