@@ -10,7 +10,13 @@
             <div class="card-body">
                 <div class="card-text">
                     <br>
-                    <h1><b>10</b></h1>
+                    <h1><b>
+                            @if ($antrian->no_antrian)
+                                {{ $antrian->no_antrian }}
+                            @else
+                                1
+                            @endif
+                        </b></h1>
                 </div>
             </div>
             <div class="mb-2 d-grid gap-2 col-8 mx-auto bg-transparent">

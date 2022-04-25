@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Menheal | Dashboard</title>
+    <title>Menheal | @yield('title-tab')</title>
 
     <!-- icon page -->
     <link rel="shortcut icon" href="{{ url('assets/icon/favicon.ico') }}" type="image/x-icon">
@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="{{ url('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ url('dist/css/adminlte.min.css') }}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -58,7 +63,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="{{ url('/admin') }}" class="brand-link">
                 <img src="{{ url('assets/icon/favicon.ico') }}" alt="Menheal Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">MenHeal</span>
@@ -82,7 +87,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/users-registration') }}" class="nav-link">
+                            <a href="{{ url('admin/users-registration') }}" class="nav-link">
                                 <i class="nav-icon fas fa-user-check"></i>
                                 <p>
                                     Users Registration
@@ -90,7 +95,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/users') }}" class="nav-link">
+                            <a href="{{ url('admin/users') }}" class="nav-link">
                                 <i class="nav-icon fas fa-hospital-user"></i>
                                 <p>
                                     Users
@@ -121,7 +126,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">@yield('title-page')</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -178,6 +183,7 @@
     <script src="{{ url('plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
     <!-- ChartJS -->
     <script src="{{ url('plugins/chart.js/Chart.min.js') }}"></script>
+    @yield('script')
 </body>
 
 </html>

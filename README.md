@@ -33,3 +33,6 @@ Repositori ini berisi mengenai project matakuliah Rekayasa Perangkat Lunak, deng
 * 
 ## License
 Semua yang terdapat didalam repositori ini hanya digunakan untuk sarana pembelajaran dan tidak untuk diperjual belikan.
+
+3. cara menjalan  
+    php artisan serve
