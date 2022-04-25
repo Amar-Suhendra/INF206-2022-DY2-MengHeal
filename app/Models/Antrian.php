@@ -9,7 +9,7 @@ class Antrian extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'Username',
+        'username',
         'no_antrian',
     ];
 }
