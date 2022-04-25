@@ -63,8 +63,6 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::GET('/konsultasi-langsung', [UserController::class, 'konsulLangsung']);
     Route::GET('get-antrian', [UserController::class, 'getAntrian']);
     // go to konsul page
-    Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
-    // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');
     });
@@ -74,3 +72,6 @@ Route::middleware('auth')->group(function () {
     // logout account
     Route::POST('logout', [LoginController::class, 'logout']);
 });
+
+// go to konsultasi online page
+Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
