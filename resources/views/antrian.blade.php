@@ -21,7 +21,7 @@
             </div>
             <div class="mb-2 d-grid gap-2 col-8 mx-auto bg-transparent">
                 <button type="button" class="btn btn-primary">
-                    <a href="#" class="text-white text-decoration-none fw-bold">
+                    <a href="{{ url('/konfirmasi') }}" class="text-white text-decoration-none fw-bold">
                         Konfirmasi
                     </a>
                 </button>
