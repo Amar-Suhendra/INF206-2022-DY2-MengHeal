@@ -37,7 +37,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ $title == 'Antrian' ? 'active fw-bold text-primary' : '' }} "
-                            href="{{ url('/konsultasilangsung') }}">Konsultasi Langsung</a>
+                            href="{{ url('/konsultasi-langsung') }}">Konsultasi Langsung</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ $title == 'Konsultasi Online' ? 'active fw-bold text-primary' : '' }} "
