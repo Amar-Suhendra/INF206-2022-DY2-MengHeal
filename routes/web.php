@@ -18,12 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-
-
-
-
-
 // Login & Logout route
 Route::middleware('guest')->group(function () {
     // go to login page
