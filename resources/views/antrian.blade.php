@@ -4,7 +4,7 @@
         <div class="card text-center " style="width: 18rem; height:16rem; border-radius: 10%">
             <div class="card-header bg-transparent">
                 <div class="card-title">
-                    @if ($antrian)
+                    @if (session('status'))
                         <h3>No Antrian Anda</h3>
                     @else
                         <h3>No Antrian</h3>
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="mb-2 d-grid gap-2 col-8 mx-auto bg-transparent">
-                @if (!$antrian)
+                @if (!session('status'))
                     <a href="{{ url('get-antrian/') }}" type="button"
                         class="btn btn-primary text-white text-decoration-none fw-bold">
                         Ambil Antrian
