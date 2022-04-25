@@ -65,8 +65,8 @@ Route::GET('register', [RegisterController::class, 'index']);
 Route::POST('register', [RegisterController::class, 'store']);
 
 // go to antrian page
-Route::GET('/konsultasilangsung', [UserController::class, 'konsulLangsung']);
-Route::GET('/getantrian', [UserController::class, 'getAntrian']);
+Route::GET('/konsultasi-langsung', [UserController::class, 'konsulLangsung']);
+Route::GET('get-antrian/{id}', [UserController::class, 'getAntrian']);
 
 // go to konsul page
 Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
