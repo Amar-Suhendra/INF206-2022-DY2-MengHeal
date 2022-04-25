@@ -38,6 +38,13 @@ Route::get('/konfirmasi', function () {
     ]);
 });
 
+// go to video page
+Route::get('/video', function () {
+    return view('video', [
+        'title' => 'video',
+    ]);
+});
+
 
 // Login & Logout route
 // go to login page
