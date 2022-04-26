@@ -23,14 +23,20 @@ Repositori ini berisi mengenai project matakuliah Rekayasa Perangkat Lunak, deng
    ```
    $ php artisan key:generate
    ```
-5. Copy file .env.example menjadi .env
-6. Di dalam file .env ubahlah nama database menjadi MengHeal
-7. Sebelum Melakukan migrasi, Buatlah terlebih dahulu database MengHeal dengan menggunakan aplikasi RDBMS yang anda punya
+5. Copy file **.env.example** dan save as menjadi **.env**.
+6. Di dalam file **.env** ubahlah value dari DB_DATABASE menjadi **MengHeal**.
+7. Sebelum Melakukan migrasi, Buatlah terlebih dahulu database MengHeal dengan menggunakan aplikasi RDBMS yang anda punya dengan query berikut:
+   ````
    create database MengHeal;
+   ````
 8. Untuk Mengisi tabel beserta data-datanya (Migrasi database) jalankan perintah berikut:
-   php artisan migrate --seed 
-9. Lalu hidupkan server aplikasinya dengan cara sebagai berikut:
-   php artisan serve
+   ````
+   $ php artisan migrate:fresh --seed
+   ```` 
+9. Jika memakai Laragon, cukup **Start All**. Jika memakai Xampp hidupkan server aplikasinya dengan cara sebagai berikut:
+   ````
+   $ php artisan serve
+   ````
 
 ## Team Member
 ### Author
