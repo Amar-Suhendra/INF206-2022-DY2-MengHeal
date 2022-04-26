@@ -48,9 +48,7 @@ Repositori ini berisi mengenai project matakuliah Rekayasa Perangkat Lunak, deng
 * Ainal Fajri Malahayati (2008107010053)
 
 ## Version History
-* 
+* V.1.0  
+  * First Release
 ## License
 Semua yang terdapat didalam repositori ini hanya digunakan untuk sarana pembelajaran dan tidak untuk diperjual belikan.
-
-3. cara menjalan  
-    php artisan serve
