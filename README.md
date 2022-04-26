@@ -1,3 +1,7 @@
+<p align="center">
+   <img src="public/assets/img/Icon.png" alt="MengHeal Logo">
+</p>
+
 # INF206-2022-DY2-MengHeal
 MengHeal menyediakan sarana untuk konsultasi mengenai permasalahan kesehatan mental pada remaja kisaran usia 12 sampai 18 tahun.
 ## About
