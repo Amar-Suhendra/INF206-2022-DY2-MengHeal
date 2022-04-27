@@ -28,11 +28,7 @@ Route::middleware('guest')->group(function () {
     Route::GET('register', [RegisterController::class, 'index']);
     Route::POST('register', [RegisterController::class, 'store']);
     // go to landing page
-    Route::get('', function () {
-        return view('landing', [
-            'title' => 'Home',
-        ]);
-    });
+    Route::GET('', [UserController::class, 'index']);
 });
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
