@@ -23,7 +23,7 @@
             <a class="navbar-brand ms-5 me-1">
                 <img src="assets/img/Icon.png" alt="Mengheal">
             </a>
-            <h3> <a href="{{ url('/index') }}" class="company-name"> Mengheal</a> </h3>
+            <h3> <a href="{{ url('') }}" class="company-name"> Mengheal</a> </h3>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
