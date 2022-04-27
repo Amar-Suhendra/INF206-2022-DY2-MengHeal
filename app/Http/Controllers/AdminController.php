@@ -56,6 +56,15 @@ class AdminController extends Controller
     }
 
     /**
+     * Show the quote page for creating a new quote.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function quote()
+    {
+        return view('admin.layout.quote');
+    }
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

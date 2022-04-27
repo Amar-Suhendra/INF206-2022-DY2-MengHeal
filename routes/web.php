@@ -38,6 +38,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
     Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
     Route::GET('admin/quote', [AdminController::class, 'quote']);
+    Route::POST('admin/quote', [AdminController::class, 'addQuote']);
     // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');
