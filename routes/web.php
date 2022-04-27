@@ -17,54 +17,57 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// go to landing page
-Route::get('', function () {
-    return view('landing', [
-        'title' => 'Home',
-    ]);
-});
-
-//go to landing page
-Route::get('/index', function () {
-    return view('landing', [
-        'title' => 'Home',
-    ]);
-});
-
 
 // Login & Logout route
-// go to login page
-Route::GET('login', [LoginController::class, 'index']);
-// validation login
-Route::POST('login', [LoginController::class, 'validation']);
-// logout account
-Route::POST('logout', [LoginController::class, 'logout']);
+Route::middleware('guest')->group(function () {
+    // go to login page
+    Route::GET('login', [LoginController::class, 'index'])->name('login');
+    // validation login
+    Route::POST('login', [LoginController::class, 'validation']);
+    // go to register page
+    Route::GET('register', [RegisterController::class, 'index']);
+    Route::POST('register', [RegisterController::class, 'store']);
+    // go to landing page
+    Route::GET('', [UserController::class, 'index']);
+});
 
-
-
-// Admin Route
-Route::GET('admin', [AdminController::class, 'index']);
-Route::GET('admin/users', [AdminController::class, 'user']);
-Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
-Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
-
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+    // Admin Route
+    Route::GET('admin', [AdminController::class, 'index']);
+    Route::GET('admin/users', [AdminController::class, 'user']);
+    Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
+    Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
+    Route::GET('admin/quote', [AdminController::class, 'quote']);
+    // go to detail pasien page
+    Route::get('/detailpasien', function () {
+        return view('detailpasien');
+    });
+});
 
 
 
 // User Controller
+Route::middleware(['auth', 'user'])->group(function () {
+    //go to landing page
+    Route::GET('index', [UserController::class, 'index']);
+    // go to konfirmasi page
+    Route::get('/konfirmasi', function () {
+        return view('konfirmasi', [
+            'title' => 'Konfirmasi',
+        ]);
+    });
+    // go to antrian page
+    Route::GET('/konsultasi-langsung', [UserController::class, 'konsulLangsung']);
+    Route::GET('get-antrian', [UserController::class, 'getAntrian']);
+    // go to konsul page
+    Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
+    // go to quote page
+    Route::GET('quote', [UserController::class, 'quote']);
+    // go to video booster page
+    Route::GET('video-booster', [UserController::class, 'videoBooster']);
+});
 
-// go to register page
-Route::GET('register', [RegisterController::class, 'index']);
-Route::POST('register', [RegisterController::class, 'store']);
-
-// go to antrian page
-Route::GET('/konsultasilangsung', [UserController::class, 'konsulLangsung']);
-Route::GET('/getantrian', [UserController::class, 'getAntrian']);
-
-// go to konsul page
-Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
-
-// go to detail pasien page
-Route::get('/detailpasien', function () {
-    return view('detailpasien');
+Route::middleware('auth')->group(function () {
+    // logout account
+    Route::POST('logout', [LoginController::class, 'logout']);
 });

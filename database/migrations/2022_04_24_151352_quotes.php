@@ -17,8 +17,7 @@ return new class extends Migration
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
             $table->string('quotes')->unique();
-            $table->timestamp('Upload_date')->nullable();
-            
+            $table->timestamp('Upload_date')->nullable();           
         });
     }
 
