@@ -41,6 +41,10 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin/users', [AdminController::class, 'user']);
     Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
     Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
+    // go to detail pasien page
+    Route::get('/detailpasien', function () {
+        return view('detailpasien');
+    });
 });
 
 
@@ -64,10 +68,10 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::GET('get-antrian', [UserController::class, 'getAntrian']);
     // go to konsul page
     Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
-    // go to detail pasien page
-    Route::get('/detailpasien', function () {
-        return view('detailpasien');
-    });
+    // go to quote page
+    Route::GET('quote', [UserController::class, 'quote']);
+    // go to video booster page
+    Route::GET('video-booster', [UserController::class, 'videoBooster']);
 });
 
 Route::middleware('auth')->group(function () {
