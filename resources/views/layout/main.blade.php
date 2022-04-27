@@ -33,7 +33,7 @@
                 <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {{ $title == 'Home' ? 'active fw-bold text-primary' : '' }} "
-                            aria-current="page" href="{{ url('/index') }}">Home</a>
+                            aria-current="page" href="{{ url('') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ $title == 'Antrian' ? 'active fw-bold text-primary' : '' }} "
