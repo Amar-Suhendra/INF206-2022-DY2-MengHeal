@@ -102,6 +102,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ url('admin/quote') }}" class="nav-link">
+                                <i class="nav-icon fas fa-hospital-user"></i>
+                                <p>
+                                    Quote
+                                </p>
+                            </a>
+                        </li>
 
                         <!-- user login -->
                         <div class="user-panel mt-3 pb-3 mb-3 d-flex">

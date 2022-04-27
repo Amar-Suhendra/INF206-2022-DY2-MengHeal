@@ -28,11 +28,7 @@ Route::middleware('guest')->group(function () {
     Route::GET('register', [RegisterController::class, 'index']);
     Route::POST('register', [RegisterController::class, 'store']);
     // go to landing page
-    Route::get('', function () {
-        return view('landing', [
-            'title' => 'Home',
-        ]);
-    });
+    Route::GET('', [UserController::class, 'index']);
 });
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
@@ -41,6 +37,11 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin/users', [AdminController::class, 'user']);
     Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
     Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
+    Route::GET('admin/quote', [AdminController::class, 'quote']);
+    // go to detail pasien page
+    Route::get('/detailpasien', function () {
+        return view('detailpasien');
+    });
 });
 
 
@@ -48,11 +49,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 // User Controller
 Route::middleware(['auth', 'user'])->group(function () {
     //go to landing page
-    Route::get('/index', function () {
-        return view('landing', [
-            'title' => 'Home',
-        ]);
-    });
+    Route::GET('index', [UserController::class, 'index']);
     // go to konfirmasi page
     Route::get('/konfirmasi', function () {
         return view('konfirmasi', [
@@ -64,10 +61,10 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::GET('get-antrian', [UserController::class, 'getAntrian']);
     // go to konsul page
     Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
-    // go to detail pasien page
-    Route::get('/detailpasien', function () {
-        return view('detailpasien');
-    });
+    // go to quote page
+    Route::GET('quote', [UserController::class, 'quote']);
+    // go to video booster page
+    Route::GET('video-booster', [UserController::class, 'videoBooster']);
 });
 
 Route::middleware('auth')->group(function () {

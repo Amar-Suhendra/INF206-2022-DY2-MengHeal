@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        return view('landing', ['title' => 'Home']);
+    }
     public function konsulLangsung()
     {
         if ((Antrian::where('username', auth()->user()->username)->first()) !== null) {
