@@ -16,13 +16,8 @@ return new class extends Migration
         //
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
-            $table->string('Kode_quotes')->unique();
-            $table->string('Category');
-            //$table->string('URL');
-            $table->timestamp('Upload_date')->nullable();
-            $table->string('Language');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('quotes')->unique();
+            $table->timestamp('Upload_date')->nullable();           
         });
     }
 

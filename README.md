@@ -9,7 +9,7 @@ Repositori ini berisi mengenai project matakuliah Rekayasa Perangkat Lunak, deng
 ## How to run
 1. Clone repositori ini terlebih dahulu di dalam folder htdocs jika memakai XAMPP. Jika memakai Laragon, clone di dalam folder www. 
    ```
-   https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal.git
+   $ git clone https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal.git
    ```
 2. Masuk ke dalam folder yang telah diclone.
    ````
