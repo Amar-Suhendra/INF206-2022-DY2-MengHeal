@@ -215,3 +215,68 @@ p{
     color: #364f6b;
     margin-left: 20px;
 }
+
+.hero-container {
+  display: flex;
+  height: 470px;
+  padding: 0 10%;
+}
+
+.hero-container > div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container h1 {
+  font-size: 60px;
+  width: 360px;
+  margin: 20px 0;
+  font-weight: bolder;
+}
+
+.hero-container p {
+  font-size: 30px;
+  color: var(--gray);
+}
+
+.hero-container > img {
+  align-self: center;
+}
+
+.description-container {
+  height: 280px;
+  margin: 40px 0;
+  padding: 0 10%;
+  display: flex;
+}
+
+.description-container > div {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px 0px rgba(1, 1, 1, 0.1);
+  border-top: 1px solid rgb(228, 228, 228);
+}
+
+.description-container h2 {
+  color: var(--darkGray);
+  font-weight: bolder;
+}
+
+.description-container p {
+  color: var(--gray);
+}
+
+.description-container > div > div {
+  width: 500px;
+}
+
+.description-container > img {
+  width: 40%;
+  object-fit: cover;
+}
