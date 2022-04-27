@@ -19,19 +19,23 @@
         <tbody>
 
             @foreach ($registers as $register)
-                <tr>
-                    <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $register['name'] }}</td>
-                    <td>{{ $register['username'] }}</td>
-                    <td>{{ $register['email'] }}</td>
-                    <td>
-                        @if ($register['status'] === 1)
-                            Dokter
-                        @else
-                            Pasien
-                        @endif
-                    </td>
-                </tr>
+                @if ($register['is_admin'] === 1)
+                    @continue
+                @else
+                    <tr>
+                        <td scope="row">{{ $loop->iteration }}</td>
+                        <td>{{ $register['name'] }}</td>
+                        <td>{{ $register['username'] }}</td>
+                        <td>{{ $register['email'] }}</td>
+                        <td>
+                            @if ($register['status'] === 1)
+                                Dokter
+                            @else
+                                Pasien
+                            @endif
+                        </td>
+                    </tr>
+                @endif
             @endforeach
 
         </tbody>
