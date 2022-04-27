@@ -49,8 +49,8 @@
                             Healing
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Quotes</a></li>
-                            <li><a class="dropdown-item" href="#">Video Booster</a></li>
+                            <li><a class="dropdown-item" href="{{ url('quote') }}">Quotes</a></li>
+                            <li><a class="dropdown-item" href="{{ url('video-booster') }}">Video Booster</a></li>
                         </ul>
                     </li>
                 </ul>

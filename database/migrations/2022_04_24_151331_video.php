@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('URL');
             $table->timestamp('Upload_date')->nullable();
             $table->string('Vid_duration');
-            //$table->rememberToken();
-            //$table->timestamps();
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
