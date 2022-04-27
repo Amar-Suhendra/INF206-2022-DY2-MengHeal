@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Quote;
 use App\Models\Register;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -63,6 +64,18 @@ class AdminController extends Controller
     public function quote()
     {
         return view('admin.layout.quote');
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addQuote(Request $request)
+    {
+        Quote::create([
+            'quotes' => $request->quote,
+        ]);
+        redirect('admin/quote');
     }
     /**
      * Show the form for creating a new resource.
