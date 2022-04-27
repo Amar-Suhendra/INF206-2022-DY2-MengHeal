@@ -52,11 +52,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 // User Controller
 Route::middleware(['auth', 'user'])->group(function () {
     //go to landing page
-    Route::get('/index', function () {
-        return view('landing', [
-            'title' => 'Home',
-        ]);
-    });
+    Route::GET('index', [UserController::class, 'index']);
     // go to konfirmasi page
     Route::get('/konfirmasi', function () {
         return view('konfirmasi', [
