@@ -70,21 +70,21 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function addQuote(Request $request)
+    public function addQuote()
     {
-        Quote::create([
-            'quotes' => $request->quote,
-        ]);
-        redirect('admin/quote');
+        return view('admin.layout.addquote');
     }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createquote(Request $request)
     {
-        //
+        Quote::create([
+            'quotes' => $request->quote,
+        ]);
+        redirect('admin/quote');
     }
 
     /**
