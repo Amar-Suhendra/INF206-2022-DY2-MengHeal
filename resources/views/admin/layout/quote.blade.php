@@ -1,10 +1,12 @@
 @extends('admin.layout.main')
 
-@section('title-page', 'List Users')
-@section('title-tab', 'User')
+@section('title-page', 'List Quotes')
+@section('title-tab', 'Quotes')
 
 @section('mainContent')
-    {{-- <section class="content" style="background-color: #272A37;"> --}}
+    <div class="justify-content-center">
+        <a href="{{ url('admin/addquote') }}" class="mx-3 btn btn-success bg-gradient-success">Add Quote</a>
+    </div>
     <!-- tabel -->
     <table id="example1" class="table table-striped table-dark">
         <thead>
@@ -17,14 +19,17 @@
             </tr>
         </thead>
         <tbody>
-
             @foreach ($quotes as $quote)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $quote['quotes'] }}</td>
-                    <td>{{ $quote['create_at'] }}</td>
-                    <td>{{ $quote['update_at'] }}</td>
-
+                    <td scope="row">{{ $quote['quotes'] }}</td>
+                    <td scope="row">{{ $quote['create_at'] }}</td>
+                    <td scope="row">{{ $quote['update_at'] }}</td>
+                    <td scope="row" class="row justify-content-center">
+                        <a href="{{ url('admin/delete') }}" type="submit"
+                            class="mx-3 btn btn-sm bg-gradient-danger">Delete</a>
+                        <a href="{{ url('admin/update') }}" type="submit" class="btn btn-sm bg-gradient-info">Update</a>
+                    </td>
                 </tr>
             @endforeach
 
