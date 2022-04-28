@@ -63,7 +63,7 @@ class AdminController extends Controller
      */
     public function quote()
     {
-        return view('admin.layout.quote');
+        return view('admin.layout.quote', ['quotes' => Quote::all()]);
     }
     /**
      * Show the form for creating a new resource.
