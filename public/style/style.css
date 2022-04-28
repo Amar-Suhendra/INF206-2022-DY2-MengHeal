@@ -40,12 +40,17 @@
   padding: 0 0 20px;
   text-align: center;
   font-size: 22px;
+  color: #fff;
+  font-family: sans-serif;
 }
 
 .login-box p {
   margin-bottom: 0px;
   padding: 0px;
   font-weight: bold;
+  color: #fff;
+  font-family: sans-serif;
+  margin-left: 0px;
 }
 
 .login-box input {
@@ -107,7 +112,7 @@ input[type='password'] {
 
 .register-box{
     width: 320px;
-    height: 600px;
+    height: 640px;
     background: rgba(0,0,0,0.5);
     color: #fff;
     top: 55%;
@@ -132,12 +137,18 @@ input[type='password'] {
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
+    color:#fff;
+    font-family: sans-serif;
 }
 
 .register-box p{
     margin-bottom: 0px;
     padding: 0px;
     font-weight: bold;
+    color: #fff;
+    margin-left: 0px;
+    font-family: sans-serif;
+
 }
 
 .register-box input{
