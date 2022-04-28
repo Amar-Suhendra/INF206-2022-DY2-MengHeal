@@ -31,15 +31,26 @@ Route::middleware('guest')->group(function () {
     Route::GET('', [UserController::class, 'index']);
 });
 
+// Admin Route
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    // Admin Route
+    // go to admin dashboard
     Route::GET('admin', [AdminController::class, 'index']);
+    // got to user list
     Route::GET('admin/users', [AdminController::class, 'user']);
+    // go to user registration data
     Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
+    // to accept user
     Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
+    // go to quote page
     Route::GET('admin/quote', [AdminController::class, 'quote']);
+    // go to add quote page
     Route::GET('admin/addquote', [AdminController::class, 'addQuote']);
+    // to add quote
     Route::POST('admin/addquote', [AdminController::class, 'createQuote']);
+    // go to update quote
+    Route::GET('admin/{quote}/edit', [AdminController::class, 'showQuote']);
+    // update quote
+    Route::PUT('admin/updatequote/{id}', [AdminController::class, 'updateQuote']);
     // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');

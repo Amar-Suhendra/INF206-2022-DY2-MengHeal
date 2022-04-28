@@ -63,7 +63,6 @@ class AdminController extends Controller
      */
     public function quote()
     {
-        // return Quote::all();
         return view('admin.layout.quote', ['quotes' => Quote::all(), 'title' => 'Quotes']);
     }
     /**
@@ -73,7 +72,7 @@ class AdminController extends Controller
      */
     public function addQuote()
     {
-        return view('admin.layout.addquote', ['title' => 'Quote']);
+        return view('admin.layout.addquote', ['title' => 'Quote', 'action' => 'addquote']);
     }
     /**
      * Show the form for creating a new resource.
@@ -87,6 +86,31 @@ class AdminController extends Controller
         ]);
         return redirect('admin/quote');
     }
+    /**
+     * Show the form for update a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showQuote(Quote $quote)
+    {
+
+        return view('admin.layout.addquote', ['title' => 'Quote', 'action' => 'updatequote', 'quote' => $quote]);
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateQuote(Request $request, $id)
+    {
+        Quote::where('id', $id)->update([
+            'quotes' => $request->quote,
+        ]);
+        return redirect('admin/quote');
+    }
+
 
     /**
      * Store a newly created resource in storage.

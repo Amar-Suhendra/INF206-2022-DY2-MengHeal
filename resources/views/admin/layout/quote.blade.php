@@ -26,9 +26,8 @@
                     <td scope="row">{{ $quote['created_at'] }}</td>
                     <td scope="row">{{ $quote['updated_at'] }}</td>
                     <td scope="row" class="row justify-content-center">
-                        <a href="{{ url('admin/delete') }}" type="submit"
-                            class="mx-3 btn btn-sm bg-gradient-danger">Delete</a>
-                        <a href="{{ url('admin/update') }}" type="submit" class="btn btn-sm bg-gradient-info">Update</a>
+                        <a href="{{ url('admin/deletequote') }}" class="mx-3 btn btn-sm bg-gradient-danger">Delete</a>
+                        <a href="{{ url('admin/' . $quote['id'] . '/edit') }}" class="btn btn-sm bg-gradient-info">Edit</a>
                     </td>
                 </tr>
             @endforeach
