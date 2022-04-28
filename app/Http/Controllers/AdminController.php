@@ -16,7 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.layout.dashboard');
+        return view('admin.layout.dashboard', ['title' => 'Dashboard']);
     }
 
     /**
@@ -26,7 +26,7 @@ class AdminController extends Controller
     public function userRegistration()
     {
         $dataUser = Register::all();
-        return view('admin.layout.userRegistration')->with(['registers' => $dataUser]);
+        return view('admin.layout.userRegistration')->with(['registers' => $dataUser, 'title' => 'Users Registration']);
     }
     /**
      * Display a listing of the user in the web
@@ -35,7 +35,7 @@ class AdminController extends Controller
     public function user()
     {
         $dataUser = User::all();
-        return view('admin.layout.user')->with(['registers' => $dataUser]);
+        return view('admin.layout.user')->with(['registers' => $dataUser, 'title' => 'Users']);
     }
     /**
      * accept user registration
@@ -63,7 +63,7 @@ class AdminController extends Controller
      */
     public function quote()
     {
-        return view('admin.layout.quote', ['quotes' => Quote::all()]);
+        return view('admin.layout.quote', ['quotes' => Quote::all(), 'title' => 'Quotes']);
     }
     /**
      * Show the form for creating a new resource.
@@ -72,7 +72,7 @@ class AdminController extends Controller
      */
     public function addQuote()
     {
-        return view('admin.layout.addquote');
+        return view('admin.layout.addquote', ['title' => 'Quote']);
     }
     /**
      * Show the form for creating a new resource.

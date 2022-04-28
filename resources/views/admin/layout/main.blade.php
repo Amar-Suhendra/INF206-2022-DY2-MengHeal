@@ -79,7 +79,8 @@
                         data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="{{ url('/admin') }}" class="nav-link">
+                            <a href="{{ url('/admin') }}"
+                                class="nav-link @if ($title === 'Dashboard') active @endif">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
                                     Home
@@ -87,7 +88,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/users-registration') }}" class="nav-link">
+                            <a href="{{ url('admin/users-registration') }}"
+                                class="nav-link @if ($title === 'Users Registration') active @endif">
                                 <i class="nav-icon fas fa-user-check"></i>
                                 <p>
                                     Users Registration
@@ -95,7 +97,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/users') }}" class="nav-link">
+                            <a href="{{ url('admin/users') }}"
+                                class="nav-link @if ($title === 'Users') active @endif">
                                 <i class="nav-icon fas fa-hospital-user"></i>
                                 <p>
                                     Users
@@ -103,7 +106,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/quote') }}" class="nav-link">
+                            <a href="{{ url('admin/quote') }}"
+                                class="nav-link @if ($title === 'Quotes') active @endif">
                                 <i class="nav-icon far fa-comment"></i>
                                 <p>
                                     Quotes
