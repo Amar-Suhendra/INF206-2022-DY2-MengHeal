@@ -3,7 +3,7 @@
 @section('title-page', 'Quote')
 
 @section('mainContent')
-    <form action="{{ url('admin/quote') }}" method="post">
+    <form action="{{ url('admin/addquote') }}" method="post">
         @csrf
         <div class="input-group">
             <div class="input-group-prepend">

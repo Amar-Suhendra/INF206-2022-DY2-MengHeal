@@ -63,6 +63,7 @@ class AdminController extends Controller
      */
     public function quote()
     {
+        // return Quote::all();
         return view('admin.layout.quote', ['quotes' => Quote::all(), 'title' => 'Quotes']);
     }
     /**
@@ -84,7 +85,7 @@ class AdminController extends Controller
         Quote::create([
             'quotes' => $request->quote,
         ]);
-        redirect('admin/quote');
+        return redirect('admin/quote');
     }
 
     /**
