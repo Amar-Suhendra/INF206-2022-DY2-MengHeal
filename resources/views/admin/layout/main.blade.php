@@ -104,9 +104,9 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('admin/quote') }}" class="nav-link">
-                                <i class="nav-icon fas fa-hospital-user"></i>
+                                <i class="nav-icon far fa-comment"></i>
                                 <p>
-                                    Quote
+                                    Quotes
                                 </p>
                             </a>
                         </li>
