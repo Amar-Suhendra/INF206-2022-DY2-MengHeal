@@ -16,9 +16,9 @@ return new class extends Migration
         //
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->string('Judul_vid');
-            $table->string('URL');
-            $table->timestamp('Upload_date')->nullable();
+            $table->string('judul_vid');
+            $table->string('url');
+            $table->timestamps();
         });
     }
 
