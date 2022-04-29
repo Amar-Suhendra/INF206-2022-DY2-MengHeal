@@ -110,6 +110,18 @@ class AdminController extends Controller
         ]);
         return redirect('admin/quote');
     }
+    /**
+     * delete the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteQuote(Request $req)
+    {
+        return dd($req->id);
+        return redirect('admin/quote');
+    }
 
 
     /**

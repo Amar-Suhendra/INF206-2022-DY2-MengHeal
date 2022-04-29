@@ -27,6 +27,9 @@
                     <td scope="row">{{ $quote['updated_at'] }}</td>
                     <td scope="row" class="row justify-content-center">
                         <a class="mx-3 btn btn-sm bg-gradient-danger delete" data-id="{{ $quote['id'] }}">Delete</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                            Launch static backdrop modal
+                        </button>
                         <a href="{{ url('admin/' . $quote['id'] . '/edit') }}" class="btn btn-sm bg-gradient-info">Edit</a>
                     </td>
                 </tr>
@@ -37,6 +40,36 @@
     </table>
 
     <!-- /.tabel -->
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center" id="staticBackdropLabel">Warning!</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <h4>Are you sure?</h4>
+                    <form action="{{ url('admin/deletequote') }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <input type="hidden" name="id" id="id" value="{{ $quote['id'] }}">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Yes, delete it!</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 <!-- script table -->
@@ -65,33 +98,34 @@
             buttonsStyling: false
         })
 
-        $('.delete').click(function() {
-            var idQuote = $(this).attr('data-id');
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location = 'delete/' + idQuote;
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
-                } else {
-                    Swal.fire(
-                        'Cancelled!',
-                        'Your file is safe.',
-                        'error'
-                    )
-                }
-            })
-        });
+        var idQuote = $(this).attr('data-id');
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // window.location = 'deletequote/' + idQuote;
+                $.get('deletequote', {
+                    id: idQuote
+                });
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            } else {
+                Swal.fire(
+                    'Cancelled!',
+                    'Your file is safe.',
+                    'error'
+                )
+            }
+        })
     </script>
 
     <!-- Page specific script -->

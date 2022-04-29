@@ -51,6 +51,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin/{quote}/edit', [AdminController::class, 'showQuote']);
     // update quote
     Route::PUT('admin/updatequote/{id}', [AdminController::class, 'updateQuote']);
+    // delete quote
+    Route::DELETE('admin/deletequote', [AdminController::class, 'deleteQuote']);
     // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');
