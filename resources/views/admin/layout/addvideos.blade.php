@@ -2,7 +2,7 @@
 
 @section('title-page', 'Add Video')
 @section('mainContent')
-    <form action="{{ url('admin/addvideo') }}" method="post">
+    <form action="{{ url('admin/addvideos') }}" method="post">
         @csrf
         <div class="form-group">
             <span>Video title : </span>
