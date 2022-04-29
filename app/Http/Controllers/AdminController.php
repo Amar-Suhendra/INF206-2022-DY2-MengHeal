@@ -144,6 +144,20 @@ class AdminController extends Controller
     {
         return view('admin.layout.addvideos', ['title' => 'Videos']);
     }
+    /**
+     * Show the videos page  quote.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createVideos(Request $request)
+    {
+        Video::create([
+            'judul_vid' => $request->judul_vid,
+            'url' => $request->url,
+        ]);
+        return redirect('admin/videos');
+        // return view('admin.layout.addvideos', ['title' => 'Videos']);
+    }
 
 
     /**
