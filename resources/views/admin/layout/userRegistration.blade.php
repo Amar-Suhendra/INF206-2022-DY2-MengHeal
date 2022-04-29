@@ -3,6 +3,7 @@
 @section('title-page', 'List User Registration')
 @section('title-tab', 'User Registration')
 
+
 @section('mainContent')
     {{-- <section class="content" style="background-color: #272A37;"> --}}
     <!-- tabel -->

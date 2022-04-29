@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('quotes', function (Blueprint $table) {
-            $table->id();
-            $table->string('quotes')->unique();
-            $table->timestamps();
+        Schema::table('quotes', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -28,7 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('quotes');
+        Schema::table('quotes', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
     }
 };
