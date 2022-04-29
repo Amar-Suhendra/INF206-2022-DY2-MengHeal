@@ -18,12 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('Kode_vid')->unique();
             $table->string('Kode_quotes')->unique();
-            //$table->string('Category');
-            //$table->string('URL');
             $table->timestamp('access_date')->nullable();
-            //$table->string('Language');
-            //$table->rememberToken();
-            //$table->timestamps();
         });
     }
 

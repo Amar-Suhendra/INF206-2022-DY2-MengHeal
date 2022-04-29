@@ -16,13 +16,9 @@ return new class extends Migration
         //
         Schema::create('video', function (Blueprint $table) {
             $table->id();
-            $table->string('Kode_vid')->unique();
-            $table->string('Category');
+            $table->string('Judul_vid');
             $table->string('URL');
             $table->timestamp('Upload_date')->nullable();
-            $table->string('Vid_duration');
-            $table->rememberToken();
-            $table->timestamps();
         });
     }
 
