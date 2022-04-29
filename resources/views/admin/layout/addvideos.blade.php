@@ -6,7 +6,7 @@
         @csrf
         <div class="form-group">
             <span>Video title : </span>
-            <input type="text" class="form-control" placeholder="Video title">
+            <input type="text" class="form-control" placeholder="Video title" name="judul_vid">
         </div>
         <div class="form-group">
 
