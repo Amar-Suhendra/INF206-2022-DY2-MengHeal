@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Menheal | @yield('title-tab')</title>
+    <title>Menheal | {{ $title }})</title>
 
     <!-- icon page -->
     <link rel="shortcut icon" href="{{ url('assets/icon/favicon.ico') }}" type="image/x-icon">
