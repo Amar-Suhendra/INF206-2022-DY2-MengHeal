@@ -3,8 +3,9 @@
 @section('title-page', 'Quote')
 
 @section('mainContent')
-    <form action="{{ url('admin/addquote') }}" method="post">
+    <form action="{{ url('admin/updatequote/' . $quote['id']) }}" method="post">
         @csrf
+        @method('PUT')
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text">Quote</span>
@@ -12,7 +13,7 @@
             <textarea class="form-control" name="quote" aria-label="With textarea" placeholder="Write your quote here!"></textarea>
         </div>
         <button type="submit" class="btn btn-success ms-auto mt-3">
-            Add Quote
+            Update Quote
         </button>
     </form>
 @endsection

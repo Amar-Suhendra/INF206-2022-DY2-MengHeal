@@ -72,7 +72,7 @@ class AdminController extends Controller
      */
     public function addQuote()
     {
-        return view('admin.layout.addquote', ['title' => 'Quote', 'action' => 'addquote']);
+        return view('admin.layout.addquote', ['title' => 'Quote']);
     }
     /**
      * Show the form for creating a new resource.
@@ -94,7 +94,7 @@ class AdminController extends Controller
     public function showQuote(Quote $quote)
     {
 
-        return view('admin.layout.addquote', ['title' => 'Quote', 'action' => 'updatequote', 'quote' => $quote]);
+        return view('admin.layout.updatequote', ['title' => 'Quote', 'quote' => $quote]);
     }
     /**
      * Update the specified resource in storage.
@@ -119,7 +119,8 @@ class AdminController extends Controller
      */
     public function deleteQuote(Request $req)
     {
-        return dd($req->id);
+        // return dd($req->id);
+        Quote::withTrashed()->where('id', $req->id)->delete();
         return redirect('admin/quote');
     }
 

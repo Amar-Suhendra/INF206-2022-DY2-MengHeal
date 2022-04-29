@@ -28,7 +28,7 @@
                     <td scope="row" class="row justify-content-center">
                         {{-- <a class="mx-3 btn btn-sm bg-gradient-danger delete" data-id="{{ $quote['id'] }}">Delete</a> --}}
                         <button type="button" class="mx-3 btn btn-sm bg-gradient-danger" data-toggle="modal"
-                            data-target="#staticBackdrop">
+                            data-target="#exampleModal" data-quote="{{ $quote['id'] }}">
                             Delete
                         </button>
                         <a href="{{ url('admin/' . $quote['id'] . '/edit') }}" class="btn btn-sm bg-gradient-info">Edit</a>
@@ -46,27 +46,27 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title text-center" id="staticBackdropLabel">Warning!</h3>
+                    <h5 class="modal-title" id="exampleModalLabel">Warning!!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body text-center">
-                    <h4>Are you sure?</h4>
-                    <form action="{{ url('admin/deletequote') }}" method="post">
-                        @csrf
-                        @method('delete')
-                        <input type="hidden" name="id" id="id" value="{{ $quote['id'] }}">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-danger">Yes, delete it!</button>
-                </div>
+                <form action="{{ url('admin/deletequote') }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <div class="modal-body">
+                        <h4>Are you sure?</h4>
+                        <input type="hidden" name='id' id="id">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Yes, delete it!</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -90,6 +90,17 @@
     <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <!-- Sweet Alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Script to send data to modal -->
+    <script>
+        $('#exampleModal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var idQuote = button.data('quote') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-body input').val(idQuote)
+        })
+    </script>
     {{-- <script>
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
@@ -128,6 +139,8 @@
             }
         })
     </script> --}}
+
+
 
     <!-- Page specific script -->
     <script>
