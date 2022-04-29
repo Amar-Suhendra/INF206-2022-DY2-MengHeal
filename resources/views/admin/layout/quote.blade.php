@@ -26,7 +26,7 @@
                     <td scope="row">{{ $quote['created_at'] }}</td>
                     <td scope="row">{{ $quote['updated_at'] }}</td>
                     <td scope="row" class="row justify-content-center">
-                        <a href="{{ url('admin/deletequote') }}" class="mx-3 btn btn-sm bg-gradient-danger">Delete</a>
+                        <a class="mx-3 btn btn-sm bg-gradient-danger delete" data-id="{{ $quote['id'] }}">Delete</a>
                         <a href="{{ url('admin/' . $quote['id'] . '/edit') }}" class="btn btn-sm bg-gradient-info">Edit</a>
                     </td>
                 </tr>
@@ -56,6 +56,43 @@
     <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <!-- Sweet Alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-danger',
+                cancelButton: 'btn btn-info'
+            },
+            buttonsStyling: false
+        })
+
+        $('.delete').click(function() {
+            var idQuote = $(this).attr('data-id');
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location = 'delete/' + idQuote;
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                } else {
+                    Swal.fire(
+                        'Cancelled!',
+                        'Your file is safe.',
+                        'error'
+                    )
+                }
+            })
+        });
+    </script>
 
     <!-- Page specific script -->
     <script>
