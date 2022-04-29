@@ -7,10 +7,9 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Status</th>
+                <th>Video title</th>
+                <th>Upload date</th>
+                <th>Edit date</th>
             </tr>
         </thead>
         <tbody>
@@ -18,16 +17,10 @@
             @foreach ($videos as $video)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $video['name'] }}</td>
-                    <td>{{ $video['username'] }}</td>
-                    <td>{{ $video['email'] }}</td>
-                    <td>
-                        @if ($video['status'] === 1)
-                            Dokter
-                        @else
-                            Pasien
-                        @endif
-                    </td>
+                    <td>{{ $video['judul_vid'] }}</td>
+                    <td>{{ $video['created_at'] }}</td>
+                    <td>{{ $video['updated_at'] }}</td>
+
                 </tr>
             @endforeach
 
