@@ -56,6 +56,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::DELETE('admin/deletequote', [AdminController::class, 'deleteQuote']);
     // VIDEOS
     Route::GET('admin/videos', [AdminController::class, 'videos']);
+    Route::GET('admin/addvideos', [AdminController::class, 'addVideos']);
     // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');

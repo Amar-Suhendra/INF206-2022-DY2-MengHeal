@@ -135,6 +135,15 @@ class AdminController extends Controller
     {
         return view('admin.layout.videos', ['videos' => Video::all(), 'title' => 'Videos']);
     }
+    /**
+     * Show the videos page  quote.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addVideos()
+    {
+        return view('admin.layout.addvideos', ['title' => 'Videos']);
+    }
 
 
     /**

@@ -2,6 +2,11 @@
 @section('title-page', 'List Videos')
 
 @section('mainContent')
+
+    <div class="mb-2"><a href="{{ url('admin/addvideos') }}" type="button"
+            class="btn btn-info bg-gradient-info">add
+            video</a>
+    </div>
     <!-- table -->
     <table id="example1" class="table table-striped table-dark">
         <thead>
