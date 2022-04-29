@@ -26,9 +26,10 @@
                     <td scope="row">{{ $quote['created_at'] }}</td>
                     <td scope="row">{{ $quote['updated_at'] }}</td>
                     <td scope="row" class="row justify-content-center">
-                        <a class="mx-3 btn btn-sm bg-gradient-danger delete" data-id="{{ $quote['id'] }}">Delete</a>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-                            Launch static backdrop modal
+                        {{-- <a class="mx-3 btn btn-sm bg-gradient-danger delete" data-id="{{ $quote['id'] }}">Delete</a> --}}
+                        <button type="button" class="mx-3 btn btn-sm bg-gradient-danger" data-toggle="modal"
+                            data-target="#staticBackdrop">
+                            Delete
                         </button>
                         <a href="{{ url('admin/' . $quote['id'] . '/edit') }}" class="btn btn-sm bg-gradient-info">Edit</a>
                     </td>
@@ -89,7 +90,7 @@
     <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <!-- Sweet Alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
+    {{-- <script>
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-danger',
@@ -126,7 +127,7 @@
                 )
             }
         })
-    </script>
+    </script> --}}
 
     <!-- Page specific script -->
     <script>
