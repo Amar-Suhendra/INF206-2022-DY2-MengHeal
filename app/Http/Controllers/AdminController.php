@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Quote;
 use App\Models\Register;
 use App\Models\User;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -132,7 +133,7 @@ class AdminController extends Controller
      */
     public function videos()
     {
-        return view('admin.layout.videos', ['videos' => Videos::all(), 'title' => 'Videos']);
+        return view('admin.layout.videos', ['videos' => Video::all(), 'title' => 'Videos']);
     }
 
 
