@@ -57,7 +57,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Show the quote page for creating a new quote.
+     * Show the quote page  quote.
      *
      * @return \Illuminate\Http\Response
      */
@@ -87,7 +87,7 @@ class AdminController extends Controller
         return redirect('admin/quote');
     }
     /**
-     * Show the form for update a new resource.
+     * Show the specified quote.
      *
      * @return \Illuminate\Http\Response
      */
@@ -108,7 +108,7 @@ class AdminController extends Controller
         Quote::where('id', $id)->update([
             'quotes' => $request->quote,
         ]);
-        return redirect('admin/quote');
+        return redirect('admin/quotes');
     }
     /**
      * delete the specified resource in storage.
@@ -122,6 +122,17 @@ class AdminController extends Controller
         // return dd($req->id);
         Quote::withTrashed()->where('id', $req->id)->delete();
         return redirect('admin/quote');
+    }
+
+
+    /**
+     * Show the videos page  quote.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function videos()
+    {
+        return view('admin.layout.videos', ['videos' => Videos::all(), 'title' => 'Videos']);
     }
 
 

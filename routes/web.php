@@ -41,8 +41,9 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
     // to accept user
     Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
+    // QUOTE
     // go to quote page
-    Route::GET('admin/quote', [AdminController::class, 'quote']);
+    Route::GET('admin/quotes', [AdminController::class, 'quote']);
     // go to add quote page
     Route::GET('admin/addquote', [AdminController::class, 'addQuote']);
     // to add quote
@@ -53,6 +54,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::PUT('admin/updatequote/{id}', [AdminController::class, 'updateQuote']);
     // delete quote
     Route::DELETE('admin/deletequote', [AdminController::class, 'deleteQuote']);
+    // VIDEOS
+    Route::GET('admin/videos', [AdminController::class, 'videos']);
     // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');

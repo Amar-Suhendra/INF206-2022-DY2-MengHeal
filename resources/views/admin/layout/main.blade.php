@@ -106,11 +106,20 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/quote') }}"
+                            <a href="{{ url('admin/quotes') }}"
                                 class="nav-link @if ($title === 'Quotes') active @endif">
                                 <i class="nav-icon far fa-comment"></i>
                                 <p>
                                     Quotes
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('admin/videos') }}"
+                                class="nav-link @if ($title === 'Videos') active @endif">
+                                <i class="nav-icon fas fa-video"></i>
+                                <p>
+                                    Videos
                                 </p>
                             </a>
                         </li>
