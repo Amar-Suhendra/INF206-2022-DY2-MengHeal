@@ -74,15 +74,33 @@ Route::middleware(['auth', 'user'])->group(function () {
     // go to antrian page
     Route::GET('/konsultasi-langsung', [UserController::class, 'konsulLangsung']);
     Route::GET('get-antrian', [UserController::class, 'getAntrian']);
-    // go to konsul page
-    Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
-    // go to quote page
-    Route::GET('quote', [UserController::class, 'quote']);
-    // go to video booster page
-    Route::GET('video-booster', [UserController::class, 'videoBooster']);
 });
 
 Route::middleware('auth')->group(function () {
     // logout account
     Route::POST('logout', [LoginController::class, 'logout']);
 });
+
+// go to konsul page
+Route::GET('/konsultasi-online', function () {
+    return view('konsul', [
+        'title' => 'Konsultasi Online',
+    ]);
+});
+// Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
+
+// go to quote page
+Route::GET('/quote', function () {
+    return view('quote', [
+        'title' => 'Quotes',
+    ]);
+});
+// Route::GET('quote', [UserController::class, 'quote']);
+
+// go to video booster page
+Route::GET('/video-booster', function () {
+    return view('video-booster', [
+        'title' => 'Video Booster',
+    ]);
+});
+// Route::GET('video-booster', [UserController::class, 'videoBooster']);
