@@ -1,5 +1,12 @@
 <?php
 
+// For chat feature
+namespace App\Events;
+use App\Events\Message;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
+// Default code
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
