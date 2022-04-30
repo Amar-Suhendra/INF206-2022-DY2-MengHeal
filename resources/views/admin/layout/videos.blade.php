@@ -15,6 +15,7 @@
                 <th>Video title</th>
                 <th>Upload date</th>
                 <th>Edit date</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -22,9 +23,13 @@
             @foreach ($videos as $video)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $video['judul_vid'] }}</td>
-                    <td>{{ $video['created_at'] }}</td>
-                    <td>{{ $video['updated_at'] }}</td>
+                    <td scope="row">{{ $video['judul_vid'] }}</td>
+                    <td scope="row">{{ $video['created_at'] }}</td>
+                    <td scope="row">{{ $video['updated_at'] }}</td>
+                    <td scope="row" class="justify-content-center"><a type="button" class="btn btn-sm bg-gradient-danger"
+                            data-toggle="modal" data-target="#exampleModal">
+                            Delete
+                        </a></td>
 
                 </tr>
             @endforeach
