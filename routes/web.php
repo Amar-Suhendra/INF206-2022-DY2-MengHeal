@@ -89,7 +89,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // go to konsul page
-Route::GET('/konsultasi-online', function () {
+Route::GET('/konsultasionline', function () {
     return view('konsul', [
         'title' => 'Konsultasi Online',
     ]);
