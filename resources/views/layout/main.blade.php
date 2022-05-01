@@ -54,38 +54,41 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto me-5">
+                <ul class="navbar-nav me-5 mb-2 ms-4 mb-lg-0">
                     @auth
-                    <div class="d-flex">
-                        <p>{{ auth()->user()->name }}</p>
-                        <div class="vr"></div>
-                        <li class="nav-item dropdown">
-
-                        </li>
-                    </div>
-                        {{-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ auth()->user()->name }} | <ion-icon name="person-outline"></ion-icon>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li class="nav-item d-none d-sm-inline-block">
-                                    <form action="{{ url('logout') }}" method="post">
-                                        @csrf
-                                        <button type="submit" class="nav-link btn">
-                                            <i class="fas fa-sign-out-alt"></i>Logout
-                                        </button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li> --}}
+                        <div class="hstack gap-3">
+                            <li class="nav-item">
+                                <img src="assets/img/user.png" alt="user" class="border border-dark rounded-circle">
+                            </li>
+                            <div class="vr"></div>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ auth()->user()->name }}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <form action="{{ url('logout') }}" method="POST">
+                                            @csrf
+                                            <div class="dropdown-item d-flex flex-row">
+                                                <ion-icon size="large" name="log-out-outline"></ion-icon>
+                                                <button class="dropdown-item" type="submit">Logout</button>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
                     @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login">Login |</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/register">Daftar</a>
-                        </li>
+                        <div class="hstack gap-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+                            <div class="vr"></div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/register">Daftar</a>
+                            </li>
+                        </div>
                     @endauth
                 </ul>
             </div>
