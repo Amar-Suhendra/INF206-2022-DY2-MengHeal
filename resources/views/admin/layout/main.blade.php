@@ -123,6 +123,15 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ url('admin/patients') }}"
+                                class="nav-link @if ($title === 'Patients') active @endif">
+                                <i class="nav-icon fas fa-procedures"></i>
+                                <p>
+                                    Patients
+                                </p>
+                            </a>
+                        </li>
 
                         <!-- user login -->
                         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
