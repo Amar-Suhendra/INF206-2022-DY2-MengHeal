@@ -17,13 +17,15 @@
             </tr>
         </thead>
         <tbody>
-
+            @php
+                $i = 1;
+            @endphp
             @foreach ($registers as $register)
                 @if ($register['is_admin'] === 1)
                     @continue
                 @else
                     <tr>
-                        <td scope="row">{{ $loop->iteration }}</td>
+                        <td scope="row">{{ $i }}</td>
                         <td>{{ $register['name'] }}</td>
                         <td>{{ $register['username'] }}</td>
                         <td>{{ $register['email'] }}</td>
@@ -35,6 +37,9 @@
                             @endif
                         </td>
                     </tr>
+                    @php
+                        $i += 1;
+                    @endphp
                 @endif
             @endforeach
 
