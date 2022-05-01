@@ -17,7 +17,7 @@
         <form method="POST" action="{{ url('register') }}">
             @csrf
             <p>Name</p>
-            <input type="text" name="name" placeholder="Enter Name">
+            <input type="text" name="Name" placeholder="Enter Name">
             <p>Username</p>
             <input type="text" name="Username" placeholder="Enter Username">
             <p>Email</p>
