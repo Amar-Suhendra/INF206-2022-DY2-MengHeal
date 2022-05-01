@@ -17,7 +17,7 @@
     <title>Menheal | {{ $title }}</title>
 </head>
 
-<body style="overflow-x:hidden">
+<body style="overflow-x:hidden" class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand ms-5 me-1">
@@ -85,61 +85,56 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         @yield('container')
     </div>
+    <footer class="bg-light text-center text-white mt-auto">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0 ">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a href="#" class="btn">
+                    <ion-icon size="large" name="logo-facebook"></ion-icon>
+                </a>
 
-    <div class="my-5">
+                <!-- Twitter -->
+                <a href="#" class="btn">
+                    <ion-icon size="large" name="logo-twitter"></ion-icon>
+                </a>
 
-        <footer class="bg-light text-center text-white">
-            <!-- Grid container -->
-            <div class="container p-4 pb-0 ">
-                <!-- Section: Social media -->
-                <section class="mb-4">
-                    <!-- Facebook -->
-                    <a href="#" class="btn">
-                        <ion-icon size="large" name="logo-facebook"></ion-icon>
-                    </a>
+                <!-- Google -->
+                <a href="#" class="btn">
+                    <ion-icon size="large" name="logo-google"></ion-icon>
+                </a>
 
-                    <!-- Twitter -->
-                    <a href="#" class="btn">
-                        <ion-icon size="large" name="logo-twitter"></ion-icon>
-                    </a>
+                <!-- Instagram -->
+                <a href="#" class="btn">
+                    <ion-icon size="large" name="logo-instagram"></ion-icon>
+                </a>
 
-                    <!-- Google -->
-                    <a href="#" class="btn">
-                        <ion-icon size="large" name="logo-google"></ion-icon>
-                    </a>
+                <!-- Linkedin -->
+                <a href="#" class="btn">
+                    <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                </a>
 
-                    <!-- Instagram -->
-                    <a href="#" class="btn">
-                        <ion-icon size="large" name="logo-instagram"></ion-icon>
-                    </a>
+                <!-- Github -->
+                <a href="#" class="btn">
+                    <ion-icon size="large" name="logo-github"></ion-icon>
+                </a>
 
-                    <!-- Linkedin -->
-                    <a href="#" class="btn">
-                        <ion-icon size="large" name="logo-linkedin"></ion-icon>
-                    </a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
 
-                    <!-- Github -->
-                    <a href="#" class="btn">
-                        <ion-icon size="large" name="logo-github"></ion-icon>
-                    </a>
-
-                </section>
-                <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-
-            <!-- Copyright -->
-            <div class="text-center bg-light">
-                <p style="font-weight: bold; color: black">© 2022 Copyright:</p>
-                <h3> <a href="{{ url('') }}" class="company-name"> Mengheal</a> </h3>
-            </div>
-            <!-- Copyright -->
-        </footer>
-
-    </div>
+        <!-- Copyright -->
+        <div class="text-center p-3">
+            <p style="font-weight: bold; color: black">© 2022 Copyright:</p>
+            <h3> <a href="{{ url('') }}" class="company-name"> Mengheal</a></h3>
+        </div>
+        <!-- Copyright -->
+    </footer>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
