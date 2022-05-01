@@ -67,6 +67,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin/addvideos', [AdminController::class, 'addVideos']);
     Route::POST('admin/addvideos', [AdminController::class, 'createVideos']);
     Route::DELETE('admin/deletevideos/{id}', [AdminController::class, 'deleteVideos']);
+    // PATIENTS
+    Route::GET('admin/patients', [AdminController::class, 'patients']);
     // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');
