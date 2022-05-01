@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Patient;
 use App\Models\Quote;
 use App\Models\Register;
 use App\Models\User;
@@ -48,11 +49,17 @@ class AdminController extends Controller
         // return dd($temp['status']);
         $temp->status = True;
         $temp->save();
-        User::create([
+        $credetials = [
             'name' => $temp['name'],
             'username' => $temp['Username'],
             'email' => $temp['Email'],
             'password' => $temp['Password'],
+        ];
+        User::create($credetials);
+        Patient::create([
+            'name' => $temp['name'],
+            'username' => $temp['Username'],
+            'email' => $temp['Email'],
         ]);
         return redirect('admin/users-registration');
     }
@@ -178,7 +185,7 @@ class AdminController extends Controller
      */
     public function patients()
     {
-        return view('admin.layout.patients', ['title' => 'Videos']);
+        return view('admin.layout.patients', ['patients' => Patient::all(), 'title' => 'Patients']);
     }
 
 

@@ -28,7 +28,7 @@
                         <td>{{ $register['username'] }}</td>
                         <td>{{ $register['email'] }}</td>
                         <td>
-                            @if ($register['status'] === 1)
+                            @if ($register['status'] === 0)
                                 Dokter
                             @else
                                 Pasien
