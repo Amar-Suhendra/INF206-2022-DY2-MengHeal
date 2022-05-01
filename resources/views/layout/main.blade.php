@@ -56,10 +56,17 @@
                 </ul>
                 <ul class="navbar-nav ms-auto me-5">
                     @auth
+                    <div class="d-flex">
+                        <p>{{ auth()->user()->name }}</p>
+                        <div class="vr"></div>
                         <li class="nav-item dropdown">
+
+                        </li>
+                    </div>
+                        {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ auth()->user()->name }}
+                                {{ auth()->user()->name }} | <ion-icon name="person-outline"></ion-icon>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li class="nav-item d-none d-sm-inline-block">
@@ -71,7 +78,7 @@
                                     </form>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                     @else
                         <li class="nav-item">
                             <a class="nav-link" href="/login">Login |</a>
