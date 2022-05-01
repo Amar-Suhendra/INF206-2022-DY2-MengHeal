@@ -171,6 +171,16 @@ class AdminController extends Controller
         return redirect('admin/videos');
     }
 
+    /**
+     * Show the patients page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function patients()
+    {
+        return view('admin.layout.patients', ['title' => 'Videos']);
+    }
+
 
     /**
      * Store a newly created resource in storage.
