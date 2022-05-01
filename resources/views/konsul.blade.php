@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <title>konsul online</title>
-</head>
-<body>
-    <h1>konsul online Page</h1>
-</body>
-</html>
+@extends('layout.main')
+@section('container')
+    <link rel="stylesheet" href="./css/app.css">
+    <div class="app">
+        <header class="chat-header">
+            <h1 class="chat-judul">Konsultasi Online</h1>
+            <input class="form-control" type="text" name="username" id="username" placeholder="Enter Username">
+        </header>
+        <div id="messages"></div>
+        <form id="message_form">
+            <input class="form-control" type="text" name="message" id="message" placeholder="Enter Message">
+            <button class="btn btn-primary" type="submit" id="message_send">Send<ion-icon name="send-outline"></ion-icon></button>
+        </form>
+    </div>
+    <script src="./js/app.js"></script>
+@endsection
