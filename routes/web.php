@@ -2,6 +2,7 @@
 
 // For chat feature
 namespace App\Events;
+
 use App\Events\Message;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -65,6 +66,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin/videos', [AdminController::class, 'videos']);
     Route::GET('admin/addvideos', [AdminController::class, 'addVideos']);
     Route::POST('admin/addvideos', [AdminController::class, 'createVideos']);
+    Route::DELETE('admin/deletevideos/{id}', [AdminController::class, 'deleteVideos']);
     // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');
@@ -119,9 +121,10 @@ Route::GET('/video-booster', function () {
 
 // send message
 Route::post('/send-message', function (Request $request) {
-    event(new Message(
-        $request->input('username'),
-         $request->input('message')
+    event(
+        new Message(
+            $request->input('username'),
+            $request->input('message')
         )
     );
     return ['success' => true];

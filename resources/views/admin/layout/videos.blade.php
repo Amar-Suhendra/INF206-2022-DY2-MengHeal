@@ -26,10 +26,15 @@
                     <td scope="row">{{ $video['judul_vid'] }}</td>
                     <td scope="row">{{ $video['created_at'] }}</td>
                     <td scope="row">{{ $video['updated_at'] }}</td>
-                    <td scope="row" class="justify-content-center"><a type="button" class="btn btn-sm bg-gradient-danger"
-                            data-toggle="modal" data-target="#exampleModal">
-                            Delete
-                        </a></td>
+                    <td scope="row" class="justify-content-center">
+                        <form action="{{ url('admin/deletevideos/' . $video->id) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-sm bg-gradient-danger">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
 
                 </tr>
             @endforeach

@@ -159,6 +159,18 @@ class AdminController extends Controller
         // return view('admin.layout.addvideos', ['title' => 'Videos']);
     }
 
+    /**
+     * Remove the videos resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteVideos($id)
+    {
+        Video::destroy($id);
+        return redirect('admin/videos');
+    }
+
 
     /**
      * Store a newly created resource in storage.
