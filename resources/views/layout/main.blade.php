@@ -89,6 +89,57 @@
         @yield('container')
     </div>
 
+    <div class="my-5">
+
+        <footer class="bg-light text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0 ">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a href="#" class="btn">
+                        <ion-icon size="large" name="logo-facebook"></ion-icon>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a href="#" class="btn">
+                        <ion-icon size="large" name="logo-twitter"></ion-icon>
+                    </a>
+
+                    <!-- Google -->
+                    <a href="#" class="btn">
+                        <ion-icon size="large" name="logo-google"></ion-icon>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" class="btn">
+                        <ion-icon size="large" name="logo-instagram"></ion-icon>
+                    </a>
+
+                    <!-- Linkedin -->
+                    <a href="#" class="btn">
+                        <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                    </a>
+
+                    <!-- Github -->
+                    <a href="#" class="btn">
+                        <ion-icon size="large" name="logo-github"></ion-icon>
+                    </a>
+
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center bg-light">
+                <p style="font-weight: bold; color: black">© 2022 Copyright:</p>
+                <h3> <a href="{{ url('') }}" class="company-name"> Mengheal</a> </h3>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
