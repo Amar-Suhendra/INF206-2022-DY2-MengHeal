@@ -2,6 +2,7 @@
 
 // For chat feature
 namespace App\Events;
+
 use App\Events\Message;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -48,8 +49,9 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
     // to accept user
     Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
+    // QUOTE
     // go to quote page
-    Route::GET('admin/quote', [AdminController::class, 'quote']);
+    Route::GET('admin/quotes', [AdminController::class, 'quote']);
     // go to add quote page
     Route::GET('admin/addquote', [AdminController::class, 'addQuote']);
     // to add quote
@@ -60,6 +62,13 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::PUT('admin/updatequote/{id}', [AdminController::class, 'updateQuote']);
     // delete quote
     Route::DELETE('admin/deletequote', [AdminController::class, 'deleteQuote']);
+    // VIDEOS
+    Route::GET('admin/videos', [AdminController::class, 'videos']);
+    Route::GET('admin/addvideos', [AdminController::class, 'addVideos']);
+    Route::POST('admin/addvideos', [AdminController::class, 'createVideos']);
+    Route::DELETE('admin/deletevideos/{id}', [AdminController::class, 'deleteVideos']);
+    // PATIENTS
+    Route::GET('admin/patients', [AdminController::class, 'patients']);
     // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');
@@ -114,9 +123,10 @@ Route::GET('/video-booster', function () {
 
 // send message
 Route::post('/send-message', function (Request $request) {
-    event(new Message(
-        $request->input('username'),
-         $request->input('message')
+    event(
+        new Message(
+            $request->input('username'),
+            $request->input('message')
         )
     );
     return ['success' => true];

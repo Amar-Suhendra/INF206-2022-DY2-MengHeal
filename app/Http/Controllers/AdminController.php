@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Patient;
 use App\Models\Quote;
 use App\Models\Register;
 use App\Models\User;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -47,17 +49,23 @@ class AdminController extends Controller
         // return dd($temp['status']);
         $temp->status = True;
         $temp->save();
-        User::create([
+        $credetials = [
             'name' => $temp['name'],
             'username' => $temp['Username'],
             'email' => $temp['Email'],
             'password' => $temp['Password'],
+        ];
+        User::create($credetials);
+        Patient::create([
+            'name' => $temp['name'],
+            'username' => $temp['Username'],
+            'email' => $temp['Email'],
         ]);
         return redirect('admin/users-registration');
     }
 
     /**
-     * Show the quote page for creating a new quote.
+     * Show the quote page  quote.
      *
      * @return \Illuminate\Http\Response
      */
@@ -87,7 +95,7 @@ class AdminController extends Controller
         return redirect('admin/quote');
     }
     /**
-     * Show the form for update a new resource.
+     * Show the specified quote.
      *
      * @return \Illuminate\Http\Response
      */
@@ -108,7 +116,7 @@ class AdminController extends Controller
         Quote::where('id', $id)->update([
             'quotes' => $request->quote,
         ]);
-        return redirect('admin/quote');
+        return redirect('admin/quotes');
     }
     /**
      * delete the specified resource in storage.
@@ -122,6 +130,62 @@ class AdminController extends Controller
         // return dd($req->id);
         Quote::withTrashed()->where('id', $req->id)->delete();
         return redirect('admin/quote');
+    }
+
+
+    /**
+     * Show the videos page  quote.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function videos()
+    {
+        return view('admin.layout.videos', ['videos' => Video::all(), 'title' => 'Videos']);
+    }
+    /**
+     * Show the videos page  quote.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addVideos()
+    {
+        return view('admin.layout.addvideos', ['title' => 'Videos']);
+    }
+    /**
+     * Show the videos page  quote.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createVideos(Request $request)
+    {
+        Video::create([
+            'judul_vid' => $request->judul_vid,
+            'url' => $request->url,
+        ]);
+        return redirect('admin/videos');
+        // return view('admin.layout.addvideos', ['title' => 'Videos']);
+    }
+
+    /**
+     * Remove the videos resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteVideos($id)
+    {
+        Video::destroy($id);
+        return redirect('admin/videos');
+    }
+
+    /**
+     * Show the patients page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function patients()
+    {
+        return view('admin.layout.patients', ['patients' => Patient::all(), 'title' => 'Patients']);
     }
 
 

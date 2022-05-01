@@ -1,7 +1,6 @@
 @extends('admin.layout.main')
 
-@section('title-page', 'List Users')
-@section('title-tab', 'User')
+@section('title-page', 'Patients')
 
 @section('mainContent')
     {{-- <section class="content" style="background-color: #272A37;"> --}}
@@ -13,34 +12,19 @@
                 <th>Name</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Status</th>
+                <th>Jumlah Konsultasi</th>
             </tr>
         </thead>
         <tbody>
-            @php
-                $i = 1;
-            @endphp
-            @foreach ($registers as $register)
-                @if ($register['is_admin'] === 1)
-                    @continue
-                @else
-                    <tr>
-                        <td scope="row">{{ $i }}</td>
-                        <td>{{ $register['name'] }}</td>
-                        <td>{{ $register['username'] }}</td>
-                        <td>{{ $register['email'] }}</td>
-                        <td>
-                            @if ($register['status'] === 0)
-                                Dokter
-                            @else
-                                Pasien
-                            @endif
-                        </td>
-                    </tr>
-                    @php
-                        $i += 1;
-                    @endphp
-                @endif
+
+            @foreach ($patients as $patient)
+                <tr>
+                    <td scope="row">{{ $loop->iteration }}</td>
+                    <td>{{ $patient['name'] }}</td>
+                    <td>{{ $patient['username'] }}</td>
+                    <td>{{ $patient['email'] }}</td>
+                    <td>{{ $patient['jumlah_konsul'] }}</td>
+                </tr>
             @endforeach
 
         </tbody>
