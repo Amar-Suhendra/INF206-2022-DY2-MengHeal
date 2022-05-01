@@ -111,3 +111,13 @@ Route::GET('/video-booster', function () {
     ]);
 });
 // Route::GET('video-booster', [UserController::class, 'videoBooster']);
+
+// send message
+Route::post('/send-message', function (Request $request) {
+    event(new Message(
+        $request->input('username'),
+         $request->input('message')
+        )
+    );
+    return ['success' => true];
+});
