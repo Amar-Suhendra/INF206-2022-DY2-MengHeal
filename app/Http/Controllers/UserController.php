@@ -27,7 +27,7 @@ class UserController extends Controller
             $antrian = null;
         }
         return view('antrian', [
-            'antrian' => $antrian, 'title' => 'antrian',
+            'antrian' => $antrian, 'title' => 'Antrian',
         ]);
     }
     public function getAntrian()
