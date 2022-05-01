@@ -1,5 +1,12 @@
 <?php
 
+// For chat feature
+namespace App\Events;
+use App\Events\Message;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
+// Default code
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -79,15 +86,43 @@ Route::middleware(['auth', 'user'])->group(function () {
     // go to antrian page
     Route::GET('/konsultasi-langsung', [UserController::class, 'konsulLangsung']);
     Route::GET('get-antrian', [UserController::class, 'getAntrian']);
-    // go to konsul page
-    Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
-    // go to quote page
-    Route::GET('quote', [UserController::class, 'quote']);
-    // go to video booster page
-    Route::GET('video-booster', [UserController::class, 'videoBooster']);
 });
 
 Route::middleware('auth')->group(function () {
     // logout account
     Route::POST('logout', [LoginController::class, 'logout']);
+});
+
+// go to konsul page
+Route::GET('/konsultasionline', function () {
+    return view('konsul', [
+        'title' => 'Konsultasi Online',
+    ]);
+});
+// Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
+
+// go to quote page
+Route::GET('/quote', function () {
+    return view('quote', [
+        'title' => 'Quotes',
+    ]);
+});
+// Route::GET('quote', [UserController::class, 'quote']);
+
+// go to video booster page
+Route::GET('/video-booster', function () {
+    return view('video-booster', [
+        'title' => 'Video Booster',
+    ]);
+});
+// Route::GET('video-booster', [UserController::class, 'videoBooster']);
+
+// send message
+Route::post('/send-message', function (Request $request) {
+    event(new Message(
+        $request->input('username'),
+         $request->input('message')
+        )
+    );
+    return ['success' => true];
 });
