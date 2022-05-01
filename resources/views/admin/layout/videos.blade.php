@@ -12,9 +12,10 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Video title</th>
-                <th>Upload date</th>
-                <th>Edit date</th>
+                <th>Video Title</th>
+                <th>Video Link</th>
+                <th>Upload Date</th>
+                <th>Edit Date</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
                     <td scope="row">{{ $video['judul_vid'] }}</td>
+                    <td scope="row">{{ $video['url'] }}</td>
                     <td scope="row">{{ $video['created_at'] }}</td>
                     <td scope="row">{{ $video['updated_at'] }}</td>
                     <td scope="row" class="justify-content-center">
