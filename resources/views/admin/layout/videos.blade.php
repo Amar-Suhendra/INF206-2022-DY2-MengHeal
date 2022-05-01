@@ -1,48 +1,49 @@
 @extends('admin.layout.main')
-
-@section('title-page', 'List Users')
-@section('title-tab', 'User')
+@section('title-page', 'List Videos')
 
 @section('mainContent')
-    {{-- <section class="content" style="background-color: #272A37;"> --}}
-    <!-- tabel -->
+
+    <div class="mb-2"><a href="{{ url('admin/addvideos') }}" type="button"
+            class="btn btn-info bg-gradient-info">add
+            video</a>
+    </div>
+    <!-- table -->
     <table id="example1" class="table table-striped table-dark">
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Status</th>
+                <th>Video Title</th>
+                <th>Video Link</th>
+                <th>Upload Date</th>
+                <th>Edit Date</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
 
-            @foreach ($registers as $register)
-                @if ($register['is_admin'] === 1)
-                    @continue
-                @else
-                    <tr>
-                        <td scope="row">{{ $loop->iteration }}</td>
-                        <td>{{ $register['name'] }}</td>
-                        <td>{{ $register['username'] }}</td>
-                        <td>{{ $register['email'] }}</td>
-                        <td>
-                            @if ($register['status'] === 0)
-                                Dokter
-                            @else
-                                Pasien
-                            @endif
-                        </td>
-                    </tr>
-                @endif
+            @foreach ($videos as $video)
+                <tr>
+                    <td scope="row">{{ $loop->iteration }}</td>
+                    <td scope="row">{{ $video['judul_vid'] }}</td>
+                    <td scope="row">{{ $video['url'] }}</td>
+                    <td scope="row">{{ $video['created_at'] }}</td>
+                    <td scope="row">{{ $video['updated_at'] }}</td>
+                    <td scope="row" class="justify-content-center">
+                        <form action="{{ url('admin/deletevideos/' . $video->id) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-sm bg-gradient-danger">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+
+                </tr>
             @endforeach
 
         </tbody>
 
     </table>
-
-    <!-- /.tabel -->
 @endsection
 
 <!-- script table -->

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Menheal | @yield('title-tab')</title>
+    <title>Menheal | {{ $title }}</title>
 
     <!-- icon page -->
     <link rel="shortcut icon" href="{{ url('assets/icon/favicon.ico') }}" type="image/x-icon">
@@ -54,8 +54,6 @@
                         <button type="submit" class="nav-link btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
                     </form>
                 </li>
-
-
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -106,11 +104,29 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/quote') }}"
+                            <a href="{{ url('admin/quotes') }}"
                                 class="nav-link @if ($title === 'Quotes') active @endif">
                                 <i class="nav-icon far fa-comment"></i>
                                 <p>
                                     Quotes
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('admin/videos') }}"
+                                class="nav-link @if ($title === 'Videos') active @endif">
+                                <i class="nav-icon fas fa-video"></i>
+                                <p>
+                                    Videos
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('admin/patients') }}"
+                                class="nav-link @if ($title === 'Patients') active @endif">
+                                <i class="nav-icon fas fa-procedures"></i>
+                                <p>
+                                    Patients
                                 </p>
                             </a>
                         </li>
@@ -172,7 +188,7 @@
         <footer class="main-footer">
             <strong>Copyright &copy; 2022 <a href="#">MenHeal</a>.</strong>
             <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 1.0.0
+                <b>Version</b> 2.0.0
             </div>
         </footer>
     </div>

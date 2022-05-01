@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('video', function (Blueprint $table) {
+        Schema::create('patients', function (Blueprint $table) {
             $table->id();
-            $table->string('Judul_vid');
-            $table->string('URL');
-            $table->timestamp('Upload_date')->nullable();
+            $table->string('name');
+            $table->string('username')->unique();
+            $table->string('email')->unique();
+            $table->integer('jumlah_konsul')->default(0);
+            $table->timestamps();
         });
     }
 
@@ -29,7 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('video');
+        Schema::dropIfExists('patients');
     }
 };
