@@ -49,7 +49,7 @@ class RegisterController extends Controller
             'Name' => $request->Name,
             'Username' => $request->Username,
             'Email' => $request->Email,
-            'Password' => Crypt::encryptString($request->Password),
+            'Password' => bcrypt($request->Password),
         ]);
         return redirect('/login');
     }
