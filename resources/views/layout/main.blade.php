@@ -58,7 +58,7 @@
                     @auth
                         <div class="hstack gap-3">
                             <li class="nav-item">
-                                <img src="assets/img/user.png" alt="user" class="border border-dark rounded-circle">
+                                <img src="assets/img/user.png" style="width: 40px; height: 40px" alt="user" class="border border-dark rounded-circle">
                             </li>
                             <div class="vr"></div>
                             <li class="nav-item dropdown">
