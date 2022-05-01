@@ -2164,6 +2164,43 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var messages_el = document.getElementById('messages');
+var username_input = document.getElementById('username');
+var message_input = document.getElementById('message_input');
+var message_form = document.getElementById('message_form');
+message_form.addEventListener('submit', function (e) {
+  // messages_el.innerHTML += '<div class="message"><strong>' + username_input.value + ':</strong> ' + message_input.value + '</div>';
+  e.preventDefault();
+  var has_error = false;
+
+  if (username_input.value == '') {
+    alert('Please enter a username');
+    has_error = true;
+  }
+
+  if (message_input.value == '') {
+    alert('Please enter a message');
+    has_error = true;
+  }
+
+  if (has_error) {
+    return;
+  }
+
+  var options = {
+    method: 'post',
+    url: '/send-message',
+    data: {
+      username: username_input.value,
+      message: message_input.value
+    }
+  };
+  axios(options);
+});
+window.Echo.channel('chat').listen('.message', function (e) {
+  messages_el.innerHTML += '<div class="message"><strong>' + e.username + ':</strong> ' + e.message + '</div>';
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

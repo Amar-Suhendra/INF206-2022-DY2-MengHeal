@@ -8,7 +8,7 @@
         </header>
         <div id="messages"></div>
         <form id="message_form">
-            <input class="form-control" type="text" name="message" id="message" placeholder="Enter Message">
+            <input class="form-control" type="text" name="message_input" id="message_input" placeholder="Enter Message">
             <button class="btn btn-primary" type="submit" id="message_send">Send<ion-icon name="send-outline"></ion-icon></button>
         </form>
     </div>
