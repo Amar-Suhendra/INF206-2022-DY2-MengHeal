@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Register;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
 
 class RegisterController extends Controller
 {
@@ -49,7 +48,7 @@ class RegisterController extends Controller
             'Name' => $request->Name,
             'Username' => $request->Username,
             'Email' => $request->Email,
-            'Password' => Crypt::encryptString($request->Password),
+            'Password' => bcrypt($request->Password),
         ]);
         return redirect('/login');
     }

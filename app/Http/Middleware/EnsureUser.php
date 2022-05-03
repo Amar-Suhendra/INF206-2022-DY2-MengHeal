@@ -16,7 +16,7 @@ class EnsureUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth()->check() || Auth()->user()->is_admin === 1) {
+        if (!Auth()->check() || Auth()->user()->level_access === 1) {
             return redirect('/admin');
         }
         return $next($request);
