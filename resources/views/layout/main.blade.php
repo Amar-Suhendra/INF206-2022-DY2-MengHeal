@@ -64,12 +64,6 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <div class="dropdown-item d-flex flex-row">
-                                            <ion-icon size="large" name="person-outline"></ion-icon>
-                                            <a class="dropdown-item" href="{{ url('profile') }}">Profile</a>
-                                        </div>
-                                    </li>
-                                    <li>
                                         <form action="{{ url('logout') }}" method="POST">
                                             @csrf
                                             <div class="dropdown-item d-flex flex-row">
