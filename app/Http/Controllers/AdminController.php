@@ -18,7 +18,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.layout.dashboard', ['title' => 'Dashboard']);
+        $count = Register::count();
+        return view('admin.layout.dashboard', [
+            'title' => 'Dashboard',
+            'count' => $count,
+        ]);
     }
 
     /**
@@ -28,7 +32,10 @@ class AdminController extends Controller
     public function userRegistration()
     {
         $dataUser = Register::all();
-        return view('admin.layout.userRegistration')->with(['registers' => $dataUser, 'title' => 'Users Registration']);
+        return view('admin.layout.userRegistration')->with([
+            'registers' => $dataUser,
+            'title' => 'Users Registration',
+        ]);
     }
     /**
      * Display a listing of the user in the web
@@ -37,7 +44,10 @@ class AdminController extends Controller
     public function user()
     {
         $dataUser = User::all();
-        return view('admin.layout.user')->with(['registers' => $dataUser, 'title' => 'Users']);
+        return view('admin.layout.user')->with([
+            'registers' => $dataUser,
+            'title' => 'Users',
+        ]);
     }
     /**
      * accept user registration
@@ -47,7 +57,7 @@ class AdminController extends Controller
     {
         $temp = Register::find($id);
         // return dd($temp['status']);
-        $temp->status = True;
+        $temp->status = true;
         $temp->save();
         $credetials = [
             'name' => $temp['name'],
@@ -71,7 +81,10 @@ class AdminController extends Controller
      */
     public function quote()
     {
-        return view('admin.layout.quote', ['quotes' => Quote::all(), 'title' => 'Quotes']);
+        return view('admin.layout.quote', [
+            'quotes' => Quote::all(),
+            'title' => 'Quotes',
+        ]);
     }
     /**
      * Show the form for creating a new resource.
@@ -101,8 +114,10 @@ class AdminController extends Controller
      */
     public function showQuote(Quote $quote)
     {
-
-        return view('admin.layout.updatequote', ['title' => 'Quote', 'quote' => $quote]);
+        return view('admin.layout.updatequote', [
+            'title' => 'Quote',
+            'quote' => $quote,
+        ]);
     }
     /**
      * Update the specified resource in storage.
@@ -128,10 +143,11 @@ class AdminController extends Controller
     public function deleteQuote(Request $req)
     {
         // return dd($req->id);
-        Quote::withTrashed()->where('id', $req->id)->delete();
+        Quote::withTrashed()
+            ->where('id', $req->id)
+            ->delete();
         return redirect('admin/quote');
     }
-
 
     /**
      * Show the videos page  quote.
@@ -140,7 +156,10 @@ class AdminController extends Controller
      */
     public function videos()
     {
-        return view('admin.layout.videos', ['videos' => Video::all(), 'title' => 'Videos']);
+        return view('admin.layout.videos', [
+            'videos' => Video::all(),
+            'title' => 'Videos',
+        ]);
     }
     /**
      * Show the videos page  quote.
@@ -185,9 +204,11 @@ class AdminController extends Controller
      */
     public function patients()
     {
-        return view('admin.layout.patients', ['patients' => Patient::all(), 'title' => 'Patients']);
+        return view('admin.layout.patients', [
+            'patients' => Patient::all(),
+            'title' => 'Patients',
+        ]);
     }
-
 
     /**
      * Store a newly created resource in storage.
