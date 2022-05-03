@@ -21,16 +21,16 @@
                 $i = 1;
             @endphp
             @foreach ($registers as $register)
-                @if ($register['is_admin'] === 1)
+                @if ($register['level_access'] === 1)
                     @continue
                 @else
                     <tr>
                         <td scope="row">{{ $i }}</td>
-                        <td>{{ $register['name'] }}</td>
-                        <td>{{ $register['username'] }}</td>
-                        <td>{{ $register['email'] }}</td>
-                        <td>
-                            @if ($register['status'] === 0)
+                        <td scope="row">{{ $register['name'] }}</td>
+                        <td scope="row">{{ $register['username'] }}</td>
+                        <td scope="row">{{ $register['email'] }}</td>
+                        <td scope="row">
+                            @if ($register['level_access'] === 0)
                                 Dokter
                             @else
                                 Pasien
