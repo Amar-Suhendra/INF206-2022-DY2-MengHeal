@@ -13,6 +13,6 @@ class Patient extends Model
         'name',
         'username',
         'email',
-
+        'jumlah_konsul',
     ];
 }
