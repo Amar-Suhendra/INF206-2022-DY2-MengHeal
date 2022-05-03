@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('username')->unique();
             $table->string('no_antrian');
+            $table->date('tanggal_konsul');
             $table->timestamps();
         });
     }
