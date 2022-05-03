@@ -11,5 +11,6 @@ class Antrian extends Model
     protected $fillable = [
         'username',
         'no_antrian',
+        'tanggal_konsul',
     ];
 }
