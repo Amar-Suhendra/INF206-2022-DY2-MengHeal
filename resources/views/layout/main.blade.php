@@ -54,19 +54,21 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="navbar-nav me-5 mb-2 ms-4 mb-lg-0">
+                <ul class="navbar-nav mb-lg-0 me-5">
                     @auth
                         <div class="hstack gap-3">
-                            <li class="nav-item">
-                                <img src="assets/img/user.png" style="width: 40px; height: 40px" alt="user" class="border border-dark rounded-circle">
-                            </li>
-                            <div class="vr"></div>
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ auth()->user()->name }}
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <div class="dropdown-item d-flex flex-row">
+                                            <ion-icon size="large" name="person-outline"></ion-icon>
+                                            <a class="dropdown-item" href="{{ url('profile') }}">Profile</a>
+                                        </div>
+                                    </li>
                                     <li>
                                         <form action="{{ url('logout') }}" method="POST">
                                             @csrf
@@ -77,6 +79,11 @@
                                         </form>
                                     </li>
                                 </ul>
+                            </li>
+                            <div class="vr"></div>
+                            <li class="nav-item">
+                                <img src="assets/img/user.png" style="width: 40px; height: 40px" alt="user"
+                                    class="border border-dark rounded-circle">
                             </li>
                         </div>
                     @else
