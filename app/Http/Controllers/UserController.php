@@ -25,7 +25,7 @@ class UserController extends Controller
             $jumlah_konsul += 1;
             $pasien->update(['jumlah_konsul' => $jumlah_konsul]);
             return view('antrian', [
-                'antrian' => $antrian, 'jadwal' => $jadwal, 'title' => 'antrian', 'status' => true,
+                'antrian' => $antrian, 'jadwal' => $jadwal, 'title' => 'Antrian', 'status' => true,
             ]);
         } else if (Antrian::all()->last()) {
             $data = Antrian::all()->last();
