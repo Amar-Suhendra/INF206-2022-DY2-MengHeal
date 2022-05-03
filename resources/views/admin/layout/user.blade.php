@@ -21,7 +21,7 @@
                 $i = 1;
             @endphp
             @foreach ($registers as $register)
-                @if ($register['level'] === 1)
+                @if ($register['level_access'] === 1)
                     @continue
                 @else
                     <tr>
@@ -30,7 +30,7 @@
                         <td scope="row">{{ $register['username'] }}</td>
                         <td scope="row">{{ $register['email'] }}</td>
                         <td scope="row">
-                            @if ($register['level'] === 0)
+                            @if ($register['level_access'] === 0)
                                 Dokter
                             @else
                                 Pasien
