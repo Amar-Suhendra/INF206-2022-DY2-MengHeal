@@ -20,7 +20,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">Registered Member</span>
-                    <span class="info-box-number">{{ $count }}</span>
+                    <span class="info-box-number">1</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>

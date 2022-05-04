@@ -30,11 +30,10 @@ class LoginController extends Controller
             $request->session()->regenerate();
             if ((User::where('username', $request->Username)->first()->level_access) === 1) {
                 return redirect()->intended('admin');
-            }
-            elseif((User::where('username', $request->Username)->first()->level_access) === 0){
+            } else if ((User::where('username', $request->Username)->first()->level_access) === 0) {
                 return redirect()->intended('doctor');
                 // return "Sukses";
-            }else{
+            } else {
                 return redirect()->intended('/index')->with('status', 'sukses');
             }
         }
