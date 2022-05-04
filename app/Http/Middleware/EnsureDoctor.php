@@ -17,7 +17,7 @@ class EnsureDoctor
     public function handle(Request $request, Closure $next)
     {
         if (!Auth()->check() || Auth()->user()->level_access === 0) {
-            return redirect('doctor');
+            return redirect('/doctor');
         }
         return $next($request);
     }

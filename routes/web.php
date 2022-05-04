@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -105,7 +106,7 @@ Route::middleware(['auth', 'user'])->group(function () {
 });
 
 // Doctor Controller
-Route::middleware(['auth', 'doctor'])->group(function () {
+Route::middleware(['auth', 'isDoctor'])->group(function () {
     // go to landing page
     Route::GET('doctor', [DoctorController::class, 'index']);
 });

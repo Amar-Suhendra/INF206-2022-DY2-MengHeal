@@ -9,6 +9,8 @@ class DoctorController extends Controller
 {
     public function index()
     {
-        return "sukses";
+        return view('doctor.layout.dashboard', [
+            'title' => 'Dashboard',
+        ]);
     }
 }
