@@ -126,7 +126,7 @@ Route::GET('/konsultasionline', function () {
 
 // go to quote page
 Route::GET('/quote', function () {
-    return view('quote', [
+    return view('quotes', [
         'title' => 'Quotes',
     ]);
 });

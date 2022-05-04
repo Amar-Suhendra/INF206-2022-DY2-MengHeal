@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <title>Quotes</title>
-</head>
-
+@extends('layout.main')
 <style type="text/css">
     .box-1, .box-2, .box-3, .box-4, .box-5, .box-6 {
         text-align: center;
@@ -19,9 +10,9 @@
         border-style: solid;
         border-color: #1c8adb;
     }
-</style>
+    </style>
+@section('container')
 
-<body>
     <div class="box-1">"Health is a state of complete physical, mental, and social well-
         being and not merely the absence of disease or infirmity."
     </div>
@@ -41,5 +32,4 @@
         If we treated ourselves the way we treat our best friend, 
         can you imagine how much better off we would be?""
     </div>
-</body>
-</html>
+@endsection
