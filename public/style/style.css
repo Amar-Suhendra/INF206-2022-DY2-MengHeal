@@ -280,3 +280,33 @@ p{
   width: 40%;
   object-fit: cover;
 }
+
+.box-1, .box-2 {
+  width: 600px;
+  height: 200px;
+  background: white;
+  margin: 50px 100px;
+  margin-top: 50px;
+  border-radius: 20px;
+  float: left;
+}
+
+.box-3, .box-4 {
+  width: 600px;
+  height: 200px;
+  background: white;
+  margin: 50px 100px;
+  margin-top: 0px;
+  float: left;
+  border-radius: 20px;
+}
+
+.box-5, .box-6 {
+  width: 600px;
+  height: 200px;
+  background: white;
+  margin: 50px 100px;
+  margin-top: 0px;
+  float: left;
+  border-radius: 20px;
+}
