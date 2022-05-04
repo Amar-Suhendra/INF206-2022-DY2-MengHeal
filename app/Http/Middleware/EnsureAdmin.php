@@ -17,7 +17,10 @@ class EnsureAdmin
     public function handle(Request $request, Closure $next)
     {
         if (!Auth()->check() || Auth()->user()->level_access !== 1) {
-            return redirect('');
+            if (Auth()->user()->level_access !== 0) {
+                return redirect('');
+            }
+            return redirect('doctor');
         }
         return $next($request);
     }
