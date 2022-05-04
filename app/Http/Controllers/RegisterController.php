@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Register;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
 
 class RegisterController extends Controller
 {
@@ -38,7 +37,7 @@ class RegisterController extends Controller
     {
         // validasi data
         $request->validate([
-            // 'nama' => 'required',
+            'Name' => 'required',
             'Username' => 'required|unique:registers',
             'Email' => 'required|unique:registers,email',
             'Password' => 'required',
@@ -46,9 +45,10 @@ class RegisterController extends Controller
 
         // simpan data ke dalam database register
         Register::create([
+            'Name' => $request->Name,
             'Username' => $request->Username,
             'Email' => $request->Email,
-            'Password' => Crypt::encryptString($request->Password),
+            'Password' => bcrypt($request->Password),
         ]);
         return redirect('/login');
     }

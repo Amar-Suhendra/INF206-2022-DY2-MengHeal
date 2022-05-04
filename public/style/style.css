@@ -192,7 +192,7 @@ input[type='password'] {
     color: #293cec;
 }
 
-section{
+.landing-section{
     margin: auto;
     display: flex;
     margin-bottom: 50px;
@@ -211,15 +211,15 @@ section{
     color: #364f6b;
 }
 
-h1{
-  font-size: 20px;
+.landing-h1{
+  font-size: 80px;
   font-weight: bold;
   font-family: 'comic sans ms';
   color: #364f6b;
   margin-left: 20px;
 }
 
-h2{
+.landing-h2{
     font-size: 20px;
     font-weight: bold;
     font-family: 'comic sans ms';
@@ -227,42 +227,11 @@ h2{
     margin-left: 20px;
 }
 
-p{
+.konten-text{
     font-size: 20px;
-    font-weight: bold;
     font-family: 'comic sans ms';
     color: #364f6b;
     margin-left: 20px;
-}
-
-.hero-container {
-  display: flex;
-  height: 470px;
-  padding: 0 10%;
-}
-
-.hero-container > div {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-container h1 {
-  font-size: 60px;
-  width: 360px;
-  margin: 20px 0;
-  font-weight: bolder;
-}
-
-.hero-container p {
-  font-size: 30px;
-  color: var(--gray);
-}
-
-.hero-container > img {
-  align-self: center;
 }
 
 .quote-container {

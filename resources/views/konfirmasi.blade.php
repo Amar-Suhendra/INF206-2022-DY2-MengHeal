@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="card-footer bg-transparent">
-                <a href="#" class="btn btn-primary" style="width:16rem;">
+                <a href="{{ url('/index') }}" class="btn rounded-pill btn-primary" style="width:16rem;">
                     OK
                 </a>
             </div>

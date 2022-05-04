@@ -28,6 +28,9 @@ class LoginController extends Controller
     {
         if (Auth::attempt(['Username' => $request->Username, 'password' => $request->Password])) {
             $request->session()->regenerate();
+            if ((User::where('username', $request->Username)->first()->level_access) === 1) {
+                return redirect()->intended('admin');
+            }
             return redirect()->intended('/index')->with('status', 'sukses');
         }
 
@@ -38,58 +41,19 @@ class LoginController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Logout account.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function logout(Request $request)
     {
-        //
-    }
+        Auth::logout();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        $request->session()->invalidate();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        $request->session()->regenerateToken();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect('');
     }
 }
