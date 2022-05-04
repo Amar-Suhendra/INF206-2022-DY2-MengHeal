@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Register;
 use App\Models\Patient;
+use App\Models\Antrian;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -28,6 +29,8 @@ class DoctorController extends Controller
     public function schedule()
     {
         return view('doctor.layout.jadwal', [
+            'patients' => Patient::all(),
+            'schedules' => Antrian::all(),
             'title' => 'Schedule',
         ]);
     }
