@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Register;
+use App\Models\Patient;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -43,9 +44,15 @@ class DoctorController extends Controller
         ]);
     }
 
+    /**
+     * Display a patients page
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function patients()
     {
         return view('doctor.layout.patients', [
+            'patients' => Patient::all(),
             'title' => 'Patients',
         ]);
     }
