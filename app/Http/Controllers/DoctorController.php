@@ -29,13 +29,48 @@ class DoctorController extends Controller
      */
     public function schedule()
     {
+        $today = DB::table('patients')
+            ->join('antrians', 'patients.username', '=', 'antrians.username')
+            ->select(
+                'patients.name',
+                'antrians.tanggal_konsul',
+                'antrians.no_antrian',
+                'patients.email'
+            )
+            ->where('antrians.tanggal_konsul', '=', date('Y-m-d'))
+            ->get();
+        $today = json_decode($today, true);
+        $todayCount = count($today);
+
+        $tomorrow = DB::table('patients')
+            ->join('antrians', 'patients.username', '=', 'antrians.username')
+            ->select(
+                'patients.name',
+                'antrians.tanggal_konsul',
+                'antrians.no_antrian',
+                'patients.email'
+            )
+            ->where('antrians.tanggal_konsul', '=', date('Y-m-d', strtotime('+1 day')))
+            ->get();
+        $tomorrow = json_decode($tomorrow, true);
+        $tomorrowCount = count($tomorrow);
+
         $jadwal = DB::table('patients')
-            ->join('antrians', 'patients.id', '=', 'antrians.id')
-            ->select('patients.name', 'antrians.tanggal_konsul', 'antrians.no_antrian', 'patients.email')
+            ->join('antrians', 'patients.username', '=', 'antrians.username')
+            ->select(
+                'patients.name',
+                'antrians.tanggal_konsul',
+                'antrians.no_antrian',
+                'patients.email'
+            )
             ->get();
         $jadwal = json_decode($jadwal, true);
         return view('doctor.layout.jadwal', [
             'schedule' => $jadwal,
+            'today' => $today,
+            'todayCount' => $todayCount,
+            'tomorrow' => $tomorrow,
+            'tomorrowCount' => $tomorrowCount,
             'title' => 'Schedule',
         ]);
     }

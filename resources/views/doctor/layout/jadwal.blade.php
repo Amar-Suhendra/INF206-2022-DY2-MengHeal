@@ -4,7 +4,63 @@
 @section('title-page', 'Schedule')
 
 @section('mainContent')
-    {{-- <section class="content" style="background-color: #272A37;"> --}}
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header d-flex w-100 justify-content-between">
+                    <h3>Today Schedules</h3>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        @foreach ($today as $data)
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">No {{ $data['no_antrian'] }}</h5>
+                                    <small>{{ $data['tanggal_konsul'] }}</small>
+                                </div>
+                                <h5 class="mb-1">{{ $data['name'] }}</h5>
+                                <p class="mb-1">{{ $data['email'] }}</p>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#">
+                        <i class="nav-icon fas fa-user"></i>
+                        {{ $todayCount }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header d-flex w-100 justify-content-between">
+                    <h3>Tomorrow Schedules</h3>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        @foreach ($tomorrow as $data)
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">No {{ $data['no_antrian'] }}</h5>
+                                    <small>{{ $data['tanggal_konsul'] }}</small>
+                                </div>
+                                <h5 class="mb-1">{{ $data['name'] }}</h5>
+                                <p class="mb-1">{{ $data['email'] }}</p>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#">
+                        <i class="nav-icon fas fa-user"></i>
+                        {{ $tomorrowCount }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="card">
         <div class="card-header">
             <h3>All Schedules</h3>
