@@ -16,19 +16,7 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('doctor.layout.dashboard', [
-            'title' => 'Dashboard',
-        ]);
-    }
-
-    /**
-     * Display a Schedule
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function schedule()
-    {
+    {   
         $today = DB::table('patients')
             ->join('antrians', 'patients.username', '=', 'antrians.username')
             ->select(
@@ -65,13 +53,17 @@ class DoctorController extends Controller
             )
             ->get();
         $jadwal = json_decode($jadwal, true);
-        return view('doctor.layout.jadwal', [
+
+        $countPatients = Patient::count();
+
+        return view('doctor.layout.dashboard', [
+            'title' => 'Dashboard',
+            'countPatients' => $countPatients,
             'schedule' => $jadwal,
             'today' => $today,
             'todayCount' => $todayCount,
             'tomorrow' => $tomorrow,
             'tomorrowCount' => $tomorrowCount,
-            'title' => 'Schedule',
         ]);
     }
 

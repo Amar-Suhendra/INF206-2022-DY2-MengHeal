@@ -29,7 +29,7 @@
 
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-light-primary elevation-1">
+        <nav class="main-header navbar navbar-expand navbar-light-primary bg-light elevation-1">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -59,7 +59,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-light-primary elevation-1 ">
+        <aside class="main-sidebar sidebar-light-primary elevation-2 ">
             <!-- Brand Logo -->
             <a href="{{ url('/admin') }}" class="brand-link">
                 <img src="{{ url('assets/img/icon.png') }}" alt="Menheal Logo" class="brand-image">
@@ -81,15 +81,6 @@
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
                                     Home
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/doctor/schedule') }}"
-                                class="nav-link @if ($title === 'Schedule') active  @endif">
-                                <i class="nav-icon fas fa-calendar"></i>
-                                <p>
-                                    Schedule
                                 </p>
                             </a>
                         </li>
