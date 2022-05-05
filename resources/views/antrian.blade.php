@@ -30,7 +30,7 @@
                         </h3>
                     @elseif ($jadwal == null)
                         <h4>Kemungkinan Jadwal Konsultasi</h4>
-                        <h3>{{ $date = date('Y-m-d', strtotime("+ 2 day")); }}</h3>
+                        <h3>{{ $date = date('Y-m-d', strtotime('+ 2 day')) }}</h3>
                     @endif
                 </div>
             </div>
