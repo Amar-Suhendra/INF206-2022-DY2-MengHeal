@@ -33,7 +33,7 @@
             </div>
             <div class="card-body">
                 <div class="ratio ratio-16x9 mt-2">
-                    <iframe src="https://www.youtube.com/embed/8iuLXODzL04" title="YouTube video" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/SDZt7yetI2g" title="YouTube video" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
