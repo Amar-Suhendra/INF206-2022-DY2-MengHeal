@@ -64,14 +64,16 @@
                 </div>
             </div>
         </div>
-        <div class="card text-center " style="width: 19rem; height:17rem; border-radius: 10%">
+        <div class="card text-center " style="width: 21rem; height:19rem; border-radius: 10%">
             <div class="card-header bg-transparent">
                 <div class="card-title">
-                   <h5>video 6</h5>
+                   <h6>Gimana Cara Punya Mental yang Kuat?</h6>
                 </div>
             </div>
-            <div class="ratio ratio-16x9 mt-2">
-                <iframe src="https://www.youtube.com/embed/8iuLXODzL04" title="YouTube video" allowfullscreen></iframe>
+            <div class="card-body">
+                <div class="ratio ratio-16x9 mt-2">
+                    <iframe src="https://www.youtube.com/embed/lQi2Hyasfn0" title="YouTube video" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>
