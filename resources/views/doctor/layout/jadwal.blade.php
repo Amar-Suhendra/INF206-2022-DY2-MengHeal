@@ -6,6 +6,9 @@
 @section('mainContent')
     {{-- <section class="content" style="background-color: #272A37;"> --}}
     <div class="card">
+        <div class="card-header">
+            <h3>All Schedules</h3>
+        </div>
         <div class="card-body">
             <!-- tabel -->
             <table id="example1" class="table border table-striped table-light">
@@ -13,7 +16,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Name</th>
-                        <th>Username</th>
                         <th>Email</th>
                         <th>No Antrian</th>
                         <th>Tanggal Konsul</th>
@@ -21,17 +23,14 @@
                 </thead>
                 <tbody>
 
-                    @foreach ($patients as $patient)
-                        @foreach ($schedules as $schedule)
-                            <tr>
-                                <td scope="row">{{ $loop->iteration }}</td>
-                                <td>{{ $patient['name'] }}</td>
-                                <td>{{ $patient['username'] }}</td>
-                                <td>{{ $patient['email'] }}</td>
-                                <td>{{ $schedule['no_antrian'] }}</td>
-                                <td>{{ $schedule['tanggal_konsul'] }}</td>
-                            </tr>
-                        @endforeach
+                    @foreach ($schedule as $schedules)
+                        <tr>
+                            <td scope="row">{{ $loop->iteration }}</td>
+                            <td>{{ $schedules['name'] }}</td>
+                            <td>{{ $schedules['email'] }}</td>
+                            <td>{{ $schedules['no_antrian'] }}</td>
+                            <td>{{ $schedules['tanggal_konsul'] }}</td>
+                        </tr>
                     @endforeach
 
                 </tbody>

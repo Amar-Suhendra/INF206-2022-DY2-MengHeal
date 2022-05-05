@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Register;
 use App\Models\Patient;
 use App\Models\Antrian;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -28,9 +29,13 @@ class DoctorController extends Controller
      */
     public function schedule()
     {
+        $jadwal = DB::table('patients')
+            ->join('antrians', 'patients.id', '=', 'antrians.id')
+            ->select('patients.name', 'antrians.tanggal_konsul', 'antrians.no_antrian', 'patients.email')
+            ->get();
+        $jadwal = json_decode($jadwal, true);
         return view('doctor.layout.jadwal', [
-            'patients' => Patient::all(),
-            'schedules' => Antrian::all(),
+            'schedule' => $jadwal,
             'title' => 'Schedule',
         ]);
     }
