@@ -25,6 +25,18 @@
             <a href="{{ url('register') }}">Register</a>
         </form>
     </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if (session('register'))
+        <script>
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Pendaftaran Berhasil!',
+                showConfirmButton: false,
+                timer: 1500,
+            })
+        </script>
+    @endif
 </body>
 
 </html>
