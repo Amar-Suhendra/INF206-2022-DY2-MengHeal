@@ -7,7 +7,7 @@
     <title>Menheal | {{ $title }}</title>
 
     <!-- icon page -->
-    <link rel="shortcut icon" href="{{ url('assets/icon/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('assets/icon/icon.ico') }}" type="image/x-icon">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -29,7 +29,7 @@
 
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-dark">
+        <nav class="main-header navbar navbar-expand navbar-light-primary bg-light elevation-1">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -59,12 +59,11 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-light-primary elevation-2 ">
             <!-- Brand Logo -->
             <a href="{{ url('/admin') }}" class="brand-link">
-                <img src="{{ url('assets/icon/favicon.ico') }}" alt="Menheal Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">MenHeal</span>
+                <img src="{{ url('assets/img/icon.png') }}" alt="Menheal Logo" class="brand-image">
+                <span class="brand-text font-weight-bold text-primary">MenHeal</span>
             </a>
 
             <!-- Sidebar -->
@@ -77,7 +76,7 @@
                         data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="{{ url('/admin') }}"
+                            <a href="{{ url('/doctor') }}"
                                 class="nav-link @if ($title === 'Dashboard') active @endif">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
@@ -86,43 +85,16 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/users-registration') }}"
-                                class="nav-link @if ($title === 'Users Registration') active @endif">
-                                <i class="nav-icon fas fa-user-check"></i>
+                            <a href="{{ url('/doctor/konsul') }}"
+                                class="nav-link @if ($title === 'Online Consultation') active @endif">
+                                <i class="nav-icon fas fa-comment"></i>
                                 <p>
-                                    Users Registration
+                                    Online Consultation
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/users') }}"
-                                class="nav-link @if ($title === 'Users') active @endif">
-                                <i class="nav-icon fas fa-hospital-user"></i>
-                                <p>
-                                    Users
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('admin/quotes') }}"
-                                class="nav-link @if ($title === 'Quotes') active @endif">
-                                <i class="nav-icon far fa-comment"></i>
-                                <p>
-                                    Quotes
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('admin/videos') }}"
-                                class="nav-link @if ($title === 'Videos') active @endif">
-                                <i class="nav-icon fas fa-video"></i>
-                                <p>
-                                    Videos
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('admin/patients') }}"
+                            <a href="{{ url('/doctor/patients') }}"
                                 class="nav-link @if ($title === 'Patients') active @endif">
                                 <i class="nav-icon fas fa-procedures"></i>
                                 <p>
@@ -159,7 +131,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item active">{{ $title }}</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->

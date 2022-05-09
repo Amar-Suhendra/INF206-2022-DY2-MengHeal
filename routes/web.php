@@ -109,6 +109,10 @@ Route::middleware(['auth', 'user'])->group(function () {
 Route::middleware(['auth', 'isDoctor'])->group(function () {
     // go to landing page
     Route::GET('doctor', [DoctorController::class, 'index']);
+    // go to online consultation page
+    Route::GET('doctor/konsul', [DoctorController::class, 'onlineConsultation']);
+    // go to patients page
+    Route::GET('doctor/patients', [DoctorController::class, 'patients']);
 });
 
 Route::middleware('auth')->group(function () {
