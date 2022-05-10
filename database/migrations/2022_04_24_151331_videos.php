@@ -14,6 +14,12 @@ return new class extends Migration
     public function up()
     {
         //
+        Schema::create('videos', function (Blueprint $table) {
+            $table->id();
+            $table->string('judul_vid');
+            $table->string('url');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -24,5 +30,6 @@ return new class extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('videos');
     }
 };

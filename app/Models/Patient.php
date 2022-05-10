@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Register extends Model
+class Patient extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'Name',
-        'Username',
-        'Email',
-        'Password',
+        'name',
+        'username',
+        'email',
+        'jumlah_konsul',
     ];
 }

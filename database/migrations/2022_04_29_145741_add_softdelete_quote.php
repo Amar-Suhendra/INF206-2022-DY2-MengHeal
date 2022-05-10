@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('video', function (Blueprint $table) {
-            $table->id();
-            $table->string('Judul_vid');
-            $table->string('URL');
-            $table->timestamp('Upload_date')->nullable();
+        Schema::table('quotes', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -29,7 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('video');
+        Schema::table('quotes', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
     }
 };

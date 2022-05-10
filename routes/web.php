@@ -1,9 +1,18 @@
 <?php
 
+// For chat feature
+namespace App\Events;
+
+use App\Events\Message;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
+// Default code
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 // Login & Logout route
 Route::middleware('guest')->group(function () {
@@ -31,20 +39,53 @@ Route::middleware('guest')->group(function () {
     Route::GET('', [UserController::class, 'index']);
 });
 
+// Admin Route
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    // Admin Route
+    // go to admin dashboard
     Route::GET('admin', [AdminController::class, 'index']);
+    // got to user list
     Route::GET('admin/users', [AdminController::class, 'user']);
-    Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
-    Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
-    Route::GET('admin/quote', [AdminController::class, 'quote']);
+    // go to user registration data
+    Route::GET('admin/users-registration', [
+        AdminController::class,
+        'userRegistration',
+    ]);
+    // to accept user
+    Route::PUT('admin/users-registration/{id}', [
+        AdminController::class,
+        'accept',
+    ]);
+    // QUOTE
+    // go to quote page
+    Route::GET('admin/quotes', [AdminController::class, 'quote']);
+    // go to add quote page
+    Route::GET('admin/addquote', [AdminController::class, 'addQuote']);
+    // to add quote
+    Route::POST('admin/addquote', [AdminController::class, 'createQuote']);
+    // go to update quote
+    Route::GET('admin/{quote}/edit', [AdminController::class, 'showQuote']);
+    // update quote
+    Route::PUT('admin/updatequote/{id}', [
+        AdminController::class,
+        'updateQuote',
+    ]);
+    // delete quote
+    Route::DELETE('admin/deletequote', [AdminController::class, 'deleteQuote']);
+    // VIDEOS
+    Route::GET('admin/videos', [AdminController::class, 'videos']);
+    Route::GET('admin/addvideos', [AdminController::class, 'addVideos']);
+    Route::POST('admin/addvideos', [AdminController::class, 'createVideos']);
+    Route::DELETE('admin/deletevideos/{id}', [
+        AdminController::class,
+        'deleteVideos',
+    ]);
+    // PATIENTS
+    Route::GET('admin/patients', [AdminController::class, 'patients']);
     // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');
     });
 });
-
-
 
 // User Controller
 Route::middleware(['auth', 'user'])->group(function () {
@@ -57,17 +98,54 @@ Route::middleware(['auth', 'user'])->group(function () {
         ]);
     });
     // go to antrian page
-    Route::GET('/konsultasi-langsung', [UserController::class, 'konsulLangsung']);
+    Route::GET('/konsultasi-langsung', [
+        UserController::class,
+        'konsulLangsung',
+    ]);
     Route::GET('get-antrian', [UserController::class, 'getAntrian']);
-    // go to konsul page
-    Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
-    // go to quote page
-    Route::GET('quote', [UserController::class, 'quote']);
-    // go to video booster page
-    Route::GET('video-booster', [UserController::class, 'videoBooster']);
+});
+
+// Doctor Controller
+Route::middleware(['auth', 'isDoctor'])->group(function () {
+    // go to landing page
+    Route::GET('doctor', [DoctorController::class, 'index']);
+    // go to online consultation page
+    Route::GET('doctor/konsul', [DoctorController::class, 'onlineConsultation']);
+    // go to patients page
+    Route::GET('doctor/patients', [DoctorController::class, 'patients']);
 });
 
 Route::middleware('auth')->group(function () {
     // logout account
     Route::POST('logout', [LoginController::class, 'logout']);
+});
+
+// go to konsul page
+Route::GET('/konsultasionline', function () {
+    return view('konsul', [
+        'title' => 'Konsultasi Online',
+    ]);
+});
+// Route::GET('/konsultasionline', [UserController::class, 'konsulOnline']);
+
+// go to quote page
+Route::GET('/quote', function () {
+    return view('quotes', [
+        'title' => 'Quotes',
+    ]);
+});
+// Route::GET('quote', [UserController::class, 'quote']);
+
+// go to video booster page
+Route::GET('/video-booster', function () {
+    return view('video-booster', [
+        'title' => 'Video Booster',
+    ]);
+});
+// Route::GET('video-booster', [UserController::class, 'videoBooster']);
+
+// send message
+Route::post('/send-message', function (Request $request) {
+    event(new Message($request->input('username'), $request->input('message')));
+    return ['success' => true];
 });

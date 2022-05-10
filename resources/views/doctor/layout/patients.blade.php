@@ -1,53 +1,41 @@
-@extends('admin.layout.main')
+@extends('doctor.layout.main')
 
-@section('title-page', 'List Users')
-@section('title-tab', 'User')
+@section('title-page', 'Patients')
 
 @section('mainContent')
     {{-- <section class="content" style="background-color: #272A37;"> --}}
-    <!-- tabel -->
-    <table id="example1" class="table table-striped table-dark">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            @php
-                $i = 1;
-            @endphp
-            @foreach ($registers as $register)
-                @if ($register['level_access'] === 1)
-                    @continue
-                @else
+    <div class="card">
+        <div class="card-body">
+            <!-- tabel -->
+            <table id="example1" class="table border table-striped table-light">
+                <thead>
                     <tr>
-                        <td scope="row">{{ $i }}</td>
-                        <td scope="row">{{ $register['name'] }}</td>
-                        <td scope="row">{{ $register['username'] }}</td>
-                        <td scope="row">{{ $register['email'] }}</td>
-                        <td scope="row">
-                            @if ($register['level_access'] === 0)
-                                Dokter
-                            @else
-                                Pasien
-                            @endif
-                        </td>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Jumlah Konsultasi</th>
                     </tr>
-                    @php
-                        $i += 1;
-                    @endphp
-                @endif
-            @endforeach
+                </thead>
+                <tbody>
 
-        </tbody>
+                    @foreach ($patients as $patient)
+                        <tr>
+                            <td scope="row">{{ $loop->iteration }}</td>
+                            <td>{{ $patient['name'] }}</td>
+                            <td>{{ $patient['username'] }}</td>
+                            <td>{{ $patient['email'] }}</td>
+                            <td>{{ $patient['jumlah_konsul'] }}</td>
+                        </tr>
+                    @endforeach
 
-    </table>
+                </tbody>
 
-    <!-- /.tabel -->
+            </table>
+            <!-- /.tabel -->
+        </div>
+    </div>
+
 @endsection
 
 <!-- script table -->
