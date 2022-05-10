@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shorcut icon" href="/assets/icon/favicon.ico">
+    <link rel="shorcut icon" href="/assets/icon/icon.ico">
     <link rel="stylesheet" href="style/style.css">
     <title>Login</title>
 </head>
@@ -25,6 +25,18 @@
             <a href="{{ url('register') }}">Register</a>
         </form>
     </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if (session('register'))
+        <script>
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Pendaftaran Berhasil!',
+                showConfirmButton: false,
+                timer: 1500,
+            })
+        </script>
+    @endif
 </body>
 
 </html>

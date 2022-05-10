@@ -50,7 +50,7 @@ class RegisterController extends Controller
             'Email' => $request->Email,
             'Password' => bcrypt($request->Password),
         ]);
-        return redirect('/login');
+        return redirect('/login')->with('register', true);
     }
 
     /**

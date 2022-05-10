@@ -308,3 +308,8 @@ input[type='password'] {
   display: flex;
   justify-content: space-between;
 }
+
+.description-container > img {
+  width: 40%;
+  object-fit: cover;
+}

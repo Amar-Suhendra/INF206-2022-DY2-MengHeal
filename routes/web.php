@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 // Login & Logout route
 Route::middleware('guest')->group(function () {
@@ -46,9 +46,15 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     // got to user list
     Route::GET('admin/users', [AdminController::class, 'user']);
     // go to user registration data
-    Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
+    Route::GET('admin/users-registration', [
+        AdminController::class,
+        'userRegistration',
+    ]);
     // to accept user
-    Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
+    Route::PUT('admin/users-registration/{id}', [
+        AdminController::class,
+        'accept',
+    ]);
     // QUOTE
     // go to quote page
     Route::GET('admin/quotes', [AdminController::class, 'quote']);
@@ -59,14 +65,20 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     // go to update quote
     Route::GET('admin/{quote}/edit', [AdminController::class, 'showQuote']);
     // update quote
-    Route::PUT('admin/updatequote/{id}', [AdminController::class, 'updateQuote']);
+    Route::PUT('admin/updatequote/{id}', [
+        AdminController::class,
+        'updateQuote',
+    ]);
     // delete quote
     Route::DELETE('admin/deletequote', [AdminController::class, 'deleteQuote']);
     // VIDEOS
     Route::GET('admin/videos', [AdminController::class, 'videos']);
     Route::GET('admin/addvideos', [AdminController::class, 'addVideos']);
     Route::POST('admin/addvideos', [AdminController::class, 'createVideos']);
-    Route::DELETE('admin/deletevideos/{id}', [AdminController::class, 'deleteVideos']);
+    Route::DELETE('admin/deletevideos/{id}', [
+        AdminController::class,
+        'deleteVideos',
+    ]);
     // PATIENTS
     Route::GET('admin/patients', [AdminController::class, 'patients']);
     // go to detail pasien page
@@ -74,8 +86,6 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
         return view('detailpasien');
     });
 });
-
-
 
 // User Controller
 Route::middleware(['auth', 'user'])->group(function () {
@@ -88,8 +98,21 @@ Route::middleware(['auth', 'user'])->group(function () {
         ]);
     });
     // go to antrian page
-    Route::GET('/konsultasi-langsung', [UserController::class, 'konsulLangsung']);
+    Route::GET('/konsultasi-langsung', [
+        UserController::class,
+        'konsulLangsung',
+    ]);
     Route::GET('get-antrian', [UserController::class, 'getAntrian']);
+});
+
+// Doctor Controller
+Route::middleware(['auth', 'isDoctor'])->group(function () {
+    // go to landing page
+    Route::GET('doctor', [DoctorController::class, 'index']);
+    // go to online consultation page
+    Route::GET('doctor/konsul', [DoctorController::class, 'onlineConsultation']);
+    // go to patients page
+    Route::GET('doctor/patients', [DoctorController::class, 'patients']);
 });
 
 Route::middleware('auth')->group(function () {
@@ -107,7 +130,7 @@ Route::GET('/konsultasionline', function () {
 
 // go to quote page
 Route::GET('/quote', function () {
-    return view('quote', [
+    return view('quotes', [
         'title' => 'Quotes',
     ]);
 });
@@ -123,11 +146,6 @@ Route::GET('/video-booster', function () {
 
 // send message
 Route::post('/send-message', function (Request $request) {
-    event(
-        new Message(
-            $request->input('username'),
-            $request->input('message')
-        )
-    );
+    event(new Message($request->input('username'), $request->input('message')));
     return ['success' => true];
 });
