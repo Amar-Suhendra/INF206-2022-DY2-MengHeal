@@ -14,6 +14,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -130,8 +131,11 @@ Route::GET('/konsultasionline', function () {
 
 // go to quote page
 Route::GET('/quote', function () {
+    $quote = DB::table('quotes')->get();
+    $quote = json_decode($quote, true);
     return view('quotes', [
         'title' => 'Quotes',
+        'quote' => $quote,
     ]);
 });
 // Route::GET('quote', [UserController::class, 'quote']);
