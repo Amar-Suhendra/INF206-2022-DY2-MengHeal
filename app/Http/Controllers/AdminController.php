@@ -131,6 +131,7 @@ class AdminController extends Controller
     {
         Quote::where('id', $id)->update([
             'quotes' => $request->quote,
+            'author' => $request->author,
         ]);
         return redirect('admin/quotes');
     }

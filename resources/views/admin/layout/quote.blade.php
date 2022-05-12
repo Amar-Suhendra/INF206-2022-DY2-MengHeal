@@ -23,6 +23,7 @@
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
                     <td scope="row">{{ $quote['quotes'] }}</td>
+                    <td scope="row">{{ $quote['author'] }}</td>
                     <td scope="row">{{ $quote['created_at'] }}</td>
                     <td scope="row">{{ $quote['updated_at'] }}</td>
                     <td scope="row" class="row justify-content-center">
