@@ -2196,6 +2196,7 @@ message_form.addEventListener('submit', function (e) {
     }
   };
   axios(options);
+  document.getElementById('message_input').value = '';
 });
 window.Echo.channel('chat').listen('.message', function (e) {
   messages_el.innerHTML += '<div class="message"><strong>' + e.username + ':</strong> ' + e.message + '</div>';
