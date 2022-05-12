@@ -10,6 +10,7 @@ class Quote extends Model
 {
     use HasFactory, SoftDeletes;
     protected $fillable = [
-        'quotes'
+        'quotes',
+        'author'
     ];
 }

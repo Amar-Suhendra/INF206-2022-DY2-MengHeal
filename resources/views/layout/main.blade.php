@@ -17,8 +17,8 @@
     <title>Menheal | {{ $title }}</title>
 </head>
 
-<body style="overflow-x:hidden" class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body style="overflow-x:hidden" class="d-flex flex-column min-vh-100 bg-light">
+    <nav class="navbar navbar-expand-lg navbar-white bg-white">
         <div class="container-fluid">
             <a class="navbar-brand ms-5 me-1">
                 <img src="assets/img/Icon.png" alt="Mengheal">
@@ -99,7 +99,7 @@
     <div class="container mt-5 mb-5">
         @yield('container')
     </div>
-    <footer class="bg-light text-center text-white mt-auto">
+    <footer class="bg-white text-center text-white mt-auto">
         <!-- Grid container -->
         <div class="container p-4 pb-0 ">
             <!-- Section: Social media -->

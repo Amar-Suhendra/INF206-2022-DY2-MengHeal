@@ -104,8 +104,9 @@ class AdminController extends Controller
     {
         Quote::create([
             'quotes' => $request->quote,
+            'author' => $request->author,
         ]);
-        return redirect('admin/quote');
+        return redirect('admin/quotes');
     }
     /**
      * Show the specified quote.
@@ -130,6 +131,7 @@ class AdminController extends Controller
     {
         Quote::where('id', $id)->update([
             'quotes' => $request->quote,
+            'author' => $request->author,
         ]);
         return redirect('admin/quotes');
     }
@@ -146,7 +148,7 @@ class AdminController extends Controller
         Quote::withTrashed()
             ->where('id', $req->id)
             ->delete();
-        return redirect('admin/quote');
+        return redirect('admin/quotes');
     }
 
     /**
