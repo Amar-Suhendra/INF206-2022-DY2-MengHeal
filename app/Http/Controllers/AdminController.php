@@ -148,7 +148,7 @@ class AdminController extends Controller
         Quote::withTrashed()
             ->where('id', $req->id)
             ->delete();
-        return redirect('admin/quote');
+        return redirect('admin/quotes');
     }
 
     /**
