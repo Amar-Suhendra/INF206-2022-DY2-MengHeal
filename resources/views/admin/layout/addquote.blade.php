@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
-@section('title-tab', 'Quote')
-@section('title-page', 'Quote')
+@section('title-tab', 'Add Quote')
+@section('title-page', 'Add Quote')
 
 @section('mainContent')
     <div class="card">
