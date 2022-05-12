@@ -35,6 +35,7 @@ message_form.addEventListener('submit', function (e) {
   }
 
   axios(options)
+  document.getElementById('message_input').value = ''
 })
 
 window.Echo.channel('chat').listen('.message', (e) => {
