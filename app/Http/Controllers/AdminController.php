@@ -104,8 +104,9 @@ class AdminController extends Controller
     {
         Quote::create([
             'quotes' => $request->quote,
+            'author' => $request->author,
         ]);
-        return redirect('admin/quote');
+        return redirect('admin/quotes');
     }
     /**
      * Show the specified quote.
