@@ -23,15 +23,19 @@
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
                     <td scope="row">{{ $quote['quotes'] }}</td>
+                    <td scope="row">{{ $quote['author'] }}</td>
                     <td scope="row">{{ $quote['created_at'] }}</td>
                     <td scope="row">{{ $quote['updated_at'] }}</td>
                     <td scope="row" class="row justify-content-center">
                         {{-- <a class="mx-3 btn btn-sm bg-gradient-danger delete" data-id="{{ $quote['id'] }}">Delete</a> --}}
-                        <button type="button" class="mx-3 btn btn-sm bg-gradient-danger" data-toggle="modal"
-                            data-target="#exampleModal" data-quote="{{ $quote['id'] }}">
-                            Delete
-                        </button>
-                        <a href="{{ url('admin/' . $quote['id'] . '/edit') }}" class="btn btn-sm bg-gradient-info">Edit</a>
+                        <div class="d-flex flex-row">
+                            <button type="button" class="mx-3 btn btn-sm bg-gradient-danger" data-toggle="modal"
+                                data-target="#exampleModal" data-quote="{{ $quote['id'] }}">
+                                Delete
+                            </button>
+                            <a href="{{ url('admin/' . $quote['id'] . '/edit') }}"
+                                class="btn btn-sm bg-gradient-info">Edit</a>
+                        </div>
                     </td>
                 </tr>
             @endforeach
