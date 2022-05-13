@@ -19,7 +19,7 @@ class AdminController extends Controller
     public function index()
     {
         $countRegister = Register::count();
-        $countUser = User::count();
+        $countUser = User::where('level_access',  null)->count() + User::where('level_access', '0')->count();
         $countPatients = Patient::count();
         return view('admin.layout.dashboard', [
             'title' => 'Dashboard',
