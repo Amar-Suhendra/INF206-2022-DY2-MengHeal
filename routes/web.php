@@ -60,7 +60,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     // to add quote
     Route::POST('admin/addquote', [AdminController::class, 'createQuote']);
     // go to update quote
-    Route::GET('admin/{quote}/edit', [AdminController::class, 'showQuote']);
+    Route::GET('admin/quotes/{quote}/edit', [AdminController::class, 'showQuote']);
     // update quote
     Route::PUT('admin/updatequote/{id}', [AdminController::class, 'updateQuote']);
     // delete quote

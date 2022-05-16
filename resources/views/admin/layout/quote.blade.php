@@ -34,7 +34,7 @@
                                 data-target="#exampleModal" data-quote="{{ $quote['id'] }}">
                                 Delete
                             </button>
-                            <a href="{{ url('admin/' . $quote['id'] . '/edit') }}"
+                            <a href="{{ url('admin/quotes/' . $quote['id'] . '/edit') }}"
                                 class="btn btn-sm bg-gradient-info">Edit</a>
                         </div>
                     </td>
