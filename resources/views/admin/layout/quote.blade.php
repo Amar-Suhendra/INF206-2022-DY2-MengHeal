@@ -13,6 +13,7 @@
             <tr>
                 <th>No.</th>
                 <th>Quote</th>
+                <th>Author</th>
                 <th>Dibuat</th>
                 <th>Diupdate</th>
                 <th>Status</th>
