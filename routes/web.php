@@ -142,7 +142,7 @@ Route::GET('/quote', function () {
 
 // go to video booster page
 Route::GET('/video-booster', function () {
-    return view('video-booster', [
+    return view('video', [
         'title' => 'Video Booster',
     ]);
 });
