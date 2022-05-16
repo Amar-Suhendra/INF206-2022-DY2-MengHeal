@@ -16,5 +16,6 @@
         <button type="submit" class="btn btn-success ms-auto mt-3">
             Add Video
         </button>
+        <a href="{{ url('admin/videos') }}" class="btn btn-info ms-5 mt-3">Cancel</a>
     </form>
 @endsection
