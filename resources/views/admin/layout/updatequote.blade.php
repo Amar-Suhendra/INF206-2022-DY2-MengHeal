@@ -17,6 +17,7 @@
                 <button type="submit" class="btn btn-success ms-auto mt-3">
                     Update Quote
                 </button>
+                <a href="{{ url('admin/quotes') }}" class="btn btn-info ms-5 mt-3">Cancel</a>
             </form>
         </div>
     </div>
