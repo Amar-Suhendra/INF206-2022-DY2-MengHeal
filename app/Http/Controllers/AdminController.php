@@ -202,6 +202,18 @@ class AdminController extends Controller
         return redirect('admin/videos');
         // return view('admin.layout.addvideos', ['title' => 'Videos']);
     }
+    /**
+     * Show the specified video.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showVideo(Video $video)
+    {
+        return view('admin.layout.updatevideo', [
+            'title' => 'Video',
+            'quote' => $video,
+        ]);
+    }
 
     /**
      * Remove the videos resource from storage.
