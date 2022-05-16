@@ -37,6 +37,8 @@
                                 @method('delete')
                             </form>
                         </a>
+                        <a href="{{ url('admin/quotes/' . $quote['id'] . '/edit') }}"
+                            class="btn btn-sm bg-gradient-info">Edit</a>
                     </td>
 
                 </tr>
