@@ -47,15 +47,11 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     // got to user list
     Route::GET('admin/users', [AdminController::class, 'user']);
     // go to user registration data
-    Route::GET('admin/users-registration', [
-        AdminController::class,
-        'userRegistration',
-    ]);
+    Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
     // to accept user
-    Route::PUT('admin/users-registration/{id}', [
-        AdminController::class,
-        'accept',
-    ]);
+    Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
+    // to delete user
+    Route::DELETE('admin/users/delete', [AdminController::class, 'deleteUsers']);
     // QUOTE
     // go to quote page
     Route::GET('admin/quotes', [AdminController::class, 'quote']);
@@ -66,10 +62,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     // go to update quote
     Route::GET('admin/{quote}/edit', [AdminController::class, 'showQuote']);
     // update quote
-    Route::PUT('admin/updatequote/{id}', [
-        AdminController::class,
-        'updateQuote',
-    ]);
+    Route::PUT('admin/updatequote/{id}', [AdminController::class, 'updateQuote']);
     // delete quote
     Route::DELETE('admin/deletequote', [AdminController::class, 'deleteQuote']);
     // VIDEOS

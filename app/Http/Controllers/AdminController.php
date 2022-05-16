@@ -49,9 +49,21 @@ class AdminController extends Controller
     {
         $dataUser = User::all();
         return view('admin.layout.user')->with([
-            'registers' => $dataUser,
+            'users' => $dataUser,
             'title' => 'Users',
         ]);
+    }
+    /**
+     * Remove the users resource from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteUsers(Request $req)
+    {
+        User::destroy($req->id);
+        Register::destroy($req->id);
+        return redirect('admin/users')->with('success', 'success');
     }
     /**
      * accept user registration

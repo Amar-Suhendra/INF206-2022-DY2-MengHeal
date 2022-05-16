@@ -14,27 +14,44 @@
                 <th>Username</th>
                 <th>Email</th>
                 <th>Status</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @php
                 $i = 1;
             @endphp
-            @foreach ($registers as $register)
-                @if ($register['level_access'] === 1)
+            @foreach ($users as $user)
+                @if ($user['level_access'] === 1)
                     @continue
                 @else
                     <tr>
                         <td scope="row">{{ $i }}</td>
-                        <td scope="row">{{ $register['name'] }}</td>
-                        <td scope="row">{{ $register['username'] }}</td>
-                        <td scope="row">{{ $register['email'] }}</td>
+                        <td scope="row">{{ $user['name'] }}</td>
+                        <td scope="row">{{ $user['username'] }}</td>
+                        <td scope="row">{{ $user['email'] }}</td>
                         <td scope="row">
-                            @if ($register['level_access'] === 0)
+                            @if ($user['level_access'] === 0)
                                 Dokter
                             @else
                                 Pasien
                             @endif
+                        </td>
+                        <td>
+                            <div class="d-flex flex-row">
+                                <button type="button" class="mx-3 btn btn-sm bg-gradient-danger confirm"
+                                    data-id="{{ $user['id'] }}">
+                                    Delete
+                                    <form action="{{ url('admin/users/delete') }}" method="post"
+                                        id="delete{{ $user->id }}">
+                                        @csrf
+                                        @method('delete')
+                                        <input type="hidden" name="id" value="{{ $user['id'] }}">
+                                    </form>
+                                </button>
+                                <a href="{{ url('admin/users/' . $user['id'] . '/edit') }}"
+                                    class="btn btn-sm bg-gradient-info">Edit</a>
+                            </div>
                         </td>
                     </tr>
                     @php
@@ -82,4 +99,43 @@
             });
         });
     </script>
+    <!-- Script to send alert to user -->
+    <script>
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-danger',
+                cancelButton: 'btn btn-info'
+            },
+            buttonsStyling: false
+        })
+
+        $('.confirm').click(function() {
+            let id = $(this).attr('data-id');
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $(`#delete${id}`).submit();
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                } else {
+                    Swal.fire(
+                        'Cancelled!',
+                        'Your file is safe.',
+                        'error'
+                    )
+                }
+            })
+        });
+    </script>
+
 @endsection
