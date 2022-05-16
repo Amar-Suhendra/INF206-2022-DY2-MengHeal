@@ -29,13 +29,14 @@
                     <td scope="row">{{ $video['created_at'] }}</td>
                     <td scope="row">{{ $video['updated_at'] }}</td>
                     <td scope="row" class="justify-content-center">
-                        <form action="{{ url('admin/deletevideos/' . $video->id) }}" method="POST">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn btn-sm bg-gradient-danger">
-                                Delete
-                            </button>
-                        </form>
+                        <a type="submit" class="btn btn-sm bg-gradient-danger delete" data-id="{{ $video['id'] }}">
+                            Delete
+                            <form action="{{ url('admin/deletevideos/' . $video->id) }}" method="POST"
+                                id="delete{{ $video['id'] }}">
+                                @csrf
+                                @method('delete')
+                            </form>
+                        </a>
                     </td>
 
                 </tr>
@@ -76,6 +77,44 @@
                 "autoWidth": false,
                 "responsive": true,
             });
+        });
+    </script>
+    <!-- Script to send alert to user -->
+    <script>
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-danger',
+                cancelButton: 'btn btn-info'
+            },
+            buttonsStyling: false
+        })
+
+        $('.delete').click(function() {
+            let id = $(this).attr('data-id');
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $(`#delete${id}`).submit();
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                } else {
+                    Swal.fire(
+                        'Cancelled!',
+                        'Your file is safe.',
+                        'error'
+                    )
+                }
+            })
         });
     </script>
 @endsection
