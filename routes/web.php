@@ -70,6 +70,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin/addvideos', [AdminController::class, 'addVideos']);
     Route::POST('admin/addvideos', [AdminController::class, 'createVideos']);
     Route::GET('admin/video/{video}/edit', [AdminController::class, 'showVideo']);
+    Route::PUT('admin/updatevideo/{id}', [AdminController::class, 'updateVideo']);
     Route::DELETE('admin/deletevideos/{id}', [AdminController::class, 'deleteVideos']);
     // PATIENTS
     Route::GET('admin/patients', [AdminController::class, 'patients']);

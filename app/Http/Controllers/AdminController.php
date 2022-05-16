@@ -209,10 +209,25 @@ class AdminController extends Controller
      */
     public function showVideo(Video $video)
     {
-        return view('admin.layout.updatevideo', [
+        return view('admin.layout.updatevideos', [
             'title' => 'Video',
-            'quote' => $video,
+            'video' => $video,
         ]);
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateVideo(Request $request, $id)
+    {
+        Video::where('id', $id)->update([
+            'judul_vid' => $request->judul_vid,
+            'url' => $request->url,
+        ]);
+        return redirect('admin/videos');
     }
 
     /**
