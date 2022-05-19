@@ -123,8 +123,8 @@ Route::GET('/konsultasionline', function () {
 
 // go to quote page
 Route::GET('/quote', function () {
-    $quote = DB::table('quotes')->get();
-    $quote = json_decode($quote, true);
+    $quote = DB::table('quotes')->paginate(6);
+    //$quote = json_decode($quote, true);
     return view('quotes', [
         'title' => 'Quotes',
         'quote' => $quote,
@@ -134,7 +134,7 @@ Route::GET('/quote', function () {
 
 // go to video booster page
 Route::GET('/video-booster', function () {
-    return view('video-booster', [
+    return view('video', [
         'title' => 'Video Booster',
     ]);
 });
