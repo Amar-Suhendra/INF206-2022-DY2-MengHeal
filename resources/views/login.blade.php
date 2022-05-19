@@ -17,9 +17,9 @@
         <form action="{{ url('login') }}" method="post">
             @csrf
             <p>Username</p>
-            <input type="text" name="Username" placeholder="Enter Username">
+            <input type="text" name="Username" placeholder="Enter Username" required>
             <p>Password</p>
-            <input type="Password" name="Password" placeholder="Enter Password">
+            <input type="Password" name="Password" placeholder="Enter Password" required>
             <input type="submit" name="submit" value="Login">
             <a href="a">Forget Password?</a>
             <a href="{{ url('register') }}">Register</a>
@@ -34,6 +34,17 @@
                 title: 'Pendaftaran Berhasil!',
                 showConfirmButton: false,
                 timer: 1500,
+            })
+        </script>
+    @endif
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Gagal!',
+                text: 'Username atau Password Salah!',
+                showConfirmButton: false,
+                timer: 2000,
             })
         </script>
     @endif
