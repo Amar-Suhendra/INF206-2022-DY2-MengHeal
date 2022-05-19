@@ -18,10 +18,14 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $count = Register::count();
+        $countRegister = Register::count();
+        $countUser = User::where('level_access',  null)->count() + User::where('level_access', '0')->count();
+        $countPatients = Patient::count();
         return view('admin.layout.dashboard', [
             'title' => 'Dashboard',
-            'count' => $count,
+            'countRegister' => $countRegister,
+            'countUser' => $countUser,
+            'countPatient' => $countPatients,
         ]);
     }
 
@@ -45,9 +49,21 @@ class AdminController extends Controller
     {
         $dataUser = User::all();
         return view('admin.layout.user')->with([
-            'registers' => $dataUser,
+            'users' => $dataUser,
             'title' => 'Users',
         ]);
+    }
+    /**
+     * Remove the users resource from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteUsers(Request $req)
+    {
+        User::destroy($req->id);
+        Register::destroy($req->id);
+        return redirect('admin/users')->with('success', 'success');
     }
     /**
      * accept user registration
@@ -185,6 +201,33 @@ class AdminController extends Controller
         ]);
         return redirect('admin/videos');
         // return view('admin.layout.addvideos', ['title' => 'Videos']);
+    }
+    /**
+     * Show the specified video.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showVideo(Video $video)
+    {
+        return view('admin.layout.updatevideos', [
+            'title' => 'Video',
+            'video' => $video,
+        ]);
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateVideo(Request $request, $id)
+    {
+        Video::where('id', $id)->update([
+            'judul_vid' => $request->judul_vid,
+            'url' => $request->url,
+        ]);
+        return redirect('admin/videos');
     }
 
     /**

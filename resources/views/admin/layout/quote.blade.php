@@ -13,6 +13,7 @@
             <tr>
                 <th>No.</th>
                 <th>Quote</th>
+                <th>Author</th>
                 <th>Dibuat</th>
                 <th>Diupdate</th>
                 <th>Status</th>
@@ -33,7 +34,7 @@
                                 data-target="#exampleModal" data-quote="{{ $quote['id'] }}">
                                 Delete
                             </button>
-                            <a href="{{ url('admin/' . $quote['id'] . '/edit') }}"
+                            <a href="{{ url('admin/quotes/' . $quote['id'] . '/edit') }}"
                                 class="btn btn-sm bg-gradient-info">Edit</a>
                         </div>
                     </td>

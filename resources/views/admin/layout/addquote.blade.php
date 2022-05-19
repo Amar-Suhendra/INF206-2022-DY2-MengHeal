@@ -1,6 +1,6 @@
 @extends('admin.layout.main')
-@section('title-tab', 'Quote')
-@section('title-page', 'Quote')
+@section('title-tab', 'Add Quote')
+@section('title-page', 'Add Quote')
 
 @section('mainContent')
     <div class="card">
@@ -16,6 +16,8 @@
                 <button type="submit" class="btn btn-success ms-auto mt-3">
                     Add Quote
                 </button>
+                <a href="{{ url('admin/quotes') }}" class="btn btn-info ms-5 mt-3">Cancel</a>
+
             </form>
         </div>
     </div>
