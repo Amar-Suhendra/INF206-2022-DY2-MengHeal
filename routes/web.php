@@ -131,7 +131,7 @@ Route::GET('/konsultasionline', function () {
 
 // go to quote page
 Route::GET('/quote', function () {
-    $quote = DB::table('quotes')->paginate(3);
+    $quote = DB::table('quotes')->paginate(6);
     //$quote = json_decode($quote, true);
     return view('quotes', [
         'title' => 'Quotes',
