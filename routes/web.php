@@ -134,8 +134,10 @@ Route::GET('/quote', function () {
 
 // go to video booster page
 Route::GET('/video-booster', function () {
+    $video = DB::table('videos')->paginate(4);
     return view('video', [
         'title' => 'Video Booster',
+        'video' => $video,
     ]);
 });
 // Route::GET('video-booster', [UserController::class, 'videoBooster']);

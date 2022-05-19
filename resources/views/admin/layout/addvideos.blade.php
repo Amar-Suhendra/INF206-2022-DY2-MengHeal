@@ -11,7 +11,7 @@
         <div class="form-group">
 
             <span>URL : </span>
-            <input type="text" class="form-control" name="url" placeholder="URL">
+            <input type="text" class="form-control" name="url" placeholder="EX: https://www.youtube.com/embed/">
         </div>
         <button type="submit" class="btn btn-success ms-auto mt-3">
             Add Video
