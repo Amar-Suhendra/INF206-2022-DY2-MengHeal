@@ -115,7 +115,7 @@
                 </a>
 
                 <!-- Google -->
-                <a href="#" class="btn">
+                <a href="https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal/graphs/contributors" target="_blank" class="btn">
                     <ion-icon size="large" name="logo-google"></ion-icon>
                 </a>
 
