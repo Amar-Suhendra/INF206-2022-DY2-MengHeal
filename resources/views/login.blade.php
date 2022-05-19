@@ -37,6 +37,17 @@
             })
         </script>
     @endif
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Gagal!',
+                text: 'Username atau Password Salah!',
+                showConfirmButton: false,
+                timer: 2000,
+            })
+        </script>
+    @endif
 </body>
 
 </html>
