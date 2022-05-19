@@ -1,68 +1,32 @@
 @extends('layout.main')
 @section('container')
-    <div class="d-flex justify-content-around py-2">
-        <div class="card text-center" style="width: 18rem; height:16rem; border-radius: 5%">
-            <div class="card-header bg-transparent">
-                <div class="card-title">
-                   <h5>video 1</h5>
-                </div>
-            </div>
-            <div class="ratio ratio-16x9 mt-2">
-                <iframe src="https://www.youtube.com/embed/8iuLXODzL04" title="YouTube video" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="card text-center " style="width: 18rem; height:16rem; border-radius: 5%">
-            <div class="card-header bg-transparent">
-                <div class="card-title">
-                   <h5>video 2</h5>
-                </div>
-            </div>
-            <div class="ratio ratio-16x9 mt-2">
-                <iframe src="https://www.youtube.com/embed/8iuLXODzL04" title="YouTube video" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="card text-center " style="width: 18rem; height:16rem; border-radius: 5%">
-            <div class="card-header bg-transparent">
-                <div class="card-title">
-                   <h5>video 3</h5>
-                </div>
-            </div>
-            <div class="ratio ratio-16x9 mt-2">
-                <iframe src="https://www.youtube.com/embed/8iuLXODzL04" title="YouTube video" allowfullscreen></iframe>
+    <div class="container">
+        <h2 class="mb-3">Video Booster</h2>
+        <div class="d-flex">
+            @php
+                $i = 1;
+            @endphp
+            <div class="row">
+                @foreach ($video as $videos)
+                    <div class="col p-3 mb-3 me-3">
+                        <iframe width="512" height="324" src="{{ $videos->url }}" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <p class="fw-bold fst-italic">
+                            {{ $videos->judul_vid }}
+                        </p>
+                    </div>
+                    @if ($i % 2 == 0)
+                        <div class="w-100"></div>
+                    @endif
+                    @php
+                        $i++;
+                    @endphp
+                @endforeach
+
             </div>
         </div>
-    </div>
-    
-    <div class="d-flex justify-content-around py-5">
-        <div class="card text-center" style="width: 18rem; height:16rem; border-radius: 10%">
-            <div class="card-header bg-transparent">
-                <div class="card-title">
-                   <h5>video 4</h5>
-                </div>
-            </div>
-            <div class="ratio ratio-16x9 mt-2">
-                <iframe src="https://www.youtube.com/embed/8iuLXODzL04" title="YouTube video" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="card text-center " style="width: 18rem; height:16rem; border-radius: 10%">
-            <div class="card-header bg-transparent">
-                <div class="card-title">
-                   <h5>video 5</h5>
-                </div>
-            </div>
-            <div class="ratio ratio-16x9 mt-2">
-                <iframe src="https://www.youtube.com/embed/8iuLXODzL04" title="YouTube video" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="card text-center " style="width: 18rem; height:16rem; border-radius: 10%">
-            <div class="card-header bg-transparent">
-                <div class="card-title">
-                   <h5>video 6</h5>
-                </div>
-            </div>
-            <div class="ratio ratio-16x9 mt-2">
-                <iframe src="https://www.youtube.com/embed/8iuLXODzL04" title="YouTube video" allowfullscreen></iframe>
-            </div>
-        </div>
+        {{ $video->links() }}
     </div>
 @endsection
