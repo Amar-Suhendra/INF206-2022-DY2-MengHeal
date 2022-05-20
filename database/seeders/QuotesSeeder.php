@@ -112,8 +112,8 @@ class QuotesSeeder extends Seeder
                 'created_at' => now(),
             ],
             [
-                'quotes' => 'Saran yang akan saya berikan kepada seseorang yang diam-diam berjuang adalah, Anda tidak harus hidup seperti itu. Anda tidak harus berjuang dalam diam. Anda bisa tidak diam. Anda dapat hidup dengan baik dengan kondisi kesehatan mental, selama Anda terbuka kepada seseorang tentang hal itu, karena sangat penting bagi Anda untuk berbagi pengalaman dengan orang-orang sehingga Anda bisa mendapatkan bantuan yang Anda butuhkan.',
-                'author' => 'Demi Lovato',
+                'quotes' => 'Ada harapan, bahkan ketika otakmu mengatakan tidak ada.',
+                'author' => 'John Green',
                 'created_at' => now(),
             ]
         ]);
