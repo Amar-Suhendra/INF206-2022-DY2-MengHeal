@@ -100,6 +100,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Penyakit Anda bukanlah identitas Anda. Chemistry Anda bukanlah karakter Anda.',
                 'author' => 'Rick Warren',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Kebahagiaan dapat ditemukan bahkan di saat-saat tergelap, jika seseorang hanya ingat untuk menyalakan lampu.',
+                'author' => 'Albus Dumbledore',
+                'created_at' => now(),
             ]
         ]);
     }
