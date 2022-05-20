@@ -18,13 +18,9 @@ class VideoSeeder extends Seeder
         //
         DB::table('videos')->insert([
             [
-                'judul_vid' => 'Apa itu Kesehatan Mental? (Belajar Psikologi)',
-                'url' => 'https://www.youtube.com/embed/xDUy5dmhHcM',
-            ],
-            // [
-            //     'judul_vid' => '',
-            //     'url' => '',                
-            // ]
+                 'judul_vid' => 'Apa itu Kesehatan Mental? (Belajar Psikologi)',
+                 'url' => 'https://www.youtube.com/embed/xDUy5dmhHcM',                
+            ]
         ]);
     }
 }
