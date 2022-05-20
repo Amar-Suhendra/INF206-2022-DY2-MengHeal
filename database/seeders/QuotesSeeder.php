@@ -50,6 +50,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Kamu tidak harus mengendalikan pikiranmu. Anda hanya harus berhenti membiarkan mereka mengendalikan Anda.',
                 'author' => 'Dan Millman',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Luangkan waktumu untuk menyembuhkan, selama yang kamu mau. Tidak ada orang lain yang tahu apa yang telah Anda alami. Bagaimana mereka bisa tahu berapa lama waktu yang dibutuhkan untuk menyembuhkanmu?',
+                'author' => 'Abertoli',
+                'created_at' => now(),
             ]
         ]);
     }
