@@ -55,6 +55,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Luangkan waktumu untuk menyembuhkan, selama yang kamu mau. Tidak ada orang lain yang tahu apa yang telah Anda alami. Bagaimana mereka bisa tahu berapa lama waktu yang dibutuhkan untuk menyembuhkanmu?',
                 'author' => 'Abertoli',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Satu retakan kecil bukan berarti kamu hancur, itu berarti kamu sedang diuji dan kamu tidak hancur.',
+                'author' => 'Linda Poindexter',
+                'created_at' => now(),
             ]
         ]);
     }
