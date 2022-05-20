@@ -105,6 +105,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Kebahagiaan dapat ditemukan bahkan di saat-saat tergelap, jika seseorang hanya ingat untuk menyalakan lampu.',
                 'author' => 'Albus Dumbledore',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Rasa sakit emosional bukanlah sesuatu yang harus disembunyikan dan tidak pernah dibicarakan. Ada kebenaran dalam rasa sakit Anda, ada pertumbuhan dalam rasa sakit Anda, tetapi hanya jika itu pertama kali diungkapkan.',
+                'author' => 'Steven Aitchison',
+                'created_at' => now(),
             ]
         ]);
     }
