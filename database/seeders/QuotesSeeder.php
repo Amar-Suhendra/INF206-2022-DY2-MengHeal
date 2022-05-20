@@ -45,6 +45,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'I finally realized that owning up to your vulnerabilities is a form of strength. And making the choice to go to therapy is a form of strength.',
                 'author' => 'Lizzo.',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Kamu tidak harus mengendalikan pikiranmu. Anda hanya harus berhenti membiarkan mereka mengendalikan Anda.',
+                'author' => 'Dan Millman',
+                'created_at' => now(),
             ]
         ]);
     }
