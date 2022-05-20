@@ -60,6 +60,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Satu retakan kecil bukan berarti kamu hancur, itu berarti kamu sedang diuji dan kamu tidak hancur.',
                 'author' => 'Linda Poindexter',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Kadang-kadang Anda bangun dari tempat tidur di pagi hari dan Anda berpikir, saya tidak akan berhasil, tetapi Anda tertawa di dalam - mengingat semua saat Anda merasa seperti itu.',
+                'author' => 'Charles Bukowski',
+                'created_at' => now(),
             ]
         ]);
     }
