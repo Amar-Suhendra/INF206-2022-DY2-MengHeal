@@ -70,6 +70,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Ada harapan, bahkan ketika otakmu mengatakan tidak ada',
                 'author' => 'John Green',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Dari penderitaan telah muncul jiwa-jiwa terkuat; karakter yang paling besar penuh dengan bekas luka.',
+                'author' => 'Kahlil Gibran',
+                'created_at' => now(),
             ]
         ]);
     }
