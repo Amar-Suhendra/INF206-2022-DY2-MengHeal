@@ -13,7 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('antrians', function (Blueprint $table) {
+            $table->id();
+            $table->string('username')->unique();
+            $table->string('no_antrian');
+            $table->date('tanggal_konsul');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('antrians');
     }
 };

@@ -40,12 +40,17 @@
   padding: 0 0 20px;
   text-align: center;
   font-size: 22px;
+  color: #fff;
+  font-family: sans-serif;
 }
 
 .login-box p {
   margin-bottom: 0px;
   padding: 0px;
   font-weight: bold;
+  color: #fff;
+  font-family: sans-serif;
+  margin-left: 0px;
 }
 
 .login-box input {
@@ -107,7 +112,7 @@ input[type='password'] {
 
 .register-box{
     width: 320px;
-    height: 600px;
+    height: 640px;
     background: rgba(0,0,0,0.5);
     color: #fff;
     top: 55%;
@@ -132,12 +137,18 @@ input[type='password'] {
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
+    color:#fff;
+    font-family: sans-serif;
 }
 
 .register-box p{
     margin-bottom: 0px;
     padding: 0px;
     font-weight: bold;
+    color: #fff;
+    margin-left: 0px;
+    font-family: sans-serif;
+
 }
 
 .register-box input{
@@ -181,7 +192,7 @@ input[type='password'] {
     color: #293cec;
 }
 
-section{
+.landing-section{
     margin: auto;
     display: flex;
     margin-bottom: 50px;
@@ -200,7 +211,15 @@ section{
     color: #364f6b;
 }
 
-h2{
+.landing-h1{
+  font-size: 80px;
+  font-weight: bold;
+  font-family: 'comic sans ms';
+  color: #364f6b;
+  margin-left: 20px;
+}
+
+.landing-h2{
     font-size: 20px;
     font-weight: bold;
     font-family: 'comic sans ms';
@@ -208,10 +227,89 @@ h2{
     margin-left: 20px;
 }
 
-p{
+.konten-text{
     font-size: 20px;
-    font-weight: bold;
     font-family: 'comic sans ms';
     color: #364f6b;
     margin-left: 20px;
+}
+
+.quote-container {
+  height: 280px;
+  margin: 40px 0;
+  padding: 0 10%;
+  display: flex;
+}
+
+.quote-container > div {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px 0px rgba(1, 1, 1, 0.1);
+  border-top: 1px solid rgb(228, 228, 228);
+}
+
+.quote-container h2 {
+  color: var(--darkGray);
+  font-weight: bolder;
+}
+
+.quote-container p {
+  color: var(--gray);
+}
+
+.quote-container > div > div {
+  width: 500px;
+}
+
+.quote-container > img {
+  width: 40%;
+  object-fit: cover;
+}
+
+.last-container {
+  height: 600px;
+  padding: 0 10%;
+  display: flex;
+  margin: 40px 0;
+}
+
+.last-container h1 {
+  font-size: 60px;
+}
+
+.last-container p {
+  color: var(--gray);
+  font-size: 16px;
+}
+
+.last-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 48%;
+  background: yellow;
+  background: var(--grayLight);
+}
+
+.last-container > div > div {
+  width: 400px;
+}
+
+.last-container > img {
+  width: 52%;
+  background: red;
+}
+
+.last-container > div > .footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description-container > img {
+  width: 40%;
+  object-fit: cover;
 }

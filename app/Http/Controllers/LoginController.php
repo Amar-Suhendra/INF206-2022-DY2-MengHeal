@@ -28,7 +28,14 @@ class LoginController extends Controller
     {
         if (Auth::attempt(['Username' => $request->Username, 'password' => $request->Password])) {
             $request->session()->regenerate();
-            return redirect()->intended('/index')->with('status', 'sukses');
+            if ((User::where('username', $request->Username)->first()->level_access) === 1) {
+                return redirect()->intended('admin');
+            } else if ((User::where('username', $request->Username)->first()->level_access) === 0) {
+                return redirect()->intended('doctor');
+                // return "Sukses";
+            } else {
+                return redirect()->intended('/index')->with('status', 'sukses');
+            }
         }
 
         return back()->with(

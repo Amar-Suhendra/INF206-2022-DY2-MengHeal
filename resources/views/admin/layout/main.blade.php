@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Menheal | @yield('title-tab')</title>
+    <title>Menheal | {{ $title }}</title>
 
     <!-- icon page -->
-    <link rel="shortcut icon" href="{{ url('assets/icon/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('assets/icon/icon.ico') }}" type="image/x-icon">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -37,7 +37,7 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
@@ -54,8 +54,6 @@
                         <button type="submit" class="nav-link btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
                     </form>
                 </li>
-
-
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -64,7 +62,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{ url('/admin') }}" class="brand-link">
-                <img src="{{ url('assets/icon/favicon.ico') }}" alt="Menheal Logo"
+                <img src="{{ url('assets/icon/icon.ico') }}" alt="Menheal Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">MenHeal</span>
             </a>
@@ -79,7 +77,8 @@
                         data-accordion="false">
 
                         <li class="nav-item">
-                            <a href="{{ url('/admin') }}" class="nav-link">
+                            <a href="{{ url('/admin') }}"
+                                class="nav-link @if ($title === 'Dashboard') active @endif">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
                                     Home
@@ -87,7 +86,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/users-registration') }}" class="nav-link">
+                            <a href="{{ url('admin/users-registration') }}"
+                                class="nav-link @if ($title === 'Users Registration') active @endif">
                                 <i class="nav-icon fas fa-user-check"></i>
                                 <p>
                                     Users Registration
@@ -95,10 +95,38 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/users') }}" class="nav-link">
+                            <a href="{{ url('admin/users') }}"
+                                class="nav-link @if ($title === 'Users') active @endif">
                                 <i class="nav-icon fas fa-hospital-user"></i>
                                 <p>
                                     Users
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('admin/quotes') }}"
+                                class="nav-link @if ($title === 'Quotes') active @endif">
+                                <i class="nav-icon far fa-comment"></i>
+                                <p>
+                                    Quotes
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('admin/videos') }}"
+                                class="nav-link @if ($title === 'Videos') active @endif">
+                                <i class="nav-icon fas fa-video"></i>
+                                <p>
+                                    Videos
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('admin/patients') }}"
+                                class="nav-link @if ($title === 'Patients') active @endif">
+                                <i class="nav-icon fas fa-procedures"></i>
+                                <p>
+                                    Patients
                                 </p>
                             </a>
                         </li>
@@ -106,11 +134,11 @@
                         <!-- user login -->
                         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                             <div class="image">
-                                <img src="{{ url('assets/icon/favicon.ico') }}" class="img-circle elevation-2"
+                                <img src="{{ url('assets/icon/icon.ico') }}" class="img-circle elevation-2"
                                     alt="User Image">
                             </div>
                             <div class="info">
-                                <a href="#" class="d-block">Admin</a>
+                                <a href="#" class="d-block">{{ auth()->user()->name }}</a>
                             </div>
                         </div>
 
@@ -160,7 +188,7 @@
         <footer class="main-footer">
             <strong>Copyright &copy; 2022 <a href="#">MenHeal</a>.</strong>
             <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 1.0.0
+                <b>Version</b> 2.0.0
             </div>
         </footer>
     </div>
