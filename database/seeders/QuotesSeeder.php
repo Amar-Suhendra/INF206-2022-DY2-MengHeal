@@ -75,6 +75,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Dari penderitaan telah muncul jiwa-jiwa terkuat; karakter yang paling besar penuh dengan bekas luka.',
                 'author' => 'Kahlil Gibran',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Perawatan diri adalah bagaimana Anda mengambil kembali kekuatan Anda.',
+                'author' => 'Lalah Delia',
+                'created_at' => now(),
             ]
         ]);
     }
