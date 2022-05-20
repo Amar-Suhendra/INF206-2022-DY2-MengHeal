@@ -65,6 +65,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Kadang-kadang Anda bangun dari tempat tidur di pagi hari dan Anda berpikir, saya tidak akan berhasil, tetapi Anda tertawa di dalam - mengingat semua saat Anda merasa seperti itu.',
                 'author' => 'Charles Bukowski',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Ada harapan, bahkan ketika otakmu mengatakan tidak ada',
+                'author' => 'John Green',
+                'created_at' => now(),
             ]
         ]);
     }
