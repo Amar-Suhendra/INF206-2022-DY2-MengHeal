@@ -38,6 +38,7 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('123'),
                 'level_access' => false,
             ]
+            
         ]);
     }
 }
