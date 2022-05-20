@@ -67,7 +67,7 @@ class QuotesSeeder extends Seeder
                 'created_at' => now(),
             ],
             [
-                'quotes' => 'Ada harapan, bahkan ketika otakmu mengatakan tidak ada',
+                'quotes' => 'Ada harapan, bahkan ketika otakmu mengatakan tidak ada.',
                 'author' => 'John Green',
                 'created_at' => now(),
             ],
@@ -94,6 +94,11 @@ class QuotesSeeder extends Seeder
             [
                 'quotes' => 'Anda tidak bisa mengontrol semuanya. Terkadang Anda hanya perlu bersantai dan percaya bahwa segala sesuatunya akan berhasil. Lepaskan sedikit dan biarkan hidup terjadi.',
                 'author' => 'Kody Keplinger',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Penyakit Anda bukanlah identitas Anda. Chemistry Anda bukanlah karakter Anda.',
+                'author' => 'Rick Warren',
                 'created_at' => now(),
             ]
         ]);
