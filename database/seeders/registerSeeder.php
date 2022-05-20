@@ -15,14 +15,13 @@ class registerSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('registers')->insert(
+        DB::table('registers')->insert([
             [
                 'name' => 'amar',
                 'Username' => 'amar',
                 'Email' => 'amar@gmail.com',
                 'Password' => bcrypt('123'),
             ]
-
-        );
+        ]);
     }
 }

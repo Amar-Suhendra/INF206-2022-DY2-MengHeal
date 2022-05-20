@@ -17,6 +17,7 @@ return new class extends Migration
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
             $table->string('quotes')->unique();
+            $table->string('author');
             $table->timestamps();
         });
     }
