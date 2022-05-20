@@ -110,6 +110,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Rasa sakit emosional bukanlah sesuatu yang harus disembunyikan dan tidak pernah dibicarakan. Ada kebenaran dalam rasa sakit Anda, ada pertumbuhan dalam rasa sakit Anda, tetapi hanya jika itu pertama kali diungkapkan.',
                 'author' => 'Steven Aitchison',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Saran yang akan saya berikan kepada seseorang yang diam-diam berjuang adalah, Anda tidak harus hidup seperti itu. Anda tidak harus berjuang dalam diam. Anda bisa tidak diam. Anda dapat hidup dengan baik dengan kondisi kesehatan mental, selama Anda terbuka kepada seseorang tentang hal itu, karena sangat penting bagi Anda untuk berbagi pengalaman dengan orang-orang sehingga Anda bisa mendapatkan bantuan yang Anda butuhkan.',
+                'author' => 'Demi Lovato',
+                'created_at' => now(),
             ]
         ]);
     }
