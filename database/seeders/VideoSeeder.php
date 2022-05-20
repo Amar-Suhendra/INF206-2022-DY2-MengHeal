@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class VideoSeeder extends Seeder
 {
@@ -15,12 +16,15 @@ class VideoSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('videos')->insert
-        (
+        DB::table('videos')->insert([
             [
-                'judul_vid' => ' ',
-                'url' => ' ',
-            ]
-        );
+                'judul_vid' => 'Apa itu Kesehatan Mental? (Belajar Psikologi)',
+                'url' => 'https://www.youtube.com/embed/xDUy5dmhHcM',
+            ],
+            // [
+            //     'judul_vid' => '',
+            //     'url' => '',                
+            // ]
+        ]);
     }
 }
