@@ -80,6 +80,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Perawatan diri adalah bagaimana Anda mengambil kembali kekuatan Anda.',
                 'author' => 'Lalah Delia',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Lepaskan ceritamu. Biarkan diri Anda hadir dengan siapa Anda saat ini.',
+                'author' => 'Russ Kyle',
+                'created_at' => now(),
             ]
         ]);
     }
