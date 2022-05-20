@@ -90,6 +90,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Hari-hari gelap saya membuat saya kuat. Atau mungkin saya sudah kuat, dan mereka membuat saya membuktikannya.',
                 'author' => 'Tuan Emery',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Anda tidak bisa mengontrol semuanya. Terkadang Anda hanya perlu bersantai dan percaya bahwa segala sesuatunya akan berhasil. Lepaskan sedikit dan biarkan hidup terjadi.',
+                'author' => 'Kody Keplinger',
+                'created_at' => now(),
             ]
         ]);
     }
