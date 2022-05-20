@@ -17,8 +17,8 @@
     <title>Menheal | {{ $title }}</title>
 </head>
 
-<body style="overflow-x:hidden" class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body style="overflow-x:hidden" class="d-flex flex-column min-vh-100 bg-light">
+    <nav class="navbar navbar-expand-lg navbar-white bg-white">
         <div class="container-fluid">
             <a class="navbar-brand ms-5 me-1">
                 <img src="assets/img/Icon.png" alt="Mengheal">
@@ -27,7 +27,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"><ion-icon name="menu-outline" size="large"></ion-icon></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
@@ -99,7 +99,7 @@
     <div class="container mt-5 mb-5">
         @yield('container')
     </div>
-    <footer class="bg-light text-center text-white mt-auto">
+    <footer class="bg-white text-center text-white mt-auto">
         <!-- Grid container -->
         <div class="container p-4 pb-0 ">
             <!-- Section: Social media -->
