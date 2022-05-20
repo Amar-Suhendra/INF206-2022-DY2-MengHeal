@@ -85,6 +85,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Lepaskan ceritamu. Biarkan diri Anda hadir dengan siapa Anda saat ini.',
                 'author' => 'Russ Kyle',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Hari-hari gelap saya membuat saya kuat. Atau mungkin saya sudah kuat, dan mereka membuat saya membuktikannya.',
+                'author' => 'Tuan Emery',
+                'created_at' => now(),
             ]
         ]);
     }
