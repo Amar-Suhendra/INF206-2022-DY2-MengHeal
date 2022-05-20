@@ -112,8 +112,8 @@ class QuotesSeeder extends Seeder
                 'created_at' => now(),
             ],
             [
-                'quotes' => 'Ada harapan, bahkan ketika otakmu mengatakan tidak ada.',
-                'author' => 'John Green',
+                'quotes' => 'Saya tidak takut badai karena saya sedang belajar bagaimana mengarungi kapal saya.',
+                'author' => 'Amy March',
                 'created_at' => now(),
             ]
         ]);
