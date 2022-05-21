@@ -24,6 +24,10 @@ class VideoSeeder extends Seeder
             [
                 'judul_vid' => '#WeCanWeWill | Mental Health Awareness Campaign',
                 'url' => 'https://www.youtube.com/watch?v=AcV10oWZMzU',                
+            ],
+            [
+                'judul_vid' => 'Break the Stigma',
+                'url' => 'https://www.youtube.com/watch?v=49mfPFTZsHs',                
             ]
         ]);
     }
