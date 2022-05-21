@@ -125,6 +125,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Pengalaman yang saya miliki adalah begitu Anda mulai berbicara tentang [mengalami perjuangan kesehatan mental], Anda menyadari bahwa sebenarnya Anda adalah bagian dari klub yang cukup besar.',
                 'author' => 'Prince Harry',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Di tengah musim dingin, saya akhirnya menemukan bahwa ada musim panas yang tak terkalahkan dalam diri saya.',
+                'author' => 'Albert Camus',
+                'created_at' => now(),
             ]
         ]);
     }
