@@ -20,12 +20,17 @@ class AdminController extends Controller
     {
         $countRegister = Register::count();
         $countUser = User::where('level_access',  null)->count() + User::where('level_access', '0')->count();
+        $doctor = User::where('level_access', '0')->count();
         $countPatients = Patient::count();
+        $countQuotes = Quote::count();
         return view('admin.layout.dashboard', [
             'title' => 'Dashboard',
             'countRegister' => $countRegister,
             'countUser' => $countUser,
             'countPatient' => $countPatients,
+            'countQuotes' => $countQuotes,
+            'countVideos' => Video::count(),
+            'doctor' => $doctor,
         ]);
     }
 

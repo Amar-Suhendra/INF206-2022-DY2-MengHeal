@@ -59,7 +59,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">Quotes</span>
-                    
+                    <span class="info-box-number">{{ $countQuotes }}</span>
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -72,7 +72,8 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">Videos</span>
-                    
+                    <span class="info-box-number">{{ $countVideos }}</span>
+
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -85,7 +86,8 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">Doctor</span>
-                    
+                    <span class="info-box-number">{{ $doctor }}</span>
+
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -98,7 +100,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">User Diterima</span>
-                    
+
                 </div>
                 <!-- /.info-box-content -->
             </div>
@@ -111,7 +113,7 @@
 
                 <div class="info-box-content">
                     <span class="info-box-text">User Ditolak</span>
-                    
+
                 </div>
                 <!-- /.info-box-content -->
             </div>
