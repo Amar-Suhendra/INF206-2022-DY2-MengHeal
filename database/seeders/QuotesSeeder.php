@@ -135,6 +135,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Masa-masa sulit tidak pernah bertahan lama, tetapi orang-orang tangguh melakukannya!',
                 'author' => 'Robert Schuller',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'About a third of my cases are suffering from no clinically definable neurosis, but from the senselessness and emptiness of their lives. This can be defined as the general neurosis of our times.',
+                'author' => 'Carl Gustav Jung',
+                'created_at' => now(),
             ]
         ]);
     }
