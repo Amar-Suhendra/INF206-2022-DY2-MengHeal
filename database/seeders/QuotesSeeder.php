@@ -130,6 +130,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Di tengah musim dingin, saya akhirnya menemukan bahwa ada musim panas yang tak terkalahkan dalam diri saya.',
                 'author' => 'Albert Camus',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Masa-masa sulit tidak pernah bertahan lama, tetapi orang-orang tangguh melakukannya!',
+                'author' => 'Robert Schuller',
+                'created_at' => now(),
             ]
         ]);
     }
