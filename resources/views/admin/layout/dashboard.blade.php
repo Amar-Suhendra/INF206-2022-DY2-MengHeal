@@ -94,32 +94,8 @@
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        <div class="col-12 col-sm-6 col-md-4">
-            <div class="info-box mb-3">
-                <span class="info-box-icon bg-blue elevation-1"><i class='fas fa-check-square'></i></span>
 
-                <div class="info-box-content">
-                    <span class="info-box-text">User Diterima</span>
 
-                </div>
-                <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-12 col-sm-6 col-md-4">
-            <div class="info-box mb-3">
-                <span class="info-box-icon bg-danger elevation-1"><i class='fas fa-crop'></i></span>
-
-                <div class="info-box-content">
-                    <span class="info-box-text">User Ditolak</span>
-
-                </div>
-                <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
     </div>
     <!-- /.row -->
 @endsection
