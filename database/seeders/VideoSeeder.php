@@ -20,6 +20,10 @@ class VideoSeeder extends Seeder
             [
                  'judul_vid' => 'Apa itu Kesehatan Mental? (Belajar Psikologi)',
                  'url' => 'https://www.youtube.com/embed/xDUy5dmhHcM',                
+            ],
+            [
+                'judul_vid' => '#WeCanWeWill | Mental Health Awareness Campaign',
+                'url' => 'https://www.youtube.com/watch?v=AcV10oWZMzU',                
             ]
         ]);
     }
