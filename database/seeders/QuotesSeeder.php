@@ -115,6 +115,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Saya tidak takut badai karena saya sedang belajar bagaimana mengarungi kapal saya.',
                 'author' => 'Amy March',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Saya menemukan bahwa dengan depresi, salah satu hal terpenting yang dapat Anda sadari adalah bahwa Anda tidak sendirian. Anda bukan yang pertama melewatinya, Anda tidak akan menjadi yang terakhir melewatinya.',
+                'author' => 'Dwayne “The Rock” Johnson',
+                'created_at' => now(),
             ]
         ]);
     }
