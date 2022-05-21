@@ -120,6 +120,11 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'Saya menemukan bahwa dengan depresi, salah satu hal terpenting yang dapat Anda sadari adalah bahwa Anda tidak sendirian. Anda bukan yang pertama melewatinya, Anda tidak akan menjadi yang terakhir melewatinya.',
                 'author' => 'Dwayne “The Rock” Johnson',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Pengalaman yang saya miliki adalah begitu Anda mulai berbicara tentang [mengalami perjuangan kesehatan mental], Anda menyadari bahwa sebenarnya Anda adalah bagian dari klub yang cukup besar.',
+                'author' => 'Prince Harry',
+                'created_at' => now(),
             ]
         ]);
     }
