@@ -105,35 +105,35 @@
             <!-- Section: Social media -->
             <section class="mb-4">
                 <!-- Facebook -->
-                <a href="#" class="btn">
+                <a href="https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal/graphs/contributors" target="_blank" class="btn">
                     <ion-icon size="large" name="logo-facebook"></ion-icon>
                 </a>
 
                 <!-- Twitter -->
-                <a href="#" class="btn">
+                <a href="https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal/graphs/contributors" target="_blank" class="btn">
                     <ion-icon size="large" name="logo-twitter"></ion-icon>
                 </a>
 
                 <!-- Google -->
-                <a href="#" class="btn">
+                <a href="https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal/graphs/contributors" target="_blank" class="btn">
                     <ion-icon size="large" name="logo-google"></ion-icon>
                 </a>
 
                 <!-- Instagram -->
-                <a href="#" class="btn">
+                <a href="https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal/graphs/contributors" target="_blank" class="btn">
                     <ion-icon size="large" name="logo-instagram"></ion-icon>
                 </a>
 
                 <!-- Linkedin -->
-                <a href="#" class="btn">
+                <a href="https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal/graphs/contributors" target="_blank" class="btn">
                     <ion-icon size="large" name="logo-linkedin"></ion-icon>
                 </a>
 
                 <!-- Github -->
-                <a href="#" class="btn">
+                <a href="https://github.com/Amar-Suhendra/INF206-2022-DY2-MengHeal/graphs/contributors" target="_blank" class="btn">
                     <ion-icon size="large" name="logo-github"></ion-icon>
                 </a>
-
+                
             </section>
             <!-- Section: Social media -->
         </div>
