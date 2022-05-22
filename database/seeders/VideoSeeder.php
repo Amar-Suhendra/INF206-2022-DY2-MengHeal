@@ -39,7 +39,7 @@ class VideoSeeder extends Seeder
             ],
             [
                 'judul_vid' => 'How to spot the signs of mental illness',
-                'url' => 'https://www.youtube.com/watch?v=FB49AezFJxs',                
+                'url' => 'https://www.youtube.com/embed/FB49AezFJxs',                
             ]
         ]);
     }
