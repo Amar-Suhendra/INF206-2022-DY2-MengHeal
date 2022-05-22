@@ -35,7 +35,7 @@ class VideoSeeder extends Seeder
             ],
             [
                 'judul_vid' => 'Teen Health: Mental Health',
-                'url' => 'https://www.youtube.com/watch?v=1i9OktVsTWo',                
+                'url' => 'https://www.youtube.com/embed/1i9OktVsTWo',                
             ],
             [
                 'judul_vid' => 'How to spot the signs of mental illness',
