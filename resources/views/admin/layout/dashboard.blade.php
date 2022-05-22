@@ -14,12 +14,12 @@
 
 
         <!-- /.col -->
-        <div class="col-12 col-sm-6 col-md-3">
+        <div class="col-12 col-sm-6 col-md-4">
             <div class="info-box mb-3">
                 <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Registered Users</span>
+                    <span class="info-box-text">User Register</span>
                     <span class="info-box-number">{{ $countRegister }}</span>
                 </div>
                 <!-- /.info-box-content -->
@@ -27,9 +27,9 @@
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        <div class="col-12 col-sm-6 col-md-3">
+        <div class="col-12 col-sm-6 col-md-4">
             <div class="info-box mb-3">
-                <span class="info-box-icon bg-success elevation-1"><i class="fas fa-hospital-user"></i></span>
+                <span class="info-box-icon bg-success elevation-1"><i class='fas fa-user-circle'></i></span>
 
                 <div class="info-box-content">
                     <span class="info-box-text">Users</span>
@@ -40,7 +40,7 @@
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        <div class="col-12 col-sm-6 col-md-3">
+        <div class="col-12 col-sm-6 col-md-4">
             <div class="info-box mb-3">
                 <span class="info-box-icon bg-info elevation-1"><i class="fas fa-procedures"></i></span>
 
@@ -53,6 +53,49 @@
             <!-- /.info-box -->
         </div>
         <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box mb-3">
+                <span class="info-box-icon bg-secondary elevation-1"><i class="nav-icon far fa-comment"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Quotes</span>
+                    <span class="info-box-number">{{ $countQuotes }}</span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box mb-3">
+                <span class="info-box-icon bg-light elevation-1"><i class="nav-icon fas fa-video"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Videos</span>
+                    <span class="info-box-number">{{ $countVideos }}</span>
+
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="info-box mb-3">
+                <span class="info-box-icon bg-white elevation-1"><i class="fas fa-hospital-user"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Doctor</span>
+                    <span class="info-box-number">{{ $doctor }}</span>
+
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+
+
     </div>
     <!-- /.row -->
 @endsection
