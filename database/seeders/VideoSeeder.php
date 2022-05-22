@@ -31,7 +31,7 @@ class VideoSeeder extends Seeder
             ],
             [
                 'judul_vid' => 'You Are Not Alone | Overcome Depression, Anxiety and Mental Health Problem Motivational Video',
-                'url' => 'https://www.youtube.com/watch?v=Vw1_AEaoXtM',                
+                'url' => 'https://www.youtube.com/embed/Vw1_AEaoXtM',                
             ],
             [
                 'judul_vid' => 'Teen Health: Mental Health',
