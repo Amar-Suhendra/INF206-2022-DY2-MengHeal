@@ -27,7 +27,7 @@ class VideoSeeder extends Seeder
             ],
             [
                 'judul_vid' => 'Break the Stigma',
-                'url' => 'https://www.youtube.com/watch?v=49mfPFTZsHs',                
+                'url' => 'https://www.youtube.com/embed/49mfPFTZsHs',                
             ],
             [
                 'judul_vid' => 'You Are Not Alone | Overcome Depression, Anxiety and Mental Health Problem Motivational Video',
