@@ -45,6 +45,76 @@ class QuotesSeeder extends Seeder
                 'quotes' => 'I finally realized that owning up to your vulnerabilities is a form of strength. And making the choice to go to therapy is a form of strength.',
                 'author' => 'Lizzo.',
                 'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Kamu tidak harus mengendalikan pikiranmu. Anda hanya harus berhenti membiarkan mereka mengendalikan Anda.',
+                'author' => 'Dan Millman',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Luangkan waktumu untuk menyembuhkan, selama yang kamu mau. Tidak ada orang lain yang tahu apa yang telah Anda alami. Bagaimana mereka bisa tahu berapa lama waktu yang dibutuhkan untuk menyembuhkanmu?',
+                'author' => 'Abertoli',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Satu retakan kecil bukan berarti kamu hancur, itu berarti kamu sedang diuji dan kamu tidak hancur.',
+                'author' => 'Linda Poindexter',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Kadang-kadang Anda bangun dari tempat tidur di pagi hari dan Anda berpikir, saya tidak akan berhasil, tetapi Anda tertawa di dalam - mengingat semua saat Anda merasa seperti itu.',
+                'author' => 'Charles Bukowski',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Ada harapan, bahkan ketika otakmu mengatakan tidak ada.',
+                'author' => 'John Green',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Dari penderitaan telah muncul jiwa-jiwa terkuat; karakter yang paling besar penuh dengan bekas luka.',
+                'author' => 'Kahlil Gibran',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Perawatan diri adalah bagaimana Anda mengambil kembali kekuatan Anda.',
+                'author' => 'Lalah Delia',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Lepaskan ceritamu. Biarkan diri Anda hadir dengan siapa Anda saat ini.',
+                'author' => 'Russ Kyle',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Hari-hari gelap saya membuat saya kuat. Atau mungkin saya sudah kuat, dan mereka membuat saya membuktikannya.',
+                'author' => 'Tuan Emery',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Anda tidak bisa mengontrol semuanya. Terkadang Anda hanya perlu bersantai dan percaya bahwa segala sesuatunya akan berhasil. Lepaskan sedikit dan biarkan hidup terjadi.',
+                'author' => 'Kody Keplinger',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Penyakit Anda bukanlah identitas Anda. Chemistry Anda bukanlah karakter Anda.',
+                'author' => 'Rick Warren',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Kebahagiaan dapat ditemukan bahkan di saat-saat tergelap, jika seseorang hanya ingat untuk menyalakan lampu.',
+                'author' => 'Albus Dumbledore',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Rasa sakit emosional bukanlah sesuatu yang harus disembunyikan dan tidak pernah dibicarakan. Ada kebenaran dalam rasa sakit Anda, ada pertumbuhan dalam rasa sakit Anda, tetapi hanya jika itu pertama kali diungkapkan.',
+                'author' => 'Steven Aitchison',
+                'created_at' => now(),
+            ],
+            [
+                'quotes' => 'Saya tidak takut badai karena saya sedang belajar bagaimana mengarungi kapal saya.',
+                'author' => 'Amy March',
+                'created_at' => now(),
             ]
         ]);
     }

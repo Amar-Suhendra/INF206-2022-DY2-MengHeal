@@ -28,5 +28,6 @@
             </div>
         </div>
         {{ $video->links() }}
+        
     </div>
 @endsection

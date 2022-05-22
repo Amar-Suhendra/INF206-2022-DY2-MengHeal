@@ -21,8 +21,9 @@
             <p>Password</p>
             <input type="Password" name="Password" placeholder="Enter Password" required>
             <input type="submit" name="submit" value="Login">
-            <a href="a">Forget Password?</a>
-            <a href="{{ url('register') }}">Register</a>
+            <a href="{{ url('register') }}">
+                Don't have an account?Register Here!
+            </a>
         </form>
     </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
