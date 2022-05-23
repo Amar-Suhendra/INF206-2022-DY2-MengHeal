@@ -58,6 +58,51 @@ class AdminController extends Controller
             'title' => 'Users',
         ]);
     }
+    public function addUserPage()
+    {
+        return view('admin.layout.adduser', ['title' => 'Add User',]);
+    }
+    public function addUser(Request $request)
+    {
+        User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'status' => $request->status,
+        ]);
+        return redirect('admin/users')->with('add', 'success');
+    }
+    /**
+     * Show the specified user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showUser(User $user)
+    {
+        // return dd($user);
+        return view('admin.layout.edituser', [
+            'title' => 'Edit User',
+            'user' => $user,
+        ]);
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateUser(Request $request, $id)
+    {
+        User::where('id', $id)->update([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            // 'status' => $request->status,
+        ]);
+        return redirect('admin/users')->with('success', 'success');
+    }
     /**
      * Remove the users resource from storage.
      *
@@ -68,7 +113,7 @@ class AdminController extends Controller
     {
         User::destroy($req->id);
         Register::destroy($req->id);
-        return redirect('admin/users')->with('success', 'success');
+        return redirect('admin/users');
     }
     /**
      * accept user registration
