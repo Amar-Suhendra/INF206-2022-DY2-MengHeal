@@ -59,6 +59,36 @@ class AdminController extends Controller
         ]);
     }
     /**
+     * Show the specified user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showUser(User $user)
+    {
+        // return dd($user);
+        return view('admin.layout.edituser', [
+            'title' => 'Edit User',
+            'user' => $user,
+        ]);
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateUser(Request $request, $id)
+    {
+        User::where('id', $id)->update([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            // 'status' => $request->status,
+        ]);
+        return redirect('admin/users')->with('success', 'success');
+    }
+    /**
      * Remove the users resource from storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -68,7 +98,7 @@ class AdminController extends Controller
     {
         User::destroy($req->id);
         Register::destroy($req->id);
-        return redirect('admin/users')->with('success', 'success');
+        return redirect('admin/users');
     }
     /**
      * accept user registration

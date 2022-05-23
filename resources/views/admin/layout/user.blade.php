@@ -84,7 +84,17 @@
     <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <!-- Sweet Alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your Data has been Updated',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    @endif
     <!-- Page specific script -->
     <script>
         $(function() {
