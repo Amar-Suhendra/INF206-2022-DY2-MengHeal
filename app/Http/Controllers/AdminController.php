@@ -139,6 +139,11 @@ class AdminController extends Controller
         ]);
         return redirect('admin/users-registration');
     }
+    public function reject($id)
+    {
+        Register::destroy($id);
+        return redirect('admin/users-registration');
+    }
 
     /**
      * Show the quote page  quote.
