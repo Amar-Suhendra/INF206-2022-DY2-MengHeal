@@ -58,6 +58,21 @@ class AdminController extends Controller
             'title' => 'Users',
         ]);
     }
+    public function addUserPage()
+    {
+        return view('admin.layout.adduser', ['title' => 'Add User',]);
+    }
+    public function addUser(Request $request)
+    {
+        User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'status' => $request->status,
+        ]);
+        return redirect('admin/users')->with('add', 'success');
+    }
     /**
      * Show the specified user.
      *

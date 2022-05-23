@@ -5,7 +5,12 @@
 
 @section('mainContent')
     {{-- <section class="content" style="background-color: #272A37;"> --}}
+    <div class="mb-2"><a href="{{ url('admin/users/add') }}" type="button"
+            class="btn btn-info bg-gradient-info">Add
+            User</a>
+    </div>
     <!-- tabel -->
+
     <table id="example1" class="table table-striped table-dark">
         <thead>
             <tr>
