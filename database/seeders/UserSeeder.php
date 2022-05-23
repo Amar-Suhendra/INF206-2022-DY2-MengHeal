@@ -44,34 +44,6 @@ class UserSeeder extends Seeder
                 'email' => 'akbar@gmail.com',
                 'password' => bcrypt('123'),
                 'level_access' => false,
-            ],
-            [
-                'name' => 'yoan',
-                'username' => 'yoan',
-                'email' => 'yoan@gmail.com',
-                'password' => bcrypt('123'),
-                'level_access' => false,
-            ],
-            [
-                'name' => 'umam',
-                'username' => 'umam',
-                'email' => 'umam@gmail.com',
-                'password' => bcrypt('123'),
-                'level_access' => false,
-            ],
-            [
-                'name' => 'nabil',
-                'username' => 'nabil',
-                'email' => 'nabil@gmail.com',
-                'password' => bcrypt('123'),
-                'level_access' => false,
-            ],
-            [
-                'name' => 'haris daffa',
-                'username' => 'haris daffa',
-                'email' => 'haris@gmail.com',
-                'password' => bcrypt('123'),
-                'level_access' => false,
             ]
         ]);
     }
