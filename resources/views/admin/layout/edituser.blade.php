@@ -33,7 +33,8 @@
                     <input type="text" class="form-control" id="status" name="status" placeholder="Status"
                         @if ($user['status'] === 0) value="Dokter"
                     @elseif($user['status'] === null)
-                    value="Pasien" @endif>
+                    value="Pasien" @endif
+                        readonly>
                 </div>
 
 
