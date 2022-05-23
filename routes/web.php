@@ -46,10 +46,14 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin', [AdminController::class, 'index']);
     // got to user list
     Route::GET('admin/users', [AdminController::class, 'user']);
+    Route::GET('admin/users/add', [AdminController::class, 'addUserPage']);
+    Route::POST('admin/users/add', [AdminController::class, 'addUser']);
     // go to user registration data
     Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
     // to accept user
     Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
+    Route::GET('admin/users/{user}/edit', [AdminController::class, 'showUser']);
+    Route::PUT('admin/users/update/{id}', [AdminController::class, 'updateUser']);
     // to delete user
     Route::DELETE('admin/users/delete', [AdminController::class, 'deleteUsers']);
     // QUOTE

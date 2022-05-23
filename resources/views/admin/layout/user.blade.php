@@ -5,7 +5,12 @@
 
 @section('mainContent')
     {{-- <section class="content" style="background-color: #272A37;"> --}}
+    <div class="mb-2"><a href="{{ url('admin/users/add') }}" type="button"
+            class="btn btn-info bg-gradient-info">Add
+            User</a>
+    </div>
     <!-- tabel -->
+
     <table id="example1" class="table table-striped table-dark">
         <thead>
             <tr>
@@ -84,7 +89,17 @@
     <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <!-- Sweet Alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your Data has been Updated',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    @endif
     <!-- Page specific script -->
     <script>
         $(function() {
