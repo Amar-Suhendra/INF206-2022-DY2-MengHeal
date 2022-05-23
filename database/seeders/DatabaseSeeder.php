@@ -23,5 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             QuotesSeeder::class
         ]);
+        $this->call([
+            VideoSeeder::class
+        ]);
     }
 }
