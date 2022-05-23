@@ -31,8 +31,8 @@
                 <div class="form-group">
                     <label for="status">Status</label>
                     <input type="text" class="form-control" id="status" name="status" placeholder="Status"
-                        @if ($user['status'] === 0) value="Dokter"
-                    @elseif($user['status'] === null)
+                        @if ($user['level_access'] === 0) value="Dokter"
+                    @elseif($user['level_access'] === null)
                     value="Pasien" @endif
                         readonly>
                 </div>
