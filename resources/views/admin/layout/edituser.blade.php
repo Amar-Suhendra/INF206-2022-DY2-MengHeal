@@ -31,9 +31,9 @@
                 <div class="form-group">
                     <label for="status">Status</label>
                     <input type="text" class="form-control" id="status" name="status" placeholder="Status"
-                        value=" @if ($user['status'] === 0) Dokter
+                        @if ($user['status'] === 0) value="Dokter"
                     @elseif($user['status'] === null)
-                        Pasien @endif">
+                    value="Pasien" @endif>
                 </div>
 
 
