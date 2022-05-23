@@ -46,6 +46,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin', [AdminController::class, 'index']);
     // got to user list
     Route::GET('admin/users', [AdminController::class, 'user']);
+    Route::GET('admin/users/add', [AdminController::class, 'addUserPage']);
+    Route::POST('admin/users/add', [AdminController::class, 'addUser']);
     // go to user registration data
     Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
     // to accept user
