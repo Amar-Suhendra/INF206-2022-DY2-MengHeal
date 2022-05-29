@@ -197,6 +197,43 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
     -->
+    <script>
+        let check = function() {
+            let pass = document.getElementById('password').value;
+            // console.log(pass.length == 2);
+            if (pass.length >= 12) {
+                document.getElementById('message-check').style.color = 'green';
+                document.getElementById('message-check').innerHTML = 'Strong!';
+                document.getElementById('message-check').style.marginLeft = '7px';
+                document.getElementById('submit').disabled = false;
+            } else if (pass.length >= 8) {
+                document.getElementById('message-check').style.color = 'orange';
+                document.getElementById('message-check').innerHTML = 'OK!';
+                document.getElementById('message-check').style.marginLeft = '7px';
+                document.getElementById('submit').disabled = false;
+            } else {
+                document.getElementById('message-check').style.color = 'red';
+                document.getElementById('message-check').style.marginLeft = '7px';
+                document.getElementById('message-check').innerHTML = 'you have to enter at least 8 digit!';
+                document.getElementById('submit').disabled = true;
+            }
+        }
+        let confirm = function() {
+            // console.log(document.getElementById('password').value);
+            if (document.getElementById('password').value ===
+                document.getElementById('confirm_password').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'matching';
+                document.getElementById('message').style.marginLeft = '7px';
+                document.getElementById('submit').disabled = false;
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').style.marginLeft = '7px';
+                document.getElementById('message').innerHTML = 'not matching';
+                document.getElementById('submit').disabled = true;
+            }
+        }
+    </script>
 </body>
 
 </html>

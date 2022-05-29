@@ -22,6 +22,8 @@ class EnsureDoctor
             } elseif (Auth()->user()->level_access === null) {
                 return redirect('');
             }
+        } else if (Auth()->user()->new_user === 1) {
+
             return redirect('change-password');
         }
         return $next($request);

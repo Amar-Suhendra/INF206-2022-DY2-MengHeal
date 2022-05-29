@@ -76,6 +76,7 @@ class UserController extends Controller
         if ($request->password === $request->confirm_password) {
             User::where('id', auth()->user()->id)->update([
                 'password' => $request->password,
+                'new_user' => false,
             ]);
         }
         return redirect('');

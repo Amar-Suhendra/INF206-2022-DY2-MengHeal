@@ -16,12 +16,13 @@ class EnsureUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth()->check() || Auth()->user()->level_access !== null && Auth()->user()->new_user !== null) {
+        if (!Auth()->check() || Auth()->user()->level_access !== null && Auth()->user()->new_user !== 1) {
             if (Auth()->user()->level_access === 0) {
                 return redirect('doctor');
             }
             return redirect('/admin');
-        } else {
+        } else if (Auth()->user()->new_user === 1) {
+
             return redirect('change-password');
         }
         return $next($request);

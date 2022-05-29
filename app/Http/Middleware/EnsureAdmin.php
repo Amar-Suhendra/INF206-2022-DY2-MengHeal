@@ -21,7 +21,8 @@ class EnsureAdmin
                 return redirect('');
             }
             return redirect('doctor');
-        } else {
+        } else if (Auth()->user()->new_user === 1) {
+
             return redirect('change-password');
         }
         return $next($request);
