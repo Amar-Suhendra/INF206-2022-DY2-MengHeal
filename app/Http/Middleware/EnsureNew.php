@@ -16,7 +16,7 @@ class EnsureNew
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth()->check() || Auth()->user()->new_user !== null) {
+        if (!Auth()->check() || Auth()->user()->new_user !== 1) {
             if (Auth()->user()->level_access === 1) {
                 return redirect('admin');
             } else if (Auth()->user()->level_access === 0) {
