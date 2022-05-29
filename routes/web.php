@@ -39,7 +39,7 @@ Route::middleware('guest')->group(function () {
     // go to landing page
     Route::GET('', [UserController::class, 'index']);
 });
-Route::middleware(['auth', 'EnsureNew'])->group(function () {
+Route::middleware(['auth', 'isNewUser'])->group(function () {
     Route::GET('change-password', [UserController::class, 'changePasswordPage']);
     Route::POST('change-password', [UserController::class, 'changePassword']);
 });

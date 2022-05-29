@@ -16,11 +16,13 @@ class EnsureAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth()->check() || Auth()->user()->level_access !== 2) {
-            if (Auth()->user()->level_access !== 1) {
+        if (!Auth()->check() || Auth()->user()->level_access !== 1 && Auth()->user()->new_user !== null) {
+            if (Auth()->user()->level_access === 0) {
                 return redirect('');
             }
             return redirect('doctor');
+        } else {
+            return redirect('change-password');
         }
         return $next($request);
     }

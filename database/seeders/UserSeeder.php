@@ -22,14 +22,14 @@ class UserSeeder extends Seeder
                 'username' => 'ikhsan',
                 'email' => 'ikhsan@gmail.com',
                 'password' => bcrypt('123'),
-                'level_access' => 2,
+                'level_access' => true,
             ],
             [
                 'name' => 'rudy',
                 'username' => 'rudy',
                 'email' => 'rudy@gmail.com',
                 'password' => bcrypt('123'),
-                'level_access' => 1,
+                'level_access' => false,
             ],
             [
                 'name' => 'ainal',
@@ -43,7 +43,7 @@ class UserSeeder extends Seeder
                 'username' => 'akbar',
                 'email' => 'akbar@gmail.com',
                 'password' => bcrypt('123'),
-                'level_access' => 0,
+                'level_access' => null,
             ]
         ]);
     }

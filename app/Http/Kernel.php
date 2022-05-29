@@ -66,6 +66,6 @@ class Kernel extends HttpKernel
         'isAdmin' => \App\Http\Middleware\EnsureAdmin::class,
         'user' => \App\Http\Middleware\EnsureUser::class,
         'isDoctor' => \App\Http\Middleware\EnsureDoctor::class,
-        'isDoctor' => \App\Http\Middleware\EnsureNew::class,
+        'isNewUser' => \App\Http\Middleware\EnsureNew::class,
     ];
 }

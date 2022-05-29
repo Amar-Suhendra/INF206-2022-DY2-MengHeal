@@ -34,8 +34,8 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Status</label>
                     <select class="form-control" name="status" id="exampleFormControlSelect1">
-                        <option value="0">Dokter</option>
-                        <option value="{{ null }}"> Pasien</option>
+                        <option value="1">Dokter</option>
+                        <option value=""> Pasien</option>
                     </select>
                 </div>
 

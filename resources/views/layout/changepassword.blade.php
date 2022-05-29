@@ -187,7 +187,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <!-- ionicon -->
-    {{-- <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> --}}
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
@@ -197,44 +197,6 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
     -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>
-        let check = function() {
-            let pass = document.getElementById('password').value;
-            // console.log(pass.length == 2);
-            if (pass.length >= 12) {
-                document.getElementById('message-check').style.color = 'green';
-                document.getElementById('message-check').innerHTML = 'Strong!';
-                document.getElementById('message-check').style.marginLeft = '7px';
-                document.getElementById('submit').disabled = false;
-            } else if (pass.length >= 8) {
-                document.getElementById('message-check').style.color = 'orange';
-                document.getElementById('message-check').innerHTML = 'OK!';
-                document.getElementById('message-check').style.marginLeft = '7px';
-                document.getElementById('submit').disabled = false;
-            } else {
-                document.getElementById('message-check').style.color = 'red';
-                document.getElementById('message-check').style.marginLeft = '7px';
-                document.getElementById('message-check').innerHTML = 'you have to enter at least 8 digit!';
-                document.getElementById('submit').disabled = true;
-            }
-        }
-        let confirm = function() {
-            // console.log(document.getElementById('password').value);
-            if (document.getElementById('password').value ===
-                document.getElementById('confirm_password').value) {
-                document.getElementById('message').style.color = 'green';
-                document.getElementById('message').innerHTML = 'matching';
-                document.getElementById('message').style.marginLeft = '7px';
-                document.getElementById('submit').disabled = false;
-            } else {
-                document.getElementById('message').style.color = 'red';
-                document.getElementById('message').style.marginLeft = '7px';
-                document.getElementById('message').innerHTML = 'not matching';
-                document.getElementById('submit').disabled = true;
-            }
-        }
-    </script>
 </body>
 
 </html>

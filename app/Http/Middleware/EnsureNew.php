@@ -16,10 +16,10 @@ class EnsureNew
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth()->check() || Auth()->user()->level_access !== null) {
-            if (Auth()->user()->level_access === 2) {
+        if (!Auth()->check() || Auth()->user()->new_user !== null) {
+            if (Auth()->user()->level_access === 1) {
                 return redirect('admin');
-            } else if (Auth()->user()->level_access === 1) {
+            } else if (Auth()->user()->level_access === 0) {
                 return redirect('doctor');
             }
             return redirect('');
