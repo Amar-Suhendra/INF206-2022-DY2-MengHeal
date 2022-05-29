@@ -39,6 +39,10 @@ Route::middleware('guest')->group(function () {
     // go to landing page
     Route::GET('', [UserController::class, 'index']);
 });
+Route::middleware(['auth', 'EnsureNew'])->group(function () {
+    Route::GET('change-password', [UserController::class, 'changePasswordPage']);
+    Route::POST('change-password', [UserController::class, 'changePassword']);
+});
 
 // Admin Route
 Route::middleware(['auth', 'isAdmin'])->group(function () {

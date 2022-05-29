@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class EnsureDoctor
+class EnsureNew
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,11 @@ class EnsureDoctor
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth()->check() || Auth()->user()->level_access !== 1) {
+        if (!Auth()->check() || Auth()->user()->level_access !== null) {
             if (Auth()->user()->level_access === 2) {
                 return redirect('admin');
+            } else if (Auth()->user()->level_access === 1) {
+                return redirect('doctor');
             }
             return redirect('');
         }

@@ -66,4 +66,18 @@ class UserController extends Controller
             'title' => 'Konsultasi Online',
         ]);
     }
+
+    public function changePasswordPage()
+    {
+        return view('layout.changepassword');
+    }
+    public function changePassword(Request $request)
+    {
+        if ($request->password === $request->confirm_password) {
+            User::where('id', auth()->user()->id)->update([
+                'password' => $request->password,
+            ]);
+        }
+        return redirect('');
+    }
 }
