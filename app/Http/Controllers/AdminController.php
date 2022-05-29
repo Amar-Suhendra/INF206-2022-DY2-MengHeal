@@ -64,12 +64,17 @@ class AdminController extends Controller
     }
     public function addUser(Request $request)
     {
+        $level_access = null;
+        if ($request->status === '0') {
+            $level_access = false;
+        }
+        // return dd($level_access);
         User::create([
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'status' => $request->status,
+            'password' => bcrypt('123'),
+            'level_access' => $level_access,
         ]);
         return redirect('admin/users')->with('add', 'success');
     }
@@ -137,6 +142,11 @@ class AdminController extends Controller
             'username' => $temp['Username'],
             'email' => $temp['Email'],
         ]);
+        return redirect('admin/users-registration');
+    }
+    public function reject($id)
+    {
+        Register::destroy($id);
         return redirect('admin/users-registration');
     }
 

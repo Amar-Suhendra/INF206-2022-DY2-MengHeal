@@ -27,7 +27,7 @@
                     <td>{{ $register['Email'] }}</td>
                     <td class="row justify-content-center">
                         @if ($register['status'] === null)
-                            <form action="{{ url('/admin/users-registration/') }}" method="POST"
+                            <form action="{{ url('/admin/users-registration/' . $register['id']) }}" method="POST"
                                 style="margin-right: 1rem;">
                                 @csrf
                                 @method('delete')
