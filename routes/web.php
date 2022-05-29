@@ -39,6 +39,10 @@ Route::middleware('guest')->group(function () {
     // go to landing page
     Route::GET('', [UserController::class, 'index']);
 });
+Route::middleware(['auth', 'isNewUser'])->group(function () {
+    Route::GET('change-password', [UserController::class, 'changePasswordPage']);
+    Route::POST('change-password', [UserController::class, 'changePassword']);
+});
 
 // Admin Route
 Route::middleware(['auth', 'isAdmin'])->group(function () {
@@ -52,6 +56,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::GET('admin/users-registration', [AdminController::class, 'userRegistration']);
     // to accept user
     Route::PUT('admin/users-registration/{id}', [AdminController::class, 'accept']);
+    Route::Delete('admin/users-registration/{id}', [AdminController::class, 'reject']);
     Route::GET('admin/users/{user}/edit', [AdminController::class, 'showUser']);
     Route::PUT('admin/users/update/{id}', [AdminController::class, 'updateUser']);
     // to delete user

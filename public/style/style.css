@@ -13,17 +13,18 @@
   height: 100vh;
 }
 
-.login-box{
-    width: 320px;
-    height: 450px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    box-sizing: border-box;
-    padding: 70px;
-    transform: translate(-50%, -50%);
+.login-box {
+  width: 320px;
+  height: 480px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 30px;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
 }
 
 .login-avatar {
@@ -100,118 +101,121 @@ input[type='password'] {
 }
 
 
-.register-body{
-    margin-bottom: 0px;
-    padding: 0px;
-    background-image: url("../assets/img/Latar2.jpg");
-    background-size: cover;
-    background-position: center;
-    font-family: sans-serif;
-    height: 100vh;
+.register-body {
+  margin-bottom: 0px;
+  padding: 0px;
+  background-image: url("../assets/img/Latar2.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+  height: 100vh;
 }
 
-.register-box{
-    width: 320px;
-    height: 640px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    top: 55%;
-    left: 50%;
-    position: absolute;
-    box-sizing: border-box;
-    padding: 70px;
-    transform: translate(-50%, -50%);
+.register-box {
+  width: 320px;
+  height: 640px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  top: 55%;
+  left: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 30px;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
 }
 
-.register-avatar{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: calc(67% - 33%);
+.register-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(67% - 33%);
 }
 
-.register-h1{
-    margin-top: 0px;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 22px;
-    color:#fff;
-    font-family: sans-serif;
+.register-h1 {
+  margin-top: 0px;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  font-family: sans-serif;
 }
 
-.register-box p{
-    margin-bottom: 0px;
-    padding: 0px;
-    font-weight: bold;
-    color: #fff;
-    margin-left: 0px;
-    font-family: sans-serif;
-
-}
-
-.register-box input{
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.register-box input[type="text"], input[type="password"], input[type="email"]{
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color: #fff;
-    font-size: 16px;
-}
-
-.register-box input[type="submit"]{
-    border: none;
-    outline: none;
-    height: 40px;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
-    background: #1c8adb;
-}
-
-.register-box input[type="submit"]:hover{
-    cursor: pointer;
-    background: #293cec;
-    color: #fff;
-}
-
-.register-box a{
-    text-decoration: none;
-    font-size: 14px;
-    color: #fff;
-}
-
-.register-box a:hover{
-    color: #293cec;
-}
-
-.landing-section{
-    margin: auto;
-    display: flex;
-    margin-bottom: 50px;
-}
-
-.kolom{
-    margin-top: 50px;
-    margin-bottom: 50px;
+.register-box p {
+  margin-bottom: 0px;
+  padding: 0px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 0px;
+  font-family: sans-serif;
 
 }
 
-.kolom .deskripsi-1{
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'comic sans ms';
-    color: #364f6b;
+.register-box input {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.landing-h1{
+.register-box input[type="text"],
+input[type="password"],
+input[type="email"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.register-box input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  background: #1c8adb;
+}
+
+.register-box input[type="submit"]:hover {
+  cursor: pointer;
+  background: #293cec;
+  color: #fff;
+}
+
+.register-box a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+}
+
+.register-box a:hover {
+  color: #293cec;
+}
+
+.landing-section {
+  margin: auto;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.kolom {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.kolom .deskripsi-1 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'comic sans ms';
+  color: #364f6b;
+}
+
+.landing-h1 {
   font-size: 80px;
   font-weight: bold;
   font-family: 'comic sans ms';
@@ -219,19 +223,19 @@ input[type='password'] {
   margin-left: 20px;
 }
 
-.landing-h2{
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'comic sans ms';
-    color: #364f6b;
-    margin-left: 20px;
+.landing-h2 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'comic sans ms';
+  color: #364f6b;
+  margin-left: 20px;
 }
 
-.konten-text{
-    font-size: 20px;
-    font-family: 'comic sans ms';
-    color: #364f6b;
-    margin-left: 20px;
+.konten-text {
+  font-size: 20px;
+  font-family: 'comic sans ms';
+  color: #364f6b;
+  margin-left: 20px;
 }
 
 .quote-container {
@@ -241,7 +245,7 @@ input[type='password'] {
   display: flex;
 }
 
-.quote-container > div {
+.quote-container>div {
   width: 60%;
   display: flex;
   justify-content: center;
@@ -260,11 +264,11 @@ input[type='password'] {
   color: var(--gray);
 }
 
-.quote-container > div > div {
+.quote-container>div>div {
   width: 500px;
 }
 
-.quote-container > img {
+.quote-container>img {
   width: 40%;
   object-fit: cover;
 }
@@ -285,7 +289,7 @@ input[type='password'] {
   font-size: 16px;
 }
 
-.last-container > div {
+.last-container>div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -295,21 +299,25 @@ input[type='password'] {
   background: var(--grayLight);
 }
 
-.last-container > div > div {
+.last-container>div>div {
   width: 400px;
 }
 
-.last-container > img {
+.last-container>img {
   width: 52%;
   background: red;
 }
 
-.last-container > div > .footer {
+.last-container>div>.footer {
   display: flex;
   justify-content: space-between;
 }
 
-.description-container > img {
+.description-container>img {
   width: 40%;
   object-fit: cover;
+}
+
+.fpass:hover {
+  font-weight: bold;
 }
