@@ -28,7 +28,9 @@ class LoginController extends Controller
     {
         if (Auth::attempt(['Username' => $request->Username, 'password' => $request->Password])) {
             $request->session()->regenerate();
-            if ((User::where('username', $request->Username)->first()->level_access) === 1) {
+            if ((User::where('username', $request->Username)->first()->new_user) === null) {
+                return redirect()->intended('change-password');
+            } else if ((User::where('username', $request->Username)->first()->level_access) === 1) {
                 return redirect()->intended('admin');
             } else if ((User::where('username', $request->Username)->first()->level_access) === 0) {
                 return redirect()->intended('doctor');

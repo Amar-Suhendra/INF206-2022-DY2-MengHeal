@@ -16,11 +16,15 @@ class EnsureDoctor
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth()->check() || Auth()->user()->level_access !== 0) {
+        if (!Auth()->check() || Auth()->user()->level_access !== 0 && Auth()->user()->new_user !== 1) {
             if (Auth()->user()->level_access === 1) {
                 return redirect('admin');
+            } elseif (Auth()->user()->level_access === null) {
+                return redirect('');
             }
-            return redirect('');
+        } else if (Auth()->user()->new_user === 1) {
+
+            return redirect('change-password');
         }
         return $next($request);
     }

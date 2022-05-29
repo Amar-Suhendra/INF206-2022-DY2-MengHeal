@@ -25,17 +25,13 @@
                     <label for="email">Email</label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
-                <div class="form-group">
-                    <label for="email">Password</label>
-                    <input type="text" class="form-control" id="email" name="password" placeholder="Password">
-                </div>
 
                 <!-- status -->
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Status</label>
                     <select class="form-control" name="status" id="exampleFormControlSelect1">
                         <option value="0">Dokter</option>
-                        <option value="{{ null }}"> Pasien</option>
+                        <option value=""> Pasien</option>
                     </select>
                 </div>
 
