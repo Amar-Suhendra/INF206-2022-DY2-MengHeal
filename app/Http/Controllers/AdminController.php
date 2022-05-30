@@ -135,7 +135,6 @@ class AdminController extends Controller
             'username' => $temp['Username'],
             'email' => $temp['Email'],
             'password' => $temp['Password'],
-            'new_user' => false,
         ];
         User::create($credetials);
         Patient::create([
@@ -317,58 +316,16 @@ class AdminController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Show the patients page.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function doctors()
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $doctor = User::where('level_access', '0')->get();
+        return view('admin.layout.doctors', [
+            'doctor' => $doctor,
+            'title' => 'Doctors',
+        ]);
     }
 }
