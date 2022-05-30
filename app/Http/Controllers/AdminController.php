@@ -141,6 +141,7 @@ class AdminController extends Controller
             'username' => $temp['Username'],
             'email' => $temp['Email'],
             'password' => $temp['Password'],
+            'new_user' => false,
         ];
         User::create($credetials);
         Patient::create([
