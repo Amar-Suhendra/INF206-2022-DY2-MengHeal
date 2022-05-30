@@ -42,6 +42,7 @@ class RegisterController extends Controller
             'Email' => 'required|unique:registers,email',
             'Password' => 'required',
         ]);
+        return dd('shg');
 
         // simpan data ke dalam database register
         Register::create([
