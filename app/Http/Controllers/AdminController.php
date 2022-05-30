@@ -67,6 +67,12 @@ class AdminController extends Controller
         $level_access = null;
         if ($request->status === '0') {
             $level_access = false;
+        } else {
+            Patient::create([
+                'name' => $temp['name'],
+                'username' => $temp['Username'],
+                'email' => $temp['Email'],
+            ]);
         }
         // return dd($level_access);
         User::create([
