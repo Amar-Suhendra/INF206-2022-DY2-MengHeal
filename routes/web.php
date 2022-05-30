@@ -83,6 +83,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::DELETE('admin/deletevideos/{id}', [AdminController::class, 'deleteVideos']);
     // PATIENTS
     Route::GET('admin/patients', [AdminController::class, 'patients']);
+    // Doctors
+    Route::GET('admin/doctors', [AdminController::class, 'doctors']);
     // go to detail pasien page
     Route::get('/detailpasien', function () {
         return view('detailpasien');
